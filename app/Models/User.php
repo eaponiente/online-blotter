@@ -17,9 +17,14 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name',
-        'email',
+        'station_id',
+        'first_name',
+        'last_name',
+        'middle_name',
+        'username',
         'password',
+        'position',
+        'mobile',
     ];
 
     /**
@@ -38,6 +43,10 @@ class User extends Authenticatable
      * @var array
      */
     protected $casts = [
-        'email_verified_at' => 'datetime',
     ];
+
+    public function station()
+    {
+        return $this->belongsTo(Station::class);
+    }
 }

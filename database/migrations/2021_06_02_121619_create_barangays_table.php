@@ -15,8 +15,8 @@ class CreateBarangaysTable extends Migration
     {
         Schema::create('barangays', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
             $table->integer('station_id');
+            $table->string('name');
             $table->timestamps();
         });
     }

@@ -17,13 +17,18 @@ class CreateReportsTable extends Migration
             $table->id();
             $table->string('control_no');
             $table->integer('station_id');
-            $table->integer('status');
-            $table->integer('first_name');
-            $table->integer('middle_name');
-            $table->integer('last_name');
-            $table->integer('mobile');
-            $table->integer('address');
-            $table->integer('filename');
+            $table->string('status');
+            $table->string('first_name');
+            $table->string('middle_name')->nullable();
+            $table->string('last_name');
+            $table->string('mobile');
+            $table->text('address');
+            $table->string('citizenship');
+            $table->string('gender');
+            $table->string('civil_status');
+            $table->string('date_of_birth');
+            $table->string('incident_report');
+            $table->integer('filename')->nullable();
             $table->timestamps();
         });
     }

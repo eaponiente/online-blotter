@@ -18,6 +18,12 @@ Route::get('/', function () {
 });
 
 Route::group(['namespace' => 'Client'], function() {
-
     Route::post('reports', 'ReportController@store');
+});
+
+Route::group(['namespace' => 'Admin'], function() {
+
+    Route::prefix('staff')->group(function() {
+        Route::post('login', 'AuthController@login');
+    });
 });
