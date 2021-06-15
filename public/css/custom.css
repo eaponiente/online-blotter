@@ -1,0 +1,12 @@
+.auth-wrapper {
+    /*background: rgb(0, 158, 251);*/
+    background: #000626;
+}
+
+.font-weight-medium {
+    font-weight: 500;
+}
+
+.form-details .form-group {
+    margin-bottom: 0;
+}
