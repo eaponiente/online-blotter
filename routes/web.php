@@ -13,9 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+/*Route::get('/', function () {
     return view('welcome');
-});
+});*/
 
 Route::group(['namespace' => 'Client'], function() {
     Route::post('reports', 'ReportController@store');
@@ -26,4 +26,38 @@ Route::group(['namespace' => 'Admin'], function() {
     Route::prefix('staff')->group(function() {
         Route::post('login', 'AuthController@login');
     });
+});
+
+/* User */
+// Search form
+Route::get('/search', function () {
+    return view('search');
+});
+// View form submitted
+Route::get('/overview', function () {
+    return view('overview');
+});
+// Select country form
+Route::get('/', function () {
+    return view('index');
+});
+// Blotter form
+Route::get('/form', function () {
+    return view('form');
+});
+/* Admin */
+// Login
+Route::get('/admin/login', function () {
+    return view('admin.login.index');
+});
+// Dashboard
+Route::get('/admin/dashboard', function () {
+    return view('admin.dashboard.index');
+});
+// Blotters
+Route::get('/admin/blotters', function () {
+    return view('admin.blotters.index');
+});
+Route::get('/admin/blotters/details', function () {
+    return view('admin.blotters.show');
 });
