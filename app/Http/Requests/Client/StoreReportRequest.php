@@ -24,17 +24,19 @@ class StoreReportRequest extends FormRequest
     public function rules()
     {
         return [
+            'type' => 'required',
+            'civil_status' => 'required',
             'first_name' => 'required',
-            'last_name' => 'required',
             'middle_name' => 'required',
+            'last_name' => 'required',
+            'suffix' => 'nullable',
+            'email' => 'required|email',
             'mobile' => 'required',
-            'address' => 'required',
+            'present_address' => 'nullable',
+            'permanent_address' => 'required',
             'citizenship' => 'required',
             'gender' => 'required|in:male,female',
-            'civil_status' => 'required',
             'date_of_birth' => 'required',
-            'incident_report' => 'required',
-            'filename' => 'required',
         ];
     }
 }

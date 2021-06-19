@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\Client\MainController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,7 +18,26 @@ use Illuminate\Support\Facades\Route;
 });*/
 
 Route::group(['namespace' => 'Client'], function() {
+    // Select country form
+    Route::get('/', 'MainController@index');
+
+    Route::get('/report', 'ReportController@create');
+    Route::post('/report', 'ReportController@create')->name('report.create');
+    Route::post('/reports/store', 'ReportController@store')->name('report.store');
+
+    // Search form
+    Route::get('/search', function () {
+        return view('search');
+    });
+// View form submitted
+    Route::get('/overview', function () {
+        return view('overview');
+    });
+
+// Blotter form
+
     Route::post('reports', 'ReportController@store');
+
 });
 
 Route::group(['namespace' => 'Admin'], function() {
@@ -29,22 +48,7 @@ Route::group(['namespace' => 'Admin'], function() {
 });
 
 /* User */
-// Search form
-Route::get('/search', function () {
-    return view('search');
-});
-// View form submitted
-Route::get('/overview', function () {
-    return view('overview');
-});
-// Select country form
-Route::get('/', function () {
-    return view('index');
-});
-// Blotter form
-Route::get('/form', function () {
-    return view('form');
-});
+
 /* Admin */
 // Login
 Route::get('/admin/login', function () {

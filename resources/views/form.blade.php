@@ -8,13 +8,16 @@
                     <h5 class="font-weight-medium mb-3 mt-1">Please fill out the form below.</h5>
                 </div>
                 <!-- Form -->
-                <form class="form-horizontal" action="index.html">
+                <form class="form-horizontal" action="{{ route('report.store') }}">
+                    {{ csrf_field() }}
+                    <input type="hidden" name="station_id" value="{{ $station_id }}">
                     <div class="row mt-4">
                         <div class="col-6">
                             <div class="form-floating mb-3">
-                                <select class="form-select form-input-bg" id="type" placeholder="john@gmail.com" required="">
-                                    <option value="Male">Robbery</option>
-                                    <option value="Female">Murder</option>
+                                <select class="form-select form-input-bg" name="type" id="type" placeholder="john@gmail.com" required="">
+                                    @foreach(config('constants.report_types') as $type)
+                                    <option value="{{ $type }}">{{ $type }}</option>
+                                    @endforeach
                                 </select>
                                 <label for="type">Type of report</label>
                                 <div class="invalid-feedback">
@@ -23,11 +26,15 @@
                             </div>
                         </div>
                         <div class="col-6">
-                            <div class="form-floating">
-                                <input type="text" class="form-control form-input-bg" id="tb-rfname" placeholder="john deo" value="119087992" disabled="disabled">
-                                <label for="tb-rfname">Control number</label>
+                            <div class="form-floating mb-3">
+                                <select class="form-select form-input-bg" name="civil_status" id="tb-remail" placeholder="john@gmail.com" required="">
+                                    @foreach(config('constants.civil_status') as $type)
+                                        <option value="{{ $type }}">{{ $type }}</option>
+                                    @endforeach
+                                </select>
+                                <label for="tb-remail">Civil status (Kahimtang sibil)</label>
                                 <div class="invalid-feedback">
-                                    First name is required
+                                    Last name is required
                                 </div>
                             </div>
                         </div>
@@ -35,7 +42,7 @@
                     <div class="row">
                         <div class="col-4">
                             <div class="form-floating">
-                                <input type="text" class="form-control form-input-bg" id="tb-rfname" placeholder="john deo" required="">
+                                <input type="text" name="first_name" class="form-control form-input-bg" id="tb-rfname" placeholder="john deo" required="">
                                 <label for="tb-rfname">First name (Panguna nga ngalan)</label>
                                 <div class="invalid-feedback">
                                     First name is required
@@ -44,7 +51,7 @@
                         </div>
                         <div class="col-2">
                             <div class="form-floating">
-                                <input type="text" class="form-control form-input-bg" id="tb-rfname" placeholder="john deo" required="">
+                                <input type="text" name="middle_name" class="form-control form-input-bg" id="tb-rfname" placeholder="john deo" required="">
                                 <label for="tb-rfname">Middle inital</label>
                                 <div class="invalid-feedback">
                                     First name is required
@@ -53,7 +60,7 @@
                         </div>
                         <div class="col-4">
                             <div class="form-floating">
-                                <input type="text" class="form-control form-input-bg" id="tb-rfname" placeholder="john deo" required="">
+                                <input type="text" name="last_name" class="form-control form-input-bg" id="tb-rfname" placeholder="john deo" required="">
                                 <label for="tb-rfname">Last name (Apelyido)</label>
                                 <div class="invalid-feedback">
                                     First name is required
@@ -62,7 +69,7 @@
                         </div>
                         <div class="col-2">
                             <div class="form-floating">
-                                <input type="text" class="form-control form-input-bg" id="tb-rfname" placeholder="john deo" required="">
+                                <input type="text" name="suffix" class="form-control form-input-bg" id="tb-rfname" placeholder="john deo" required="">
                                 <label for="tb-rfname">Qualifiers</label>
                                 <div class="invalid-feedback">
                                     First name is required
@@ -73,71 +80,63 @@
                     <div class="row mt-4">
                         <div class="col-6">
                             <div class="form-floating mb-3">
-                                <input type="text" class="form-control form-input-bg" id="tb-rfname" placeholder="john deo" required="">
+                                <input type="text" name="email" class="form-control form-input-bg" id="tb-rfname" placeholder="john deo" required="">
                                 <label for="tb-rfname">Email</label>
                                 <div class="invalid-feedback">
                                     First name is required
                                 </div>
                             </div>
                             <div class="form-floating mb-3">
-                                <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
+                                <textarea class="form-control" name="permanent_address" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
                                 <label for="floatingTextarea2">Permanent Address (Optional)</label>
                                 <div class="invalid-feedback">
                                     Address is required
                                 </div>
                             </div>
                             <div class="form-floating mb-3">
-                                <input type="text" class="form-control form-input-bg" id="text-rpassword" placeholder="*****" required="">
+                                <input type="text" name="citizenship" class="form-control form-input-bg" id="text-rpassword" placeholder="*****" required="">
                                 <label for="text-rpassword">Citizenship (Pagkalungsoranon)</label>
                                 <div class="invalid-feedback">
                                     Address is required
                                 </div>
                             </div>
-                            <div class="form-floating mb-3">
-                                <select class="form-select form-input-bg" id="tb-remail" placeholder="john@gmail.com" required="">
-                                    <option value="Male">Single</option>
-                                    <option value="Female">Married</option>
-                                    <option value="Undecided">Widowed/Widower</option>
-                                </select>
-                                <label for="tb-remail">Civil status (Kahimtang sibil)</label>
+
+                            <div class="form-floating">
+                                <input type="date" name="date_of_birth" class="form-control form-input-bg" id="text-rpassword" placeholder="*****" required="">
+                                <label for="text-rpassword">Date of Birth</label>
                                 <div class="invalid-feedback">
-                                    Last name is required
+                                    Address is required
                                 </div>
                             </div>
+
                         </div>
                         <div class="col-6">
                             <div class="form-floating mb-3">
-                                <input type="text" class="form-control form-input-bg" id="tb-rfname" placeholder="john deo" required="">
+                                <input type="text" name="mobile" class="form-control form-input-bg" id="tb-rfname" placeholder="john deo" required="">
                                 <label for="tb-rfname">Contact number (Numero sa pagkontak)</label>
                                 <div class="invalid-feedback">
                                     First name is required
                                 </div>
                             </div>
                             <div class="form-floating mb-3">
-                                <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
+                                <textarea class="form-control" name="present_address" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
                                 <label for="floatingTextarea2">Present Address</label>
                                 <div class="invalid-feedback">
                                     Address is required
                                 </div>
                             </div>
                             <div class="form-floating mb-3">
-                                <select class="form-select form-input-bg" id="tb-remail" placeholder="john@gmail.com" required="">
-                                    <option value="Male">Male</option>
-                                    <option value="Female">Female</option>
-                                    <option value="Undecided">Undecided</option>
+                                <select class="form-select form-input-bg" name="gender" id="tb-remail" placeholder="john@gmail.com" required="">
+                                    @foreach(config('constants.gender') as $type)
+                                        <option value="{{ $type }}">{{ $type }}</option>
+                                    @endforeach
                                 </select>
                                 <label for="tb-remail">Gender (Kinatawo)</label>
                                 <div class="invalid-feedback">
                                     Last name is required
                                 </div>
                             </div>
-                            <div class="form-floating">
-                                <input type="date" class="form-control form-input-bg" id="text-rpassword" placeholder="*****" required="">
-                                <label for="text-rpassword">Date of Birth</label>
-                                <div class="invalid-feedback">
-                                    Address is required
-                                </div>
-                            </div>
+
                         </div>
                     </div>
                     <div class="row mt-4">
@@ -145,37 +144,37 @@
                             <div class="form-group form-material mb-3">
                                 <label class="col-md-12 mb-0">Who (Kinsa)</label>
                                 <div class="col-md-12">
-                                    <textarea rows="1" class="form-control ps-0 form-control-line" style="height:auto"></textarea>
+                                    <textarea rows="1" name="who" class="form-control ps-0 form-control-line" style="height:auto"></textarea>
                                 </div>
                             </div>
                             <div class="form-group form-material mb-3">
                                 <label class="col-md-12 mb-0">What (Unsa)</label>
                                 <div class="col-md-12">
-                                    <textarea rows="1" class="form-control ps-0 form-control-line" style="height:auto"></textarea>
+                                    <textarea rows="1" name="what" class="form-control ps-0 form-control-line" style="height:auto"></textarea>
                                 </div>
                             </div>
                             <div class="form-group form-material mb-3">
                                 <label class="col-md-12 mb-0">Where (Asa)</label>
                                 <div class="col-md-12">
-                                    <textarea rows="1" class="form-control ps-0 form-control-line" style="height:auto"></textarea>
+                                    <textarea rows="1" name="where" class="form-control ps-0 form-control-line" style="height:auto"></textarea>
                                 </div>
                             </div>
                             <div class="form-group form-material mb-3">
                                 <label class="col-md-12 mb-0">When (Kanus-a)</label>
                                 <div class="col-md-12">
-                                    <textarea rows="1" class="form-control ps-0 form-control-line" style="height:auto"></textarea>
+                                    <textarea rows="1" name="when" class="form-control ps-0 form-control-line" style="height:auto"></textarea>
                                 </div>
                             </div>
                             <div class="form-group form-material mb-3">
                                 <label class="col-md-12 mb-0">How (Giunsa)</label>
                                 <div class="col-md-12">
-                                    <textarea rows="1" class="form-control ps-0 form-control-line" style="height:auto"></textarea>
+                                    <textarea rows="1" name="how" class="form-control ps-0 form-control-line" style="height:auto"></textarea>
                                 </div>
                             </div>
                             <div class="form-group form-material mb-3">
                                 <label class="col-md-12 mb-0">Synopsis (Panghitabo)</label>
                                 <div class="col-md-12">
-                                    <textarea rows="5" class="form-control ps-0 form-control-line" style="height:auto"></textarea>
+                                    <textarea rows="5" name="synopsis" class="form-control ps-0 form-control-line" style="height:auto"></textarea>
                                 </div>
                             </div>
                             <div class="form-group mb-3">
