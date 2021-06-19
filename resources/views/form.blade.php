@@ -8,13 +8,13 @@
                     <h5 class="font-weight-medium mb-3 mt-1">Please fill out the form below.</h5>
                 </div>
                 <!-- Form -->
-                <form class="form-horizontal" action="{{ route('report.store') }}">
+                <form class="form-horizontal" id="report-form" enctype="multipart/form-data" action="{{ route('report.store') }}">
                     {{ csrf_field() }}
                     <input type="hidden" name="station_id" value="{{ $station_id }}">
                     <div class="row mt-4">
                         <div class="col-6">
                             <div class="form-floating mb-3">
-                                <select class="form-select form-input-bg" name="type" id="type" placeholder="john@gmail.com" required="">
+                                <select class="form-select form-input-bg" name="type" id="type" placeholder="john@gmail.com">
                                     @foreach(config('constants.report_types') as $type)
                                     <option value="{{ $type }}">{{ $type }}</option>
                                     @endforeach
@@ -27,7 +27,7 @@
                         </div>
                         <div class="col-6">
                             <div class="form-floating mb-3">
-                                <select class="form-select form-input-bg" name="civil_status" id="tb-remail" placeholder="john@gmail.com" required="">
+                                <select class="form-select form-input-bg" name="civil_status" id="tb-remail" placeholder="john@gmail.com">
                                     @foreach(config('constants.civil_status') as $type)
                                         <option value="{{ $type }}">{{ $type }}</option>
                                     @endforeach
@@ -42,7 +42,7 @@
                     <div class="row">
                         <div class="col-4">
                             <div class="form-floating">
-                                <input type="text" name="first_name" class="form-control form-input-bg" id="tb-rfname" placeholder="john deo" required="">
+                                <input type="text" name="first_name" class="form-control form-input-bg" id="tb-rfname" placeholder="john deo">
                                 <label for="tb-rfname">First name (Panguna nga ngalan)</label>
                                 <div class="invalid-feedback">
                                     First name is required
@@ -51,7 +51,7 @@
                         </div>
                         <div class="col-2">
                             <div class="form-floating">
-                                <input type="text" name="middle_name" class="form-control form-input-bg" id="tb-rfname" placeholder="john deo" required="">
+                                <input type="text" name="middle_name" class="form-control form-input-bg" id="tb-rfname" placeholder="john deo">
                                 <label for="tb-rfname">Middle inital</label>
                                 <div class="invalid-feedback">
                                     First name is required
@@ -60,7 +60,7 @@
                         </div>
                         <div class="col-4">
                             <div class="form-floating">
-                                <input type="text" name="last_name" class="form-control form-input-bg" id="tb-rfname" placeholder="john deo" required="">
+                                <input type="text" name="last_name" class="form-control form-input-bg" id="tb-rfname" placeholder="john deo">
                                 <label for="tb-rfname">Last name (Apelyido)</label>
                                 <div class="invalid-feedback">
                                     First name is required
@@ -69,7 +69,7 @@
                         </div>
                         <div class="col-2">
                             <div class="form-floating">
-                                <input type="text" name="suffix" class="form-control form-input-bg" id="tb-rfname" placeholder="john deo" required="">
+                                <input type="text" name="suffix" class="form-control form-input-bg" id="tb-rfname" placeholder="john deo">
                                 <label for="tb-rfname">Qualifiers</label>
                                 <div class="invalid-feedback">
                                     First name is required
@@ -80,7 +80,7 @@
                     <div class="row mt-4">
                         <div class="col-6">
                             <div class="form-floating mb-3">
-                                <input type="text" name="email" class="form-control form-input-bg" id="tb-rfname" placeholder="john deo" required="">
+                                <input type="text" name="email" class="form-control form-input-bg" id="tb-rfname" placeholder="john deo">
                                 <label for="tb-rfname">Email</label>
                                 <div class="invalid-feedback">
                                     First name is required
@@ -94,7 +94,7 @@
                                 </div>
                             </div>
                             <div class="form-floating mb-3">
-                                <input type="text" name="citizenship" class="form-control form-input-bg" id="text-rpassword" placeholder="*****" required="">
+                                <input type="text" name="citizenship" class="form-control form-input-bg" id="text-rpassword" placeholder="*****">
                                 <label for="text-rpassword">Citizenship (Pagkalungsoranon)</label>
                                 <div class="invalid-feedback">
                                     Address is required
@@ -102,7 +102,7 @@
                             </div>
 
                             <div class="form-floating">
-                                <input type="date" name="date_of_birth" class="form-control form-input-bg" id="text-rpassword" placeholder="*****" required="">
+                                <input type="date" name="date_of_birth" class="form-control form-input-bg" id="text-rpassword" placeholder="*****">
                                 <label for="text-rpassword">Date of Birth</label>
                                 <div class="invalid-feedback">
                                     Address is required
@@ -112,7 +112,7 @@
                         </div>
                         <div class="col-6">
                             <div class="form-floating mb-3">
-                                <input type="text" name="mobile" class="form-control form-input-bg" id="tb-rfname" placeholder="john deo" required="">
+                                <input type="text" name="mobile" class="form-control form-input-bg" id="tb-rfname" placeholder="john deo">
                                 <label for="tb-rfname">Contact number (Numero sa pagkontak)</label>
                                 <div class="invalid-feedback">
                                     First name is required
@@ -126,7 +126,7 @@
                                 </div>
                             </div>
                             <div class="form-floating mb-3">
-                                <select class="form-select form-input-bg" name="gender" id="tb-remail" placeholder="john@gmail.com" required="">
+                                <select class="form-select form-input-bg" name="gender" id="tb-remail" placeholder="john@gmail.com">
                                     @foreach(config('constants.gender') as $type)
                                         <option value="{{ $type }}">{{ $type }}</option>
                                     @endforeach
@@ -179,7 +179,7 @@
                             </div>
                             <div class="form-group mb-3">
                                 <label for="text-rcpassword" class="mb-2">Upload ID (Pag-upload sa ID) <i class="fas fa-question-circle" data-bs-toggle="popover" data-bs-trigger="hover focus" title="LIST OF ACCEPTABLE IDS (At least 1 of the following)" data-bs-content="SSS ID, PHILHEALTH, PAG-IBIG ID/UMID, PASSPORT ID"></i></label>
-                                <input type="file" class="form-control" id="text-rcpassword" placeholder="*****" required="">
+                                <input type="file" name="filename" class="form-control" id="text-rcpassword" placeholder="*****">
                                 <div class="invalid-feedback">
                                     File upload is required
                                 </div>
@@ -191,7 +191,7 @@
                                 </div>
                             </div>
                             <div class="d-flex">
-                                <button type="submit" class="btn btn-lg btn waves-effect waves-light btn-light-info text-info" data-bs-toggle="modal" data-bs-target="#bs-example-modal-md">Submit</button>
+                                <button type="submit" class="btn btn-lg btn waves-effect waves-light btn-light-info text-info">Submit</button>
                                 <div>
                                     <!-- ------------------------------------------ -->
                                     <!-- Medium -->

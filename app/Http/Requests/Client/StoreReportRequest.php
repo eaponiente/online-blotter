@@ -37,6 +37,13 @@ class StoreReportRequest extends FormRequest
             'citizenship' => 'required',
             'gender' => 'required|in:male,female',
             'date_of_birth' => 'required',
+            'who' => 'required',
+            'what' => 'required',
+            'where' => 'required',
+            'when' => 'required',
+            'how' => 'required',
+            'synopsis' => 'required',
+            'filename' => 'required',
         ];
     }
 }
