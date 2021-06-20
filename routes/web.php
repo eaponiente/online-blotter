@@ -45,7 +45,8 @@ Route::group(['namespace' => 'Admin'], function() {
         Route::get('/', 'AuthController@index')->name('admin.login.index');
         Route::post('login', 'AuthController@login')->name('admin.login.store');
         Route::middleware('auth')->group(function() {
-            Route::post('logout', 'AuthController@login')->name('admin.logout');
+            Route::get('logout', 'AuthController@logout')->name('admin.logout');
+            Route::get('statistics', 'StatisticsController@index')->name('admin.statistics.index');
 
             Route::resource('reports', 'Reports\ReportController');
 

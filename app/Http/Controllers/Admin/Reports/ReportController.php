@@ -11,7 +11,7 @@ class ReportController extends Controller
     {
         $reports = Report::where('station_id', auth()->user()->station_id)->get();
 
-        return view('admin.blotters.index', compact('reports'));
+        return view('admin.reports.index', compact('reports'));
     }
 
     public function show($uuid)
@@ -25,6 +25,6 @@ class ReportController extends Controller
             $report->save();
         }
 
-        return view('admin.blotters.show', compact('report'));
+        return view('admin.reports.show', compact('report'));
     }
 }
