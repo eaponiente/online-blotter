@@ -102,8 +102,9 @@
                     <!-- ============================================================== -->
                     <ul class="navbar-nav">
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle waves-effect waves-dark show" href="#" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="true"> <i class="mdi mdi-bell"></i>
-                                <div class="notify" style="top:-38px;right:-5px"> <span class="heartbit"></span> <span class="point"></span> </div>
+                            <a class="nav-link dropdown-toggle waves-effect waves-dark show" href="#" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="true"> 
+                                <i class="mdi mdi-bell"></i>
+                                <span class="counter counter-lg">69</span>
                             </a>
                             <div class="dropdown-menu dropdown-menu-start mailbox dropdown-menu-animate-up">
                                 <ul class="list-style-none">
