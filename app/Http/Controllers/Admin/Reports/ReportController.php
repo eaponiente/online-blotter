@@ -9,9 +9,10 @@ class ReportController extends Controller
 {
     public function index()
     {
-        $reports = Report::where('station_id', auth()->user()->station_id)->get();
+        $reports = Report::where('station_id', auth()->user()->station_id)
+            ->latest('created_at')->get();
 
-        return view('admin.blotters.index', compact('reports'));
+        return view('admin.reports.index', compact('reports'));
     }
 
     public function show($uuid)
@@ -25,6 +26,6 @@ class ReportController extends Controller
             $report->save();
         }
 
-        return view('admin.blotters.show', compact('report'));
+        return view('admin.reports.show', compact('report'));
     }
 }

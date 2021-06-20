@@ -28,6 +28,7 @@ class ReportFactory extends Factory
         $civilStatus = ['single', 'married', 'divorced', 'widowed'];
         $type = ['robbery', 'carnapping', 'assault'];
 
+        $createdAt = $this->faker->dateTimeBetween('-20days');
         return [
             'uuid' => $this->faker->uuid,
             'control_no' => 'B' . mt_rand(1000, 9999) . mt_rand(1000, 9999) . mt_rand(1000, 9999),
@@ -47,6 +48,8 @@ class ReportFactory extends Factory
             'date_of_birth' => $this->faker->dateTimeBetween('-40years')->format('Y-m-d'),
             'gender' => ['male', 'female'][mt_rand(0 , 1)],
             'synopsis' => $this->faker->text,
+            'created_at' => $createdAt,
+            'updated_at' => $createdAt,
         ];
     }
 }

@@ -92,10 +92,7 @@
                         <!-- ============================================================== -->
 
                         <li class="nav-item hidden-sm-down">
-                            <form class="app-search ps-3">
-                                <input type="text" class="form-control" placeholder="Search for..."> <a
-                                    class="srh-btn"><i class="ti-search"></i></a>
-                            </form>
+
                         </li>
                     </ul>
 
@@ -106,64 +103,9 @@
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle waves-effect waves-dark show" href="#" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="true"> 
                                 <i class="mdi mdi-bell"></i>
-                                <span class="counter counter-lg">69</span>
+                                <span class="counter counter-lg">{{ $unreadReports }}</span>
                             </a>
-                            <div class="dropdown-menu dropdown-menu-start mailbox dropdown-menu-animate-up">
-                                <ul class="list-style-none">
-                                    <li>
-                                        <div class="border-bottom rounded-top py-3 px-4">
-                                            <div class="mb-0 font-weight-medium fs-4">Notifications</div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="message-center notifications position-relative ps-container ps-theme-default" style="height:230px;" data-ps-id="8dbbbdd2-ac3e-f2bf-41d3-3d48201b1e8e">
-                                            <!-- Message -->
-                                            <a href="javascript:void(0)" class="message-item d-flex align-items-center border-bottom px-3 py-2">
-                                                <span class="btn btn-light-danger text-danger btn-circle">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link feather-sm fill-white"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
-                                                </span>
-                                                <div class="w-75 d-inline-block v-middle ps-3">
-                                                    <h5 class="message-title mb-0 mt-1 fs-3 fw-bold">Luanch Admin</h5> <span class="fs-2 text-nowrap d-block time text-truncate fw-normal text-muted mt-1">Just see
-                                                        the my new admin!</span> <span class="fs-2 text-nowrap d-block subtext text-muted">9:30 AM</span>
-                                                </div>
-                                            </a>
-                                            <!-- Message -->
-                                            <a href="javascript:void(0)" class="message-item d-flex align-items-center border-bottom px-3 py-2">
-                                                <span class="btn btn-light-success text-success btn-circle">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar feather-sm fill-white"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
-                                                </span>
-                                                <div class="w-75 d-inline-block v-middle ps-3">
-                                                    <h5 class="message-title mb-0 mt-1 fs-3 fw-bold">Event today</h5> <span class="fs-2 text-nowrap d-block time text-truncate fw-normal text-muted mt-1">Just a
-                                                        reminder that you have event</span> <span class="fs-2 text-nowrap d-block subtext text-muted">9:10 AM</span>
-                                                </div>
-                                            </a>
-                                            <!-- Message -->
-                                            <a href="javascript:void(0)" class="message-item d-flex align-items-center border-bottom px-3 py-2">
-                                                <span class="btn btn-light-info text-info btn-circle">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-settings feather-sm fill-white"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
-                                                </span>
-                                                <div class="w-75 d-inline-block v-middle ps-3">
-                                                    <h5 class="message-title mb-0 mt-1 fs-3 fw-bold">Settings</h5> <span class="fs-2 text-nowrap d-block time text-truncate fw-normal text-muted mt-1">You can
-                                                        customize this template as you want</span> <span class="fs-2 text-nowrap d-block subtext text-muted">9:08 AM</span>
-                                                </div>
-                                            </a>
-                                            <!-- Message -->
-                                            <a href="javascript:void(0)" class="message-item d-flex align-items-center border-bottom px-3 py-2">
-                                                <span class="btn btn-light-primary text-primary btn-circle">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-users feather-sm fill-white"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
-                                                </span>
-                                                <div class="w-75 d-inline-block v-middle ps-3">
-                                                    <h5 class="message-title mb-0 mt-1 fs-3 fw-bold">Pavan kumar</h5> <span class="fs-2 text-nowrap d-block time text-truncate fw-normal text-muted mt-1">Just see
-                                                        the my admin!</span> <span class="fs-2 text-nowrap d-block subtext text-muted">9:02 AM</span>
-                                                </div>
-                                            </a>
-                                        <div class="ps-scrollbar-x-rail" style="left: 0px; bottom: 0px;"><div class="ps-scrollbar-x" tabindex="0" style="left: 0px; width: 0px;"></div></div><div class="ps-scrollbar-y-rail" style="top: 0px; right: 3px;"><div class="ps-scrollbar-y" tabindex="0" style="top: 0px; height: 0px;"></div></div></div>
-                                    </li>
-                                    <li>
-                                        <a class="nav-link border-top text-center text-dark pt-3" href="javascript:void(0);"> <strong>Check all notifications</strong> <i class="fa fa-angle-right"></i> </a>
-                                    </li>
-                                </ul>
-                            </div>
+
                         </li>
                         <!-- ============================================================== -->
                         <!-- User profile and search -->
@@ -211,9 +153,9 @@
                             </a>
                         </li>
                         <li class="sidebar-item"> 
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link <?=request()->segment(2) === 'blotters' || request()->segment(2) === 'details' ? 'active' : ''?>" href="?page=blotters" aria-expanded="false">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link <?=request()->segment(2) === 'blotters' || request()->segment(2) === 'details' ? 'active' : ''?>" href="{{ route('admin.statistics.index') }}" aria-expanded="false">
                                 <i class="me-3 fa fa-table" aria-hidden="true"></i>
-                                <span class="hide-menu">Incident Reports</span>
+                                <span class="hide-menu">Statistics</span>
                             </a>
                         </li>
                         <li class="sidebar-item"> 
@@ -241,6 +183,7 @@
         <!-- Page wrapper  -->
         <!-- ============================================================== -->
         <div class="page-wrapper">
+
             @yield('content')
             <!-- ============================================================== -->
             <!-- footer -->
@@ -278,8 +221,8 @@
     <script src="{{ url('js/pages/dashboards/dashboard1.js') }}"></script>
     <!-- JS Grid -->
     <script src="{{ url('js/jsgrid/db.js') }}"></script>
-    <script src="{{ url('js/jsgrid.min.js') }}"></script>
-    <script src="{{ url('js/jsgrid-init.js') }}"></script>
+    <script src="{{ url('js/jsgrid/jsgrid.min.js') }}"></script>
+    <script src="{{ url('js/jsgrid/jsgrid-init.js') }}"></script>
 </body>
 
 </html>

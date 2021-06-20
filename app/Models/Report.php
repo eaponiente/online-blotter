@@ -49,4 +49,9 @@ class Report extends Model
         return $this->belongsTo(Station::class);
     }
 
+    public function getFullnameAttribute()
+    {
+        return "{$this->first_name} {$this->last_name}";
+    }
+
 }
