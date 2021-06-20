@@ -51,6 +51,8 @@ Route::group(['namespace' => 'Admin'], function() {
             Route::resource('reports', 'Reports\ReportController');
 
             Route::get('dashboard', 'MainController@index')->name('admin.dashboard.index');
+            Route::get('users', 'UserController@index')->name('admin.users.index');
+            Route::get('users/create', 'UserController@create')->name('admin.users.create');
         });
     });
 });
