@@ -49,18 +49,29 @@
                         <!--<span class="db"><img src="../assets/images/logo-icon.png" alt="logo"><br>
                             <img src="../assets/images/logo-text.png" alt="Home"></span>-->
                     </div>
-                    <h3 class="box-title mt-5 mb-0">Davao Online Blotter</h3><small class="text-muted">Admin Panel</small> 
+                    <h3 class="box-title mt-5 mb-0">Davao Online Blotter</h3>
                     <!-- Form -->
                     <div class="row">
                         <div class="col-12">
-                            <form class="form-horizontal mt-3 form-material" id="loginform" action="index.html">
+                            @if ($errors->any())
+                                <div class="alert alert-danger">
+                                    <ul>
+                                        @foreach ($errors->all() as $error)
+                                            <li>{{ $error }}</li>
+                                        @endforeach
+                                    </ul>
+                                </div>
+                            @endif
+
+                            <form class="form-horizontal mt-3 form-material" method="POST" id="loginform" action="{{ route('admin.login.store') }}">
+                                {{ csrf_field() }}
                                 <div class="form-group mb-3">
                                     <div class="col-xs-12">
-                                        <input class="form-control" type="text" required="" placeholder="Username"> </div>
+                                        <input class="form-control" name="username" type="text" required="" placeholder="Username"> </div>
                                 </div>
                                 <div class="form-group mb-3">
                                     <div class="col-xs-12">
-                                        <input class="form-control" type="password" required="" placeholder="Password"> </div>
+                                        <input class="form-control" name="password" type="password" required="" placeholder="Password"> </div>
                                 </div>
                                 <div class="form-group">
                                     <div class="d-flex">
@@ -68,27 +79,12 @@
                                             <input id="checkbox-signup" type="checkbox" class="material-inputs chk-col-indigo">
                                             <label for="checkbox-signup"> Remember me </label>
                                         </div> 
-                                        <div class="ms-auto">
-                                            <a href="javascript:void(0)" id="to-recover" class="link font-weight-medium"><i class="fa fa-lock me-1"></i> Forgot pwd?</a>
-                                        </div>
+
                                     </div>
                                 </div>
                                 <div class="form-group text-center my-3">
                                     <div class="col-xs-12">
                                         <button class="btn btn-info d-block w-100 waves-effect waves-light" type="submit">Log In</button>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-xs-12 col-sm-12 col-md-12 mt-2 text-center">
-                                        <div class="social mb-3">
-                                            <a href="javascript:void(0)" class="btn  btn-facebook" data-bs-toggle="tooltip" title="Login with Facebook"> <i aria-hidden="true" class="fab fa-facebook-f"></i> </a>
-                                            <a href="javascript:void(0)" class="btn btn-googleplus" data-bs-toggle="tooltip" title="Login with Google"> <i aria-hidden="true" class="fab fa-google"></i> </a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="form-group mb-0">
-                                    <div class="col-sm-12 justify-content-center d-flex">
-                                        <p>Don't have an account? <a href="authentication-register1.html" class="text-info font-weight-medium ms-1">Sign Up</a></p>
                                     </div>
                                 </div>
                             </form>

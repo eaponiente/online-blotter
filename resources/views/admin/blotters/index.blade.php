@@ -23,78 +23,21 @@
                                 </tr>
                             </thead>
                             <tbody>
+                            @foreach($reports as $report)
                                 <tr>
-                                    <td>119087992</td>
-                                    <td>Deshmukh</td>
-                                    <td>Prohaska</td>
-                                    <td>E</td>
-                                    <td>Murder</td>
+                                    <td>{{ $report->control_no }}</td>
+                                    <td>{{ $report->first_name }}</td>
+                                    <td>{{ $report->last_name }}</td>
+                                    <td>{{ $report->middle_name }}</td>
+                                    <td>{{ $report->type }}</td>
                                     <td>
-                                        <a href="?page=details" class="btn btn-success text-white">
+                                        <a href="{{ route('reports.show', [$report->uuid]) }}" class="btn btn-success text-white">
                                             View
                                         </a>
                                     </td>
                                 </tr>
-                                <tr>
-                                    <td>119087993</td>
-                                    <td>Deshmukh</td>
-                                    <td>Gaylord</td>
-                                    <td>D</td>
-                                    <td>Murder</td>
-                                    <td>
-                                        <a href="?page=details" class="btn btn-success text-white">
-                                            View
-                                        </a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>119087994</td>
-                                    <td>Sanghani</td>
-                                    <td>Gusikowski</td>
-                                    <td>G</td>
-                                    <td>Murder</td>
-                                    <td>
-                                        <a href="?page=details" class="btn btn-success text-white">
-                                            View
-                                        </a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>119087995</td>
-                                    <td>Roshan</td>
-                                    <td>Rogahn</td>
-                                    <td>A</td>
-                                    <td>Robbery</td>
-                                    <td>
-                                        <a href="?page=details" class="btn btn-success text-white">
-                                            View
-                                        </a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>119087996</td>
-                                    <td>Joshi</td>
-                                    <td>Hickle</td>
-                                    <td>R</td>
-                                    <td>Robbery</td>
-                                    <td>
-                                        <a href="?page=details" class="btn btn-success text-white">
-                                            View
-                                        </a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>119087997</td>
-                                    <td>Nigam</td>
-                                    <td>Eichmann</td>
-                                    <td>W</td>
-                                    <td>Murder</td>
-                                    <td>
-                                        <a href="?page=details" class="btn btn-success text-white">
-                                            View
-                                        </a>
-                                    </td>
-                                </tr>
+                            @endforeach
+
                             </tbody>
                         </table>
                     </div>

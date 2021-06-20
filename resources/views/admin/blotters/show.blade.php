@@ -9,19 +9,19 @@
             <div class="card">
                 <div class="card-header bg-info">
                     <div class="row">
-                        <h4 class="mb-0 text-white">Juan Dela Cruz</h4>
+                        <h4 class="mb-0 text-white">{{ $report->first_name }} {{ $report->last_name }}</h4>
                     </div>
                 </div>
                 <form class="form-horizontal form-details">
                     <div class="form-body">
                         <div class="card-body">
-                            <h4 class="card-title mb-0">Options</h4>
+                            <h4 class="card-title mb-0">Control No: {{ $report->control_no }}</h4>
                         </div>
                         <div class="card-body border-top">
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group row">
-                                        <label class="control-label text-end col-md-4 font-weight-medium">Status:</label>
+                                        <label class="control-label col-md-4 font-weight-medium">Status:</label>
                                         <div class="col-md-8">
                                             <div class="button-group">
                                                 <button type="button" class="btn waves-effect waves-light btn-success text-white"><i class="fas fa-check"></i> Active</button>
@@ -34,7 +34,7 @@
 
                                 <div class="col-md-6">
                                     <div class="form-group row">
-                                        <label class="control-label text-end col-md-4 font-weight-medium">Upload Signature:</label>
+                                        <label class="control-label col-md-4 font-weight-medium">Upload Signature:</label>
                                         <div class="col-md-8">
                                             <input type="file" class="form-control">
                                         </div>
@@ -49,39 +49,18 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group row ">
-                                        <label class="control-label text-end col-md-4 font-weight-medium">First Name:</label>
+                                        <label class="control-label col-md-4 font-weight-medium">First Name:</label>
                                         <div class="col-md-8">
-                                            <p class="form-control-static"> John </p>
+                                            <p class="form-control-static"> {{ $report->first_name }} </p>
                                         </div>
                                     </div>
                                 </div>
                                 <!--/span-->
                                 <div class="col-md-6">
                                     <div class="form-group row ">
-                                        <label class="control-label text-end col-md-4 font-weight-medium">Last Name:</label>
+                                        <label class="control-label col-md-4 font-weight-medium">Last Name:</label>
                                         <div class="col-md-8">
-                                            <p class="form-control-static"> Doe </p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!--/span-->
-                            </div>
-                            <!--/row-->
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group row ">
-                                        <label class="control-label text-end col-md-4 font-weight-medium">Middle Initial:</label>
-                                        <div class="col-md-8">
-                                            <p class="form-control-static"> K </p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!--/span-->
-                                <div class="col-md-6">
-                                    <div class="form-group row ">
-                                        <label class="control-label text-end col-md-4 font-weight-medium">Citizenship:</label>
-                                        <div class="col-md-8">
-                                            <p class="form-control-static"> Filipino </p>
+                                            <p class="form-control-static"> {{ $report->last_name }} </p>
                                         </div>
                                     </div>
                                 </div>
@@ -91,18 +70,38 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group row ">
-                                        <label class="control-label text-end col-md-4 font-weight-medium">Gender:</label>
+                                        <label class="control-label col-md-4 font-weight-medium">Middle Initial:</label>
                                         <div class="col-md-8">
-                                            <p class="form-control-static"> Male </p>
+                                            <p class="form-control-static"> {{ $report->middle_name }} </p>
                                         </div>
                                     </div>
                                 </div>
                                 <!--/span-->
                                 <div class="col-md-6">
                                     <div class="form-group row ">
-                                        <label class="control-label text-end col-md-4 font-weight-medium">Date of Birth:</label>
+                                        <label class="control-label col-md-4 font-weight-medium">Citizenship:</label>
                                         <div class="col-md-8">
-                                            <p class="form-control-static"> 11/06/1987 </p>
+                                            <p class="form-control-static"> {{ $report->citizenship }} </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--/span-->
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group row ">
+                                        <label class="control-label col-md-4 font-weight-medium">Suffix:</label>
+                                        <div class="col-md-8">
+                                            <p class="form-control-static"> {{ $report->suffix }} </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--/span-->
+                                <div class="col-md-6">
+                                    <div class="form-group row ">
+                                        <label class="control-label col-md-4 font-weight-medium">Email:</label>
+                                        <div class="col-md-8">
+                                            <p class="form-control-static"> {{ $report->email }} </p>
                                         </div>
                                     </div>
                                 </div>
@@ -112,18 +111,39 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group row ">
-                                        <label class="control-label text-end col-md-4 font-weight-medium">Age:</label>
+                                        <label class="control-label col-md-4 font-weight-medium">Gender:</label>
                                         <div class="col-md-8">
-                                            <p class="form-control-static"> 33 </p>
+                                            <p class="form-control-static"> {{ $report->gender }} </p>
                                         </div>
                                     </div>
                                 </div>
                                 <!--/span-->
                                 <div class="col-md-6">
                                     <div class="form-group row ">
-                                        <label class="control-label text-end col-md-4 font-weight-medium">Civil Status:</label>
+                                        <label class="control-label col-md-4 font-weight-medium">Date of Birth:</label>
                                         <div class="col-md-8">
-                                            <p class="form-control-static"> Single </p>
+                                            <p class="form-control-static"> {{ $report->date_of_birth }} </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--/span-->
+                            </div>
+                            <!--/row-->
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group row ">
+                                        <label class="control-label col-md-4 font-weight-medium">Age:</label>
+                                        <div class="col-md-8">
+                                            <p class="form-control-static"> {{ \Carbon\Carbon::parse($report->date_of_birth)->age }} </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--/span-->
+                                <div class="col-md-6">
+                                    <div class="form-group row ">
+                                        <label class="control-label col-md-4 font-weight-medium">Civil Status:</label>
+                                        <div class="col-md-8">
+                                            <p class="form-control-static"> {{ $report->civil_status }}  </p>
                                         </div>
                                     </div>
                                 </div>
@@ -136,40 +156,32 @@
                         </div>
                         <div class="card-body border-top">
                             <div class="row">
-                                <div class="col-md-6">
+                                <div class="col-md-12">
                                     <div class="form-group row ">
-                                        <label class="control-label text-end col-md-4 font-weight-medium">Address:</label>
-                                        <div class="col-md-8">
-                                            <p class="form-control-static"> E104, Dharti-2, Near silverstar mall </p>
+                                        <label class="control-label col-md-3 font-weight-medium">Present Address:</label>
+                                        <div class="col-md-9">
+                                            <p class="form-control-static"> {{ $report->present_address }} </p>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col-md-6">
+                                <div class="col-md-12">
                                     <div class="form-group row ">
-                                        <label class="control-label text-end col-md-4 font-weight-medium">City:</label>
-                                        <div class="col-md-8">
-                                            <p class="form-control-static"> Bhavnagar </p>
+                                        <label class="control-label col-md-3 font-weight-medium">Permanent Address:</label>
+                                        <div class="col-md-9">
+                                            <p class="form-control-static"> {{ $report->permanent_address }} </p>
                                         </div>
                                     </div>
                                 </div>
-                                <!--/span-->
-                                <div class="col-md-6">
-                                    <div class="form-group row ">
-                                        <label class="control-label text-end col-md-4 font-weight-medium">State:</label>
-                                        <div class="col-md-8">
-                                            <p class="form-control-static"> Gujarat </p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!--/span-->
                             </div>
+                            <div class="row">
+
                             <!--/row-->
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group row ">
-                                        <label class="control-label text-end col-md-4 font-weight-medium">Post Code:</label>
+                                        <label class="control-label col-md-4 font-weight-medium">Post Code:</label>
                                         <div class="col-md-8">
                                             <p class="form-control-static"> 457890 </p>
                                         </div>
@@ -178,13 +190,37 @@
                                 <!--/span-->
                                 <div class="col-md-6">
                                     <div class="form-group row ">
-                                        <label class="control-label text-end col-md-4 font-weight-medium">Country:</label>
+                                        <label class="control-label col-md-4 font-weight-medium">Contact #:</label>
                                         <div class="col-md-8">
-                                            <p class="form-control-static"> India </p>
+                                            <p class="form-control-static"> {{ $report->mobile }} </p>
                                         </div>
                                     </div>
                                 </div>
                                 <!--/span-->
+                            </div>
+
+                        </div>
+                        <div class="card-body">
+                            <h4 class="card-title mb-0">Case Details</h4>
+                        </div>
+                        <div class="card-body border-top">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group row ">
+                                        <label class="control-label col-md-2 font-weight-medium">Type:</label>
+                                        <div class="col-md-10">
+                                            <p class="form-control-static"> {{ ucfirst($report->type) }} </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group row ">
+                                        <label class="control-label col-md-3 font-weight-medium">Status:</label>
+                                        <div class="col-md-7">
+                                            <p class="form-control-static"> {{ ucfirst($report->status) }} </p>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <div class="card-body">
@@ -194,9 +230,54 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="form-group row ">
-                                        <label class="control-label text-end col-md-2 font-weight-medium">Content:</label>
+                                        <label class="control-label col-md-2 font-weight-medium">What:</label>
                                         <div class="col-md-10">
-                                            <p class="form-control-static"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ultrices nisi a mi finibus mollis. Pellentesque justo ligula, consectetur eu lectus et, lacinia cursus erat. Phasellus eget odio at sem fringilla vehicula sed vitae risus. Aenean vehicula consequat ante id congue. Proin condimentum nulla augue, quis fermentum elit blandit eget. Quisque feugiat porta lacinia. Vestibulum placerat pharetra congue. Vivamus eget laoreet augue. Sed id dapibus orci, quis posuere mi. Donec eu congue risus. Fusce eu fermentum ipsum. Aliquam nec feugiat quam. Maecenas ac hendrerit magna. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque quis odio id metus ullamcorper ultricies lobortis in urna. </p>
+                                            <p class="form-control-static">{{ $report->what }}</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-12">
+                                    <div class="form-group row ">
+                                        <label class="control-label col-md-2 font-weight-medium">Who:</label>
+                                        <div class="col-md-10">
+                                            <p class="form-control-static"> {{ $report->who }} </p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-12">
+                                    <div class="form-group row ">
+                                        <label class="control-label col-md-2 font-weight-medium">Where:</label>
+                                        <div class="col-md-10">
+                                            <p class="form-control-static"> {{ $report->where }} </p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-12">
+                                    <div class="form-group row ">
+                                        <label class="control-label col-md-2 font-weight-medium">When:</label>
+                                        <div class="col-md-10">
+                                            <p class="form-control-static"> {{ $report->when }} </p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-12">
+                                    <div class="form-group row ">
+                                        <label class="control-label col-md-2 font-weight-medium">How:</label>
+                                        <div class="col-md-10">
+                                            <p class="form-control-static"> {{ $report->how }} </p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-12">
+                                    <div class="form-group row ">
+                                        <label class="control-label col-md-2 font-weight-medium">Synopsis:</label>
+                                        <div class="col-md-10">
+                                            <p class="form-control-static"> {{ $report->synopsis }} </p>
                                         </div>
                                     </div>
                                 </div>
@@ -209,7 +290,7 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="form-group row ">
-                                        <!--<label class="control-label text-end col-md-2 font-weight-medium"></label>-->
+                                        <!--<label class="control-label col-md-2 font-weight-medium"></label>-->
                                         <div class="col-md-12 text-center">
                                             <a href="#" style="padding-right:30px"><img src="./assets/images/pag-ibig.png" width="250"></a>
                                             <a href="#" style="padding-right:30px"><img src="./assets/images/passport.jpg" width="250"></a>

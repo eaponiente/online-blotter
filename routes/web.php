@@ -41,26 +41,15 @@ Route::group(['namespace' => 'Client'], function() {
 
 Route::group(['namespace' => 'Admin'], function() {
 
-    Route::prefix('staff')->group(function() {
-        Route::post('login', 'AuthController@login');
+    Route::prefix('admin')->group(function() {
+        Route::get('/', 'AuthController@index')->name('admin.login.index');
+        Route::post('login', 'AuthController@login')->name('admin.login.store');
+        Route::middleware('auth')->group(function() {
+            Route::post('logout', 'AuthController@login')->name('admin.logout');
+
+            Route::resource('reports', 'Reports\ReportController');
+
+            Route::get('dashboard', 'MainController@index')->name('admin.dashboard.index');
+        });
     });
-});
-
-/* User */
-
-/* Admin */
-// Login
-Route::get('/admin/login', function () {
-    return view('admin.login.index');
-});
-// Dashboard
-Route::get('/admin/dashboard', function () {
-    return view('admin.dashboard.index');
-});
-// Blotters
-Route::get('/admin/blotters', function () {
-    return view('admin.blotters.index');
-});
-Route::get('/admin/blotters/details', function () {
-    return view('admin.blotters.show');
 });

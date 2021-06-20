@@ -4,12 +4,14 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Str;
 
 class Report extends Model
 {
     use HasFactory;
 
     protected $fillable = [
+        'uuid',
         'control_no',
         'station_id',
         'type',
@@ -34,6 +36,13 @@ class Report extends Model
         'synopsis',
         'filename',
     ];
+
+    protected static function booted()
+    {
+        static::creating(function ($report) {
+            $report->uuid = Str::uuid();
+        });
+    }
 
     public function station()
     {
