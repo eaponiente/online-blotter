@@ -17,6 +17,8 @@
     <link rel="icon" type="image/png" sizes="16x16" href="{{ url('assets/images/favicon.png')}}">
     <!-- Custom CSS -->
     <link href="{{ url('assets/plugins/chartist/dist/chartist.min.css')}}" rel="stylesheet">
+    <link href="{{ url('css/jsgrid/jsgrid.min.css') }}" rel="stylesheet">
+    <link href="{{ url('css/jsgrid/jsgrid-theme.min.css') }}" rel="stylesheet">
     <link href="{{ url('css/style.min.css')}}" rel="stylesheet">
     <link href="{{ url('css/custom.css')}}" rel="stylesheet">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -285,6 +287,10 @@
     <script src="{{ url('assets/plugins/flot/jquery.flot.js') }}"></script>
     <script src="{{ url('assets/plugins/flot.tooltip/js/jquery.flot.tooltip.min.js') }}"></script>
     <script src="{{ url('js/pages/dashboards/dashboard1.js') }}"></script>
+    <!-- JS Grid -->
+    <script src="{{ url('js/jsgrid/db.js') }}"></script>
+    <script src="{{ url('js/jsgrid.min.js') }}"></script>
+    <script src="{{ url('js/jsgrid-init.js') }}"></script>
 </body>
 
 </html>
