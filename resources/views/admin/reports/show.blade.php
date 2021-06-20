@@ -152,6 +152,29 @@
                             <!--/row-->
                         </div>
                         <div class="card-body">
+                            <h4 class="card-title mb-0">Case Details</h4>
+                        </div>
+                        <div class="card-body border-top">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group row ">
+                                        <label class="control-label col-md-2 font-weight-medium">Type:</label>
+                                        <div class="col-md-10">
+                                            <p class="form-control-static"> {{ ucfirst($report->type) }} </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group row ">
+                                        <label class="control-label col-md-3 font-weight-medium">Status:</label>
+                                        <div class="col-md-7">
+                                            <p class="form-control-static"> {{ ucfirst($report->status) }} </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body">
                             <h4 class="card-title mb-0">Contact Info</h4>
                         </div>
                         <div class="card-body border-top">
@@ -177,50 +200,20 @@
                             </div>
                             <div class="row">
 
-                            <!--/row-->
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group row ">
-                                        <label class="control-label col-md-4 font-weight-medium">Post Code:</label>
-                                        <div class="col-md-8">
-                                            <p class="form-control-static"> 457890 </p>
+                                <!--/row-->
+                                <div class="row">
+                                    <!--/span-->
+                                    <div class="col-md-6">
+                                        <div class="form-group row ">
+                                            <label class="control-label col-md-4 font-weight-medium">Contact #:</label>
+                                            <div class="col-md-8">
+                                                <p class="form-control-static"> {{ $report->mobile }} </p>
+                                            </div>
                                         </div>
                                     </div>
+                                    <!--/span-->
                                 </div>
-                                <!--/span-->
-                                <div class="col-md-6">
-                                    <div class="form-group row ">
-                                        <label class="control-label col-md-4 font-weight-medium">Contact #:</label>
-                                        <div class="col-md-8">
-                                            <p class="form-control-static"> {{ $report->mobile }} </p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!--/span-->
-                            </div>
 
-                        </div>
-                        <div class="card-body">
-                            <h4 class="card-title mb-0">Case Details</h4>
-                        </div>
-                        <div class="card-body border-top">
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group row ">
-                                        <label class="control-label col-md-2 font-weight-medium">Type:</label>
-                                        <div class="col-md-10">
-                                            <p class="form-control-static"> {{ ucfirst($report->type) }} </p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group row ">
-                                        <label class="control-label col-md-3 font-weight-medium">Status:</label>
-                                        <div class="col-md-7">
-                                            <p class="form-control-static"> {{ ucfirst($report->status) }} </p>
-                                        </div>
-                                    </div>
-                                </div>
                             </div>
                         </div>
                         <div class="card-body">
@@ -292,29 +285,15 @@
                                     <div class="form-group row ">
                                         <!--<label class="control-label col-md-2 font-weight-medium"></label>-->
                                         <div class="col-md-12 text-center">
-                                            <a href="#" style="padding-right:30px"><img src="./assets/images/pag-ibig.png" width="250"></a>
-                                            <a href="#" style="padding-right:30px"><img src="./assets/images/passport.jpg" width="250"></a>
+                                            @if(filled($report->filename))
+                                            <a href="#" style="padding-right:30px"><img src="{{ \Illuminate\Support\Facades\Storage::url($report->filename) }}" width="250"></a>
+                                            @endif
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <hr>
-                        <div class="form-actions">
-                            <div class="card-body">
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="row">
-                                            <div class="col-md-offset-3 col-md-9">
-                                                <button type="button" class="btn btn-lg btn-dark"><i class="fas fa-caret-left"></i> Go Back</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6"> </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+
                 </form>
             </div>
         </div>

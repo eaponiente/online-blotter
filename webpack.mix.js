@@ -11,7 +11,17 @@ const mix = require('laravel-mix');
  |
  */
 
-mix.js('resources/js/app.js', 'public/js')
+mix
+    // js
+    .js('resources/js/app.js', 'public/js')
+    .js('resources/js/jsgrid/jsgrid.min.js', 'public/js/jsgrid/jsgrid.min.js')
+    .js('resources/js/jsgrid/jsgrid-init.js', 'public/js/jsgrid/jsgrid-init.js')
+    .js('resources/js/jsgrid/db.js', 'public/js/jsgrid/db.js')
+
+    // css
+    .css('resources/css/jsgrid/jsgrid.min.css', 'public/css/jsgrid/jsgrid.min.css')
+    .css('resources/css/jsgrid/jsgrid-theme.min.css', 'public/css/jsgrid/jsgrid-theme.min.css')
+
     .postCss('resources/css/app.css', 'public/css', [
-        //
+
     ]);

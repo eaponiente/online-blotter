@@ -92,10 +92,7 @@
                         <!-- ============================================================== -->
 
                         <li class="nav-item hidden-sm-down">
-                            <form class="app-search ps-3">
-                                <input type="text" class="form-control" placeholder="Search for..."> <a
-                                    class="srh-btn"><i class="ti-search"></i></a>
-                            </form>
+
                         </li>
                     </ul>
 
@@ -289,8 +286,8 @@
     <script src="{{ url('js/pages/dashboards/dashboard1.js') }}"></script>
     <!-- JS Grid -->
     <script src="{{ url('js/jsgrid/db.js') }}"></script>
-    <script src="{{ url('js/jsgrid.min.js') }}"></script>
-    <script src="{{ url('js/jsgrid-init.js') }}"></script>
+    <script src="{{ url('js/jsgrid/jsgrid.min.js') }}"></script>
+    <script src="{{ url('js/jsgrid/jsgrid-init.js') }}"></script>
 </body>
 
 </html>

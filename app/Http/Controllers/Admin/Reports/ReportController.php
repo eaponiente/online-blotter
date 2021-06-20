@@ -9,7 +9,8 @@ class ReportController extends Controller
 {
     public function index()
     {
-        $reports = Report::where('station_id', auth()->user()->station_id)->get();
+        $reports = Report::where('station_id', auth()->user()->station_id)
+            ->latest('created_at')->get();
 
         return view('admin.reports.index', compact('reports'));
     }
