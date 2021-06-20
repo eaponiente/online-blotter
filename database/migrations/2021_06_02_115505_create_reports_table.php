@@ -17,12 +17,12 @@ class CreateReportsTable extends Migration
             $table->id();
             $table->string('control_no');
             $table->integer('station_id');
-            $table->tinyInteger('type');
+            $table->string('type');
             $table->string('status');
             $table->string('first_name');
             $table->string('middle_name')->nullable();
             $table->string('last_name');
-            $table->string('suffix');
+            $table->string('suffix')->nullable();
             $table->string('mobile');
             $table->string('email');
             $table->text('permanent_address')->nullable();
@@ -37,7 +37,8 @@ class CreateReportsTable extends Migration
             $table->longText('when')->nullable();
             $table->longText('how')->nullable();
             $table->longText('synopsis')->nullable();
-            $table->integer('filename')->nullable();
+            $table->string('filename')->nullable();
+            $table->integer('prepared_by_user_id')->nullable();
             $table->timestamps();
         });
     }

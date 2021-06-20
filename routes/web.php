@@ -21,15 +21,14 @@ Route::group(['namespace' => 'Client'], function() {
     // Select country form
     Route::get('/', 'MainController@index');
 
+    Route::get('/search', 'ReportController@search')->name('report.search');
+    Route::post('/search', 'ReportController@processSearch')->name('report.search.process');
+    Route::get('/view-report', 'ReportController@show')->name('report.show');
     Route::get('/report', 'ReportController@create');
     Route::post('/report', 'ReportController@create')->name('report.create');
     Route::post('/reports/store', 'ReportController@store')->name('report.store');
 
-    // Search form
-    Route::get('/search', function () {
-        return view('search');
-    });
-// View form submitted
+    // View form submitted
     Route::get('/overview', function () {
         return view('overview');
     });

@@ -13,7 +13,7 @@ class StoreReportRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -32,8 +32,8 @@ class StoreReportRequest extends FormRequest
             'suffix' => 'nullable',
             'email' => 'required|email',
             'mobile' => 'required',
-            'present_address' => 'nullable',
-            'permanent_address' => 'required',
+            'present_address' => 'required',
+            'permanent_address' => 'nullable',
             'citizenship' => 'required',
             'gender' => 'required|in:male,female',
             'date_of_birth' => 'required',

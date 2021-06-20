@@ -51,9 +51,9 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ms-auto me-4 my-3 my-lg-0">
-                        <li class="nav-item"><a class="nav-link me-lg-3" href="?page=search">Search Blotter</a></li>
+                        <li class="nav-item"><a class="nav-link me-lg-3" href="{{ route('report.search') }}">Search Blotter</a></li>
                     </ul>
-                    <a href="?page=form" class="btn btn-info rounded-pill px-3 mb-2 mb-lg-0">
+                    <a href="{{ route('report.create') }}" class="btn btn-info rounded-pill px-3 mb-2 mb-lg-0">
                         <span class="d-flex align-items-center">
                             <i class="bi-chat-text-fill me-2"></i>
                             <span class="small">Submit Blotter</span>
@@ -83,6 +83,8 @@
         $("#loginform").slideUp();
         $("#recoverform").fadeIn();
     });
+
+    window.appUrl = '{{ url('/') }}'
 
     var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
     var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {

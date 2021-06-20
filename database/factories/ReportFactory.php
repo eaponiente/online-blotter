@@ -29,7 +29,7 @@ class ReportFactory extends Factory
         $type = ['robbery', 'carnapping', 'assault'];
 
         return [
-            'control_no' => 'B' . mt_rand(1000, 9999) . mt_rand(1000, 9999),
+            'control_no' => 'B' . mt_rand(1000, 9999) . mt_rand(1000, 9999) . mt_rand(1000, 9999),
             'station_id' => $station->id,
             'type' => $type[mt_rand(0, 2)],
             'civil_status' => $civilStatus[mt_rand(0, 2)],

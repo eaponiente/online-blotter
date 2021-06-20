@@ -20,6 +20,7 @@ class Report extends Model
         'suffix',
         'mobile',
         'email',
+        'civil_status',
         'permanent_address',
         'present_address',
         'citizenship',

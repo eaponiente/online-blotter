@@ -12,6 +12,8 @@ class CreateReport
      */
     public function execute($param): Report
     {
+        $param['status'] = 'for verification';
+        $param['control_no'] = 'B' . mt_rand(1000, 9999) . mt_rand(1000, 9999) . mt_rand(1000, 9999);
         return Report::create($param);
     }
 }
