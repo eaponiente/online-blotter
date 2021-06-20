@@ -15,6 +15,7 @@ class CreateReportsTable extends Migration
     {
         Schema::create('reports', function (Blueprint $table) {
             $table->id();
+            $table->uuid('uuid');
             $table->string('control_no');
             $table->integer('station_id');
             $table->string('type');
@@ -30,7 +31,8 @@ class CreateReportsTable extends Migration
             $table->string('civil_status');
             $table->string('citizenship');
             $table->string('gender');
-            $table->string('date_of_birth');
+            $table->date('date_of_birth');
+            $table->tinyInteger('is_read')->default(0);
             $table->longText('who')->nullable();
             $table->longText('what')->nullable();
             $table->longText('where')->nullable();

@@ -29,6 +29,7 @@ class ReportFactory extends Factory
         $type = ['robbery', 'carnapping', 'assault'];
 
         return [
+            'uuid' => $this->faker->uuid,
             'control_no' => 'B' . mt_rand(1000, 9999) . mt_rand(1000, 9999) . mt_rand(1000, 9999),
             'station_id' => $station->id,
             'type' => $type[mt_rand(0, 2)],
@@ -43,7 +44,7 @@ class ReportFactory extends Factory
             'present_address' => $this->faker->address,
             'permanent_address' => $this->faker->address,
             'citizenship' => ['filipino', 'american', 'british'][mt_rand(0, 2)],
-            'date_of_birth' => $this->faker->dateTimeBetween('-40years'),
+            'date_of_birth' => $this->faker->dateTimeBetween('-40years')->format('Y-m-d'),
             'gender' => ['male', 'female'][mt_rand(0 , 1)],
             'synopsis' => $this->faker->text,
         ];

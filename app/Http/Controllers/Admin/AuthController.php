@@ -8,17 +8,22 @@ use Illuminate\Support\Facades\Auth;
 
 class AuthController extends Controller
 {
+    public function index()
+    {
+        return view('admin.login.index');
+    }
+
     public function login(Request $request)
     {
         $credentials = $request->validate([
-            'username' => ['required', 'username'],
+            'username' => ['required'],
             'password' => ['required'],
         ]);
 
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
 
-            return redirect()->intended('staff');
+            return redirect()->intended('admin');
         }
 
         return back()->withErrors([
@@ -34,6 +39,6 @@ class AuthController extends Controller
 
         $request->session()->regenerateToken();
 
-        return redirect('staff');
+        return redirect('admin');
     }
 }
