@@ -59,7 +59,7 @@
                     <!--<a href="https://www.wrappixel.com/templates/monsteradmin/"
                         class="btn btn-success d-none d-md-inline-block text-white" target="_blank">Upgrade to
                         Pro</a>-->
-                        <button type="submit" class="btn btn-info text-white"> <i class="fas fa-print"></i> Print</button>
+                        <a href="{{ route('admin.users.create') }}" class="btn btn-info text-white"> <i class="fas fa-user-plus"></i> Add User</a>
                 </div>
             </div>
         </div>
@@ -79,8 +79,7 @@
             <div class="col-sm-12">
                 <div class="card">
                     <div class="card-body">
-                        <h4 class="card-title">List of Blotters</h4>
-                        <h6 class="card-subtitle">per region</h6>
+                        <h4 class="card-title">List of Users</h4>
                         <div id="basicgrid"></div>
                     </div>
                 </div>

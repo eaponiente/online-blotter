@@ -216,6 +216,12 @@
                                 <span class="hide-menu">Incident Reports</span>
                             </a>
                         </li>
+                        <li class="sidebar-item"> 
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link <?=request()->segment(2) === 'users' || request()->segment(2) === 'users' ? 'active' : ''?>" href="{{ route('admin.users.index') }}" aria-expanded="false">
+                                <i class="me-3 fa fa-users" aria-hidden="true"></i>
+                                <span class="hide-menu">Users</span>
+                            </a>
+                        </li>
                         <!--<li class="text-center p-20 upgrade-btn">
                             <a href="https://www.wrappixel.com/templates/monsteradmin/"
                                 class="btn btn-danger text-white mt-4" target="_blank">Upgrade to
@@ -235,82 +241,7 @@
         <!-- Page wrapper  -->
         <!-- ============================================================== -->
         <div class="page-wrapper">
-            <!-- ============================================================== -->
-            <!-- Bread crumb and right sidebar toggle -->
-            <!-- ============================================================== -->
-            <div class="page-breadcrumb">
-                <div class="row align-items-center">
-                    <div class="col-md-6 col-8 align-self-center">
-                        <h3 class="page-title mb-0 p-0">
-                            <?php
-                                switch(request()->segment(2)) {
-                                    case "reports":
-                                        echo "Reports";
-                                        break;
-                                    case "blotters":
-                                    case "details":
-                                        echo "Incident Reports";
-                                        break;
-                                }
-                            ?>
-                        </h3>
-                        <div class="d-flex align-items-center">
-                            <nav aria-label="breadcrumb">
-                                <ol class="breadcrumb">
-                                    <li class="breadcrumb-item"><a href="#">Home</a></li>
-                                    <li class="breadcrumb-item active" aria-current="page">
-                                    <?php
-                                        switch(request()->segment(2)) {
-                                            case "reports":
-                                                echo "Reports";
-                                                break;
-                                            case "blotters":
-                                            case "details":
-                                                echo "Incident Reports";
-                                                break;
-                                        }
-                                    ?>
-                                    </li>
-                                    <?php
-                                        if(request()->segment(2) === "details") {
-                                    ?>
-                                            <li class="breadcrumb-item active" aria-current="page">View Details</li>
-                                    <?php
-                                        }
-                                    ?>
-                                </ol>
-                            </nav>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-4 align-self-center">
-                        <div class="text-end upgrade-btn">
-                            <?php
-                                if (request()->segment(2) === "details") {
-                            ?>
-                                <h4>Control No. 119087992</h4>
-                            <?php
-                                }
-                            ?>
-                            <!--<a href="https://www.wrappixel.com/templates/monsteradmin/"
-                                class="btn btn-success d-none d-md-inline-block text-white" target="_blank">Upgrade to
-                                Pro</a>-->
-                                <button type="submit" class="btn btn-info text-white"> <i class="fas fa-print"></i> Print</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- ============================================================== -->
-            <!-- End Bread crumb and right sidebar toggle -->
-            <!-- ============================================================== -->
-            <!-- ============================================================== -->
-            <!-- Container fluid  -->
-            <!-- ============================================================== -->
-            <div class="container-fluid">
-                @yield('content')
-            </div>
-            <!-- ============================================================== -->
-            <!-- End Container fluid  -->
-            <!-- ============================================================== -->
+            @yield('content')
             <!-- ============================================================== -->
             <!-- footer -->
             <!-- ============================================================== -->
