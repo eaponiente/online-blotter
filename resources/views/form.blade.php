@@ -189,7 +189,7 @@
                         <div class="col-12">
                             <div class="form-floating mb-3">
                                 <textarea class="form-control form-who" name="who" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
-                                <label for="floatingTextarea2">Who (Kinsa)</label>
+                                <label for="floatingTextarea2">Name of Victim</label>
                                 <div class="invalid-feedback">
                                     Address is required
                                 </div>
