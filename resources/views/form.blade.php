@@ -12,7 +12,7 @@
                     {{ csrf_field() }}
                     <input type="hidden" name="station_id" value="{{ $station_id }}">
                     <div class="row mt-4">
-                        <div class="col-6">
+                        <div class="col-sm-12 col-md-12 col-lg-6">
                             <div class="form-floating mb-3">
                                 <select class="form-select form-input-bg form-type" name="type" id="type" placeholder="john@gmail.com">
                                     @foreach(config('constants.report_types') as $type)
@@ -25,7 +25,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-6">
+                        <div class="col-sm-12 col-md-12 col-lg-6">
                             <div class="form-floating mb-3">
                                 <select class="form-select form-input-bg form-civil_status" name="civil_status" id="tb-remail" placeholder="john@gmail.com">
                                     @foreach(config('constants.civil_status') as $type)
@@ -40,8 +40,8 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-4">
-                            <div class="form-floating">
+                        <div class="col-sm-12 col-md-12 col-lg-4">
+                            <div class="form-floating mb-3">
                                 <input type="text" name="first_name" class="form-control form-input-bg form-first_name" id="tb-rfname" placeholder="john deo">
                                 <label for="tb-rfname">First name (Pangalan)</label>
                                 <div class="invalid-feedback">
@@ -49,8 +49,8 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-2">
-                            <div class="form-floating">
+                        <div class="col-sm-12 col-md-12 col-lg-2">
+                            <div class="form-floating mb-3">
                                 <input type="text" name="middle_name" class="form-control form-input-bg form-middle_name" id="tb-rfname" placeholder="john deo">
                                 <label for="tb-rfname">Middle initial</label>
                                 <div class="invalid-feedback">
@@ -58,8 +58,8 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-4">
-                            <div class="form-floating">
+                        <div class="col-sm-12 col-md-12 col-lg-4">
+                            <div class="form-floating mb-3">
                                 <input type="text" name="last_name" class="form-control form-input-bg form-last_name" id="tb-rfname" placeholder="john deo">
                                 <label for="tb-rfname">Last name (Apelyido)</label>
                                 <div class="invalid-feedback">
@@ -67,7 +67,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-2">
+                        <div class="col-sm-12 col-md-12 col-lg-2">
                             <div class="form-floating">
                                 <input type="text" name="suffix" class="form-control form-input-bg form-suffix_name" id="tb-rfname" placeholder="john deo">
                                 <label for="tb-rfname">Suffix</label>
@@ -78,7 +78,7 @@
                         </div>
                     </div>
                     <div class="row mt-4">
-                        <div class="col-6">
+                        <div class="col-sm-12 col-md-12 col-lg-6">
                             <div class="form-floating mb-3">
                                 <input type="text" name="email" class="form-control form-input-bg form-email" id="tb-rfname" placeholder="john deo">
                                 <label for="tb-rfname">Email</label>
@@ -101,7 +101,7 @@
                                 </div>
                             </div>
 
-                            <div class="form-floating">
+                            <div class="form-floating mb-3">
                                 <input type="date" name="date_of_birth" class="form-control form-input-bg form-date_of_birth" id="text-rpassword" placeholder="*****">
                                 <label for="text-rpassword">Date of Birth</label>
                                 <div class="invalid-feedback">
@@ -110,7 +110,7 @@
                             </div>
 
                         </div>
-                        <div class="col-6">
+                        <div class="col-sm-12 col-md-12 col-lg-6">
                             <div class="form-floating mb-3">
                                 <input type="text" name="mobile" class="form-control form-input-bg form-mobile" id="tb-rfname" placeholder="john deo">
                                 <label for="tb-rfname">Contact number (Numero sa pagkontak)</label>
@@ -141,41 +141,32 @@
                     </div>
                     <div class="row mt-4">
                         <div class="col-12">
-                            <div class="form-group form-material mb-3">
-                                <label class="col-md-12 mb-0">Who (Kinsa)</label>
-                                <div class="col-md-12">
-                                    <textarea rows="1" name="who" class="form-control ps-0 form-control-line form-who" style="height:auto"></textarea>
-                                    <div class="invalid-feedback">
-                                        Last name is required
-                                    </div>
-                                </div>
-
-                            </div>
-                            <div class="form-group form-material mb-3">
-                                <label class="col-md-12 mb-0">Where (Asa)</label>
-                                <div class="col-md-12">
-                                    <textarea rows="1" name="where" class="form-control ps-0 form-control-line form-where" style="height:auto"></textarea>
-                                    <div class="invalid-feedback">
-                                        Last name is required
-                                    </div>
+                            <div class="form-floating mb-3">
+                                <textarea class="form-control form-who" name="who" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
+                                <label for="floatingTextarea2">Who (Kinsa)</label>
+                                <div class="invalid-feedback">
+                                    Address is required
                                 </div>
                             </div>
-                            <div class="form-group form-material mb-3">
-                                <label class="col-md-12 mb-0">When (Kanus-a)</label>
-                                <div class="col-md-12">
-                                    <textarea rows="1" name="when" class="form-control ps-0 form-control-line form-when" style="height:auto"></textarea>
-                                    <div class="invalid-feedback">
-                                        Last name is required
-                                    </div>
+                            <div class="form-floating mb-3">
+                                <textarea class="form-control form-where" name="where" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
+                                <label for="floatingTextarea2">Where (Asa)</label>
+                                <div class="invalid-feedback">
+                                    Address is required
                                 </div>
                             </div>
-                            <div class="form-group form-material mb-3">
-                                <label class="col-md-12 mb-0">Synopsis (Panghitabo)</label>
-                                <div class="col-md-12">
-                                    <textarea rows="5" name="synopsis" class="form-control ps-0 form-control-line form-synopsis" style="height:auto"></textarea>
-                                    <div class="invalid-feedback">
-                                        Last name is required
-                                    </div>
+                            <div class="form-floating mb-3">
+                                <textarea class="form-control form-when" name="when" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
+                                <label for="floatingTextarea2">When (Kanus-a)</label>
+                                <div class="invalid-feedback">
+                                    Address is required
+                                </div>
+                            </div>
+                            <div class="form-floating mb-3">
+                                <textarea class="form-control form-synopsis" name="synopsis" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
+                                <label for="floatingTextarea2">Synopsis (Panghitabo)</label>
+                                <div class="invalid-feedback">
+                                    Address is required
                                 </div>
                             </div>
 
