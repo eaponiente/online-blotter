@@ -29,12 +29,12 @@ class Report extends Model
         'gender',
         'date_of_birth',
         'who',
-        'what',
         'where',
         'when',
-        'how',
         'synopsis',
         'filename',
+        'prepared_by_user_id',
+        'incharge_signature_filename'
     ];
 
     protected $appends= ['fullname'];
