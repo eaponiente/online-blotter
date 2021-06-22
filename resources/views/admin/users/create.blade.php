@@ -62,80 +62,59 @@
     <div class="container-fluid">
         <!-- ============================================================== -->
         <!-- Start Page Content -->
-        <!-- ============================================================== -->
-        <div class="row">
+
             <!-- Column -->
-            <div class="col-lg-4 col-xlg-3 col-md-5">
-                <div class="card">
-                    <div class="card-body profile-card">
-                        <center class="mt-4"> <img src="../assets/images/users/5.jpg"
-                                class="rounded-circle" width="150" />
-                            <h4 class="card-title mt-2">Hanna Gover</h4>
-                            <h6 class="card-subtitle">Accoubts Manager Amix corp</h6>
-                            <div class="row justify-content-center">
-                                <div class="col-4">
-                                    <a href="javascript:void(0)" class="link">
-                                        <i class="icon-people" aria-hidden="true"></i>
-                                        <span class="font-normal">254</span>
-                                    </a></div>
-                                <div class="col-4">
-                                    <a href="javascript:void(0)" class="link">
-                                        <i class="icon-picture" aria-hidden="true"></i>
-                                        <span class="font-normal">54</span>
-                                    </a></div>
-                            </div>
-                            <form class="form">
-                                <div class="row mt-4">
-                                    <div class="form-group">
-                                        <label class="col-form-label col-md-4">Upload photo:</label>
-                                        <div class="col-md-6">
-                                            <input type="file" class="form-control">
-                                        </div>
-                                    </div>
-                                </div>
-                            </form>
-                        </center>
-                    </div>
-                </div>
-            </div>
-            <!-- Column -->
-            <!-- Column -->
-            <div class="col-lg-8 col-xlg-9 col-md-7">
+            <div class="col-lg-12 col-xlg-12 col-md-12">
                 <div class="card">
                     <div class="card-body">
-                        <form class="form-horizontal form-material mx-2">
+                        @if ($errors->any())
+                            <div class="alert alert-danger">
+                                <ul>
+                                    @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        @endif
+                        <form class="form-horizontal form-material mx-2" method="POST" action="{{ isset($edit) ? route('users.update', [$edit->id]) : route('users.store') }}">
+                            {{ csrf_field() }}
+                            {{ isset($edit) ? method_field('PUT'): method_field('POST') }}
                             <div class="form-group">
                                 <label class="col-md-12 mb-0">First Name</label>
                                 <div class="col-md-12">
-                                    <input type="text" placeholder="Johnathan Doe"
-                                        class="form-control ps-0 form-control-line">
+                                    <input type="text"
+                                           class="form-control ps-0 form-control-line"
+                                           name="first_name" value="{{ $edit->first_name ?? old('first_name') }}">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-md-12 mb-0">Middle Name</label>
                                 <div class="col-md-12">
-                                    <input type="text" placeholder="Johnathan Doe"
+                                    <input type="text" 
+                                           name="middle_name" value="{{ $edit->middle_name ?? old('middle_name') }}"
                                         class="form-control ps-0 form-control-line">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-md-12 mb-0">Last Name</label>
                                 <div class="col-md-12">
-                                    <input type="text" placeholder="Johnathan Doe"
+                                    <input type="text" 
+                                           name="last_name" value="{{ $edit->last_name ?? old('last_name') }}"
                                         class="form-control ps-0 form-control-line">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-md-12 mb-0">Username</label>
                                 <div class="col-md-12">
-                                    <input type="text" placeholder="Johnathan Doe"
+                                    <input type="text" 
+                                           name="username" value="{{ $edit->username ?? old('username') }}"
                                         class="form-control ps-0 form-control-line">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-md-12 mb-0">Password</label>
                                 <div class="col-md-12">
-                                    <input type="password" value="password"
+                                    <input type="password" value=""
                                         class="form-control ps-0 form-control-line">
                                 </div>
                             </div>
@@ -143,42 +122,32 @@
                                 <label class="col-md-12 mb-0">Phone No</label>
                                 <div class="col-md-12">
                                     <input type="text" placeholder="123 456 7890"
+                                           name="mobile" value="{{ $edit->mobile ?? old('mobile') }}"
                                         class="form-control ps-0 form-control-line">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="col-md-12 mb-0">Message</label>
-                                <div class="col-md-12">
-                                    <textarea rows="5" class="form-control ps-0 form-control-line"></textarea>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-sm-12">Position</label>
                                 <div class="col-sm-12 border-bottom">
-                                    <select class="form-select shadow-none border-0 ps-0 form-control-line">
-                                        <option>London</option>
-                                        <option>India</option>
-                                        <option>Usa</option>
-                                        <option>Canada</option>
-                                        <option>Thailand</option>
-                                    </select>
+                                    <input type="text" placeholder="123 456 7890"
+                                           name="position" value="{{ $edit->position ?? old('position') }}"
+                                           class="form-control ps-0 form-control-line">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-sm-12">Station</label>
                                 <div class="col-sm-12 border-bottom">
                                     <select class="form-select shadow-none border-0 ps-0 form-control-line">
-                                        <option>London</option>
-                                        <option>India</option>
-                                        <option>Usa</option>
-                                        <option>Canada</option>
-                                        <option>Thailand</option>
+                                        <option value=""></option>
+                                        @foreach($stations as $station)
+                                            <option value="{{ $station->id }}" {{ isset($edit) && $edit->station_id == $station->id ? 'selected' : '' }}> {{ $station->name }}</option>
+                                        @endforeach
                                     </select>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <div class="col-sm-12 d-flex">
-                                    <button class="btn btn-success mx-auto mx-md-0 text-white">Submit</button>
+                                    <button type="submit" class="btn btn-success mx-auto mx-md-0 text-white">Submit</button>
                                 </div>
                             </div>
                         </form>

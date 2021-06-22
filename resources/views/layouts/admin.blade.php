@@ -159,7 +159,7 @@
                             </a>
                         </li>
                         <li class="sidebar-item"> 
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link <?=request()->segment(2) === 'users' || request()->segment(2) === 'users' ? 'active' : ''?>" href="{{ route('admin.users.index') }}" aria-expanded="false">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link <?=request()->segment(2) === 'users' || request()->segment(2) === 'users' ? 'active' : ''?>" href="{{ route('users.index') }}" aria-expanded="false">
                                 <i class="me-3 fa fa-users" aria-hidden="true"></i>
                                 <span class="hide-menu">Users</span>
                             </a>
@@ -223,6 +223,8 @@
     <script src="{{ url('js/jsgrid/db.js') }}"></script>
     <script src="{{ url('js/jsgrid/jsgrid.min.js') }}"></script>
     <script src="{{ url('js/jsgrid/jsgrid-init.js') }}"></script>
+
+    @yield('scripts')
 </body>
 
 </html>
