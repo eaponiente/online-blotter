@@ -11,7 +11,7 @@ class MainController extends Controller
 {
     public function index()
     {
-        $barangays = Barangay::all();
+        $barangays = Barangay::oldest('name')->get();
 
         return view('index', compact('barangays'));
     }

@@ -17,7 +17,7 @@ class CreateReportsTable extends Migration
             $table->id();
             $table->uuid('uuid');
             $table->string('control_no');
-            $table->integer('station_id');
+            $table->integer('station_id')->nullable();
             $table->string('type');
             $table->string('status');
             $table->string('first_name');

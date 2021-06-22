@@ -17,21 +17,21 @@ class BarangaySeeder extends Seeder
     public function run()
     {
         $barangays = [
-            array('Brgy. 23-C Mini Forest', 'Brgy. 22-C Piape Quezon Blvd', 'Brgy 21-C Piape Quezon Blvd', 'Brgy. 31-D Trading Blvd', 'Brgy. Agdao Proper', 'Brgy. 13-B, J.P. Laurel Ave.', 'Brgy. 14-B Lapu-lapu St.', 'Brgy. 15-B Sobrecarey St. Bo. Obrero', 'Brgy. 16-B 33 Lupo Diaz St., Bo. Obrero', 'Brgy. 17-B Nidea/PorrasSts. Bo. Obrero', 'Brgy. 18-B IñigoPorras St., Bo. Obrero', 'Brgy. 20-B Porras Veloso St., Bo. Obrero', 'Brgy. 24-C Cor. Guerero/Aurora Sts.', 'Brgy. 25-C Quezon Blvd', 'Brgy. 26-C Juan Luna St.', 'Brgy. 27-C 3rd Ave Leon Garcia St.', 'Brgy. 28-C Cor Juan Luna/Pioneer Sts', 'Brgy. 29-C Cor Juan Luna/Jacinto', 'Brgy. 30-C Villa Abrille St.', 'Brgy. 32-D Jacinto St.', 'Brgy. 33-D Bonifacio', 'Brgy. 36-D Mabini Quezon Blvd', 'Brgy. 37-D Trading Blvd', 'Brgy. Centro San Juan Vill. R. Castillo', 'Brgy. Leon Garcia', 'Brgy. Lapu-lapu, Maya-Maya Jerome', 'Brgy. Paciano Bangoy/Cory Village Dacudao Ave.', 'Brgy. Ubalde-Ubalde St., R. Castillo', 'Brgy. Rafael Castillo – Executive Homes, Lanang', 'Brgy. San Antonio – NHA Saint Anthony Vill, Agdao', 'Brgy. Tomas Monteverde', 'Brgy. Vicente Duterte', 'Brgy. Wilfredo Aquino', 'Brgy. 30-D Villa Abrille St.'),
-            array('Brgy. 1-A Bolton St.', 'Brgy 2-A Magallanes Riverside', 'Brgy. 3-A-E.Quirino Ave', 'Brgy. 4-A-Camus cor. Quirino', 'Brgy.5-A DatuBago Ext, Bankerohan', 'Brgy 6-A San Pedro Ext.', 'Brgy 7-A-Mt. Apo St.', 'Brgy 8-A Fr. Selga St.', 'Brgy 9-A-Camus Ext.', 'Brgy.10-A-Tiongco Ave', 'Brgy 11-B-V.Mapa St.', 'Brgy 12-B-V.Mapa St.', 'Brgy 19-B-Garcia Heights, Bajada', 'Brgy. 34-D-CM Recto', 'Brgy 35-D-Simeon De Jesus St., Rizal Ext', 'Brgy 37-D-Purok, Trading', 'Brgy 38-D Rizal Ext.', 'Brgy. 39-D Quimpo Blvd', 'Brgy 40-D-Bolton Ext.', 'Brgy 76-B SeaWall'),
-            array('Brgy Ma-a', 'BrgyMagtuod', 'Brgy. Langub', 'Brgy. Talomo', 'Brgy. Matina Pangi', 'Brgy. Catalunan Grande'),
-            array('Brgy. Panacan – Panacan', 'Brgy. Sasa – Sasa', 'Brgy. Pampanga – Sasa', 'Brgy. Hizon – Sasa', 'Brgy. Angliongto – Mamay Road, Lanang'),
-            array('Brgy. Buhangin', 'Brgy. Cabantian', 'Brgy. Communal'),
-            array('Brgy. Bunawan', 'Brgy Gatungan', 'Brgy. Mahayag', 'Brgy. Mudiang', 'Brgy. Lasang', 'Brgy. San Isidro', 'Brgy. Ilang', 'Brgy. Tibungco'),
-            array('Brgy. Malabog', 'Brgy. Colasas', 'Brgy. Mapula', 'Brgy. Pañalum', 'Brgy. Mabuhay', 'Brgy. Sumimao', 'Brgy. Fatima', 'Brgy. Paquibato Proper', 'Brgy. Paradise Embac', 'Brgy. Lumiad', 'Brgy. Pandaitan', 'Brgy. Tapak', 'Brgy. Salapawan'),
-            array('Brgy. Daliaon Plantation', 'Brgy. Kilate', 'Brgy. Tungkalan', 'Brgy. Sibulan', 'Brgy. Atan Owe', 'Brgy. Bankas Heights', 'Brgy. Baracatan', 'Brgy. Bato', 'Brgy. Bayabas', 'Brgy. Camansi', 'BrgyCatigan', 'Brgy. Eden', 'Brgy. Crossing Bayabas', 'Brgy. Toril Poblacion', 'Brgy. Tibuloy', 'Brgy. Tagurano', 'Brgy. Sirawan', 'Brgy. Tagluno', 'Brgy. Sibulan', 'Brgy. Mulig', 'Brgy. Marapangi', 'Brgy. Lubogan', 'Brgy. Lizada', 'Brgy. Daliao', 'Brgy. Catigan'),
-            array('Brgy. New Carmen', 'Brgy. Biao Eskuela', 'Brgy. Tacunan', 'Brgy. Talandang', 'Brgy. New Valencia', 'Brgy. Guianga', 'Brgy. Tugbok Proper', 'Brgy. Mintal', 'Brgy. BagoOshiro', 'Brgy. Los Amigos', 'Brgy. Angalan', 'Brgy. Manambulan', 'Brgy Ola', 'BrgyTagakpan', 'Brgy Matina Biao'),
-            array('Brgy Dominga', 'Brgy Dalagdag', 'Brgy Tamayong', 'Brgy Pangyan', 'Brgy Saloy', 'Brgy Lampiano', 'Brgy CalinanPoblacion', 'Brgy Riverside', 'Brgy Talomo River', 'Brgy. Dacudao', 'Brgy. Lacson', 'Brgy. Lamanan', 'Brgy. Inayangan', 'Brgy. Megkawayan', 'Brgy. Wangan', 'Brgy. Cawayan', 'Brgy. Subasta', 'Brgy.Sirib', 'Brgy. Joaquin'),
-            array('Brgy Tambobong', 'Brgy Tawan-Tawan', 'Brgy Carmen', 'Brgy Gumalang', 'Brgy Baguio Proper', 'Brgy Malagos', 'Brgy. Wines', 'Brgy Cadalian'),
-            array('Brgy. Gumitan', 'Brgy Magsaysay', 'Brgy DatuSalumay', 'Brgy Bantol', 'Brgy Marilog', 'Brgy Tamugan', 'Brgy Malamba', 'Brgy Suawan', 'Brgy Salaysay', 'Brgy Dalag', 'Brgy Baganihan', 'Brgy Buda'),
-            array('Brgy. Acacia', 'Brgy Tigatto', 'Brgy Indangan', 'Brgy Callawa', 'Brgy Waan', 'Brgy Mandug'),
-            array('Brgy. 76-A', 'Brgy 75-A', 'Brgy  74-A'),
-            array('Brgy. Baliok', 'Brgy Bago Gallera', 'Brgy  Dumoy', 'Brgy Bago Aplaya', 'Catalunan Pequeno'),
+            array('23-C Mini Forest', '22-C Piape Quezon Blvd', '21-C Piape Quezon Blvd', '31-D Trading Blvd', 'Agdao Proper', '13-B, J.P. Laurel Ave.', '14-B Lapu-lapu St.', '15-B Sobrecarey St. Bo. Obrero', '16-B 33 Lupo Diaz St., Bo. Obrero', '17-B Nidea/Porras Sts. Bo. Obrero', '18-B Iñigo Porras St., Bo. Obrero', '20-B Porras Veloso St., Bo. Obrero', '24-C Cor. Guerero/Aurora Sts.', '25-C Quezon Blvd', '26-C Juan Luna St.', '27-C 3rd Ave Leon Garcia St.', '28-C Cor Juan Luna/Pioneer Sts', '29-C Cor Juan Luna/Jacinto', '30-C Villa Abrille St.', '32-D Jacinto St.', '33-D Bonifacio', '36-D Mabini Quezon Blvd', '37-D Trading Blvd', 'Centro San Juan Vill. R. Castillo', 'Leon Garcia', 'Lapu-lapu, Maya-Maya Jerome', 'Paciano Bangoy/Cory Village Dacudao Ave.', 'Ubalde-Ubalde St., R. Castillo', 'Rafael Castillo – Executive Homes, Lanang', 'San Antonio – NHA Saint Anthony Vill, Agdao', 'Tomas Monteverde', 'Vicente Duterte', 'Wilfredo Aquino', '30-D Villa Abrille St.'),
+            array('1-A Bolton St.', '2-A Magallanes Riverside', '3-A-E.Quirino Ave', '4-A-Camus cor. Quirino', '5-A DatuBago Ext, Bankerohan', '6-A San Pedro Ext.', '7-A-Mt. Apo St.', '8-A Fr. Selga St.', '9-A-Camus Ext.', '10-A-Tiongco Ave', '11-B-V.Mapa St.', '12-B-V.Mapa St.', '19-B-Garcia Heights, Bajada', '34-D-CM Recto', '35-D-Simeon De Jesus St., Rizal Ext', '37-D-Purok, Trading', '38-D Rizal Ext.', '39-D Quimpo Blvd', '40-D-Bolton Ext.', '76-B SeaWall'),
+            array('Ma-a', 'Magtuod', 'Langub', 'Talomo', 'Matina Pangi', 'Catalunan Grande'),
+            array('Panacan – Panacan', 'Sasa – Sasa', 'Pampanga – Sasa', 'Hizon – Sasa', 'Angliongto – Mamay Road, Lanang'),
+            array('Buhangin', 'Cabantian', 'Communal'),
+            array('Bunawan', 'Gatungan', 'Mahayag', 'Mudiang', 'Lasang', 'San Isidro', 'Ilang', 'Tibungco'),
+            array('Malabog', 'Colasas', 'Mapula', 'Pañalum', 'Mabuhay', 'Sumimao', 'Fatima', 'Paquibato Proper', 'Paradise Embac', 'Lumiad', 'Pandaitan', 'Tapak', 'Salapawan'),
+            array('Daliaon Plantation', 'Kilate', 'Tungkalan', 'Sibulan', 'Atan Owe', 'Bankas Heights', 'Baracatan', 'Bato', 'Bayabas', 'Camansi', 'Catigan', 'Eden', 'Crossing Bayabas', 'Toril Poblacion', 'Tibuloy', 'Tagurano', 'Sirawan', 'Tagluno', 'Sibulan', 'Mulig', 'Marapangi', 'Lubogan', 'Lizada', 'Daliao', 'Catigan'),
+            array('New Carmen', 'Biao Eskuela', 'Tacunan', 'Talandang', 'New Valencia', 'Guianga', 'Tugbok Proper', 'Mintal', 'BagoOshiro', 'Los Amigos', 'Angalan', 'Manambulan', 'Ola', 'Tagakpan', 'Matina Biao'),
+            array('Dominga', 'Dalagdag', 'Tamayong', 'Pangyan', 'Saloy', 'Lampiano', 'Calinan Poblacion', 'Riverside', 'Talomo River', 'Dacudao', 'Lacson', 'Lamanan', 'Inayangan', 'Megkawayan', 'Wangan', 'Cawayan', 'Subasta', 'Sirib', 'Joaquin'),
+            array('Tambobong', 'Tawan-Tawan', 'Carmen', 'Gumalang', 'Baguio Proper', 'Malagos', 'Wines', 'Cadalian'),
+            array('Gumitan', 'Magsaysay', 'Datu Salumay', 'Bantol', 'Marilog', 'Tamugan', 'Malamba', 'Suawan', 'Salaysay', 'Dalag', 'Baganihan', 'Buda'),
+            array('Acacia', 'Tigatto', 'Indangan', 'Callawa', 'Waan', 'Mandug'),
+            array('76-A', '75-A', ' 74-A'),
+            array('Baliok', 'Bago Gallera', ' Dumoy', 'Bago Aplaya', 'Catalunan Pequeno'),
         ];
 
         DB::table('barangays')->truncate();
@@ -41,7 +41,7 @@ class BarangaySeeder extends Seeder
             foreach ($b as $barangay) {
                 Barangay::factory()->create([
                     'station_id' => $key + 1,
-                    'name' => $barangay
+                    'name' => trim($barangay)
                 ]);
             }
 
