@@ -19,6 +19,8 @@
                 <div class="card-body">
                     <h4 class="card-title">List of Users</h4>
                     <div class="table-responsive">
+                        <button type="button" onclick="location.href = '{{ route('users.create') }}'" style="float: right; margin-bottom: 10px;" class="btn waves-effect waves-light btn-success text-white"><i class="fas fa-check"></i> Create User</button>
+
                         <table class="table table-bordered yajra-datatable">
                             <thead>
                             <tr>

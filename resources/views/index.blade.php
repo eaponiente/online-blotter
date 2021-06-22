@@ -5,7 +5,7 @@
             <div>
                 <div class="logo text-center">
                     <span class="db"><img src="./assets/images/logo.png" width="150" alt="logo"></span>
-                    <h5 class="font-weight-medium mb-3 mt-1">Welcome to Davao City Online Police Blotter</h5>
+                    <h5 class="font-weight-medium mb-3 mt-1">Davao City Online Police Blotter</h5>
                 </div>
                 <!-- Form -->
                 <div class="row mt-4">

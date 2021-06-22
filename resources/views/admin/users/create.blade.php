@@ -119,7 +119,7 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="col-md-12 mb-0">Phone No</label>
+                                <label class="col-md-12 mb-0">Mobile</label>
                                 <div class="col-md-12">
                                     <input type="text" placeholder="123 456 7890"
                                            name="mobile" value="{{ $edit->mobile ?? old('mobile') }}"
