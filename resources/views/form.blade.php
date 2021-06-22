@@ -100,15 +100,6 @@
                                     Address is required
                                 </div>
                             </div>
-
-                            <div class="form-floating mb-3">
-                                <input type="date" name="date_of_birth" class="form-control form-input-bg form-date_of_birth" id="text-rpassword" placeholder="*****">
-                                <label for="text-rpassword">Date of Birth</label>
-                                <div class="invalid-feedback">
-                                    Address is required
-                                </div>
-                            </div>
-
                         </div>
                         <div class="col-sm-12 col-md-12 col-lg-6">
                             <div class="form-floating mb-3">
@@ -136,7 +127,62 @@
                                     Last name is required
                                 </div>
                             </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12 col-md-12 col-lg-2">
+                            <label>Date of Birth</label>
+                            <div class="form-floating mb-3">
+                                <select class="form-select form-input-bg form-type" name="birth_month" id="type">
+                                    @foreach(config('constants.month') as $type)
+                                    <option value="{{ $type }}">{{ $type }}</option>
+                                    @endforeach
+                                </select>
+                                <label for="type">Month</label>
+                                <div class="invalid-feedback">
+                                    Last name is required
+                                </div>
+                            </div>
+                        </div>
 
+                        <div class="col-sm-12 col-md-12 col-lg-2">
+                            <label></label>
+                            <div class="form-floating mb-3">
+                                <select class="form-select form-input-bg form-type" name="birth_daay" id="type">
+                                    @foreach(config('constants.day') as $type)
+                                    <option value="{{ $type }}">{{ $type }}</option>
+                                    @endforeach
+                                </select>
+                                <label for="type">Day</label>
+                                <div class="invalid-feedback">
+                                    Last name is required
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-12 col-md-12 col-lg-2">
+                            <label></label>
+                            <div class="form-floating mb-3">
+                                <select class="form-select form-input-bg form-type" name="birth_year" id="type">
+                                    @foreach(config('constants.year') as $type)
+                                    <option value="{{ $type }}">{{ $type }}</option>
+                                    @endforeach
+                                </select>
+                                <label for="type">Year</label>
+                                <div class="invalid-feedback">
+                                    Last name is required
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-sm-12 col-md-12 col-lg-6">
+                            <div class="form-group mb-3">
+                                <label for="text-rcpassword" class="mb-2">Upload ID (Pag-upload sa ID) <i class="fas fa-question-circle" data-bs-toggle="popover" data-bs-trigger="hover focus" title="LIST OF ACCEPTABLE IDS (At least 1 of the following)" data-bs-content="SSS ID, PHILHEALTH, PAG-IBIG ID/UMID, PASSPORT ID"></i></label>
+                                <input type="file" name="filename" class="form-control form-filename" id="text-rcpassword" placeholder="*****">
+                                <div class="invalid-feedback">
+                                    File upload is required
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="row mt-4">
@@ -155,61 +201,129 @@
                                     Address is required
                                 </div>
                             </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <label>When (Kanus-a)</label>
+                        <div class="col-lg-2 col-md-4">
                             <div class="form-floating mb-3">
-                                <textarea class="form-control form-when" name="when" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
-                                <label for="floatingTextarea2">When (Kanus-a)</label>
+                                <select class="form-select form-input-bg form-type" name="when_month" id="type">
+                                    @foreach(config('constants.month') as $type)
+                                    <option value="{{ $type }}">{{ $type }}</option>
+                                    @endforeach
+                                </select>
+                                <label for="type">Month</label>
                                 <div class="invalid-feedback">
-                                    Address is required
+                                    Last name is required
                                 </div>
                             </div>
+                        </div>
+
+                        <div class="col-lg-2 col-md-4">
                             <div class="form-floating mb-3">
-                                <textarea class="form-control form-synopsis" name="synopsis" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
+                                <select class="form-select form-input-bg form-type" name="when_day" id="type">
+                                    @foreach(config('constants.day') as $type)
+                                    <option value="{{ $type }}">{{ $type }}</option>
+                                    @endforeach
+                                </select>
+                                <label for="type">Day</label>
+                                <div class="invalid-feedback">
+                                    Last name is required
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-2 col-md-4">
+                            <div class="form-floating mb-3">
+                                <select class="form-select form-input-bg form-type" name="when_year" id="type">
+                                    @foreach(config('constants.year') as $type)
+                                    <option value="{{ $type }}">{{ $type }}</option>
+                                    @endforeach
+                                </select>
+                                <label for="type">Year</label>
+                                <div class="invalid-feedback">
+                                    Last name is required
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-2 col-md-4">
+                            <div class="form-floating mb-3">
+                                <input type="text" name="when_hours" class="form-control form-input-bg form-first_name" id="tb-rfname" placeholder="john deo">
+                                <label for="tb-rfname">Hour</label>
+                                <div class="invalid-feedback">
+                                    First name is required
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-2 col-md-4">
+                            <div class="form-floating mb-3">
+                                <input type="text" name="when_minutes" class="form-control form-input-bg form-first_name" id="tb-rfname" placeholder="john deo">
+                                <label for="tb-rfname">Minutes</label>
+                                <div class="invalid-feedback">
+                                    First name is required
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-lg-2 col-md-4">
+                            <div class="form-floating mb-3">
+                                <select class="form-select form-input-bg form-type" name="meridiem" id="type">
+                                    @foreach(config('constants.meridiem') as $type)
+                                    <option value="{{ $type }}">{{ $type }}</option>
+                                    @endforeach
+                                </select>
+                                <label for="type">Buntag/Hapon</label>
+                                <div class="invalid-feedback">
+                                    Last name is required
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="form-floating mb-3">
+                                <textarea class="form-control form-synopsis" name="synopsis" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 300px"></textarea>
                                 <label for="floatingTextarea2">Synopsis (Panghitabo)</label>
                                 <div class="invalid-feedback">
                                     Address is required
                                 </div>
                             </div>
 
-                            <div class="form-group mb-3">
-                                <label for="text-rcpassword" class="mb-2">Upload ID (Pag-upload sa ID) <i class="fas fa-question-circle" data-bs-toggle="popover" data-bs-trigger="hover focus" title="LIST OF ACCEPTABLE IDS (At least 1 of the following)" data-bs-content="SSS ID, PHILHEALTH, PAG-IBIG ID/UMID, PASSPORT ID"></i></label>
-                                <input type="file" name="filename" class="form-control form-filename" id="text-rcpassword" placeholder="*****">
-                                <div class="invalid-feedback">
-                                    File upload is required
-                                </div>
-                            </div>
                             <div class="d-flex mb-3">
                                 <div class="checkbox checkbox-primary mb-3">
                                     <input id="checkbox-signup" type="checkbox" class="chk-col-indigo material-inputs">
                                     <label for="checkbox-signup"> I agree to <a href="#">Privacy Policy</a></label>
                                 </div>
                             </div>
-                            <div class="d-flex">
-                                <button type="submit" class="btn btn-lg btn waves-effect waves-light btn-light-info text-info">Submit</button>
-                                <div>
-                                    <!-- ------------------------------------------ -->
-                                    <!-- Medium -->
-                                    <!-- ------------------------------------------ -->
-                                    <!-- sample modal content -->
-                                    <div id="bs-example-modal-md" class="modal fade" tabindex="-1" aria-labelledby="bs-example-modal-md" style="display: none;" aria-hidden="true">
-                                        <div class="modal-dialog">
-                                            <div class="modal-content">
-                                                <div class="modal-header d-flex align-items-center">
-                                                    <h4 class="modal-title text-success" id="myModalLabel">Success!</h4>
-                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                                </div>
-                                                <div class="modal-body">
-                                                    <h4>Your case has been submitted...</h4>
-                                                    <p><strong>Control number: <span class="control-number"></span></strong></p>
-                                                    <p>Please copy the control number above to check updates regarding your case. Have a nice day!</p>
-                                                </div>
-                                                <div class="modal-footer">
-                                                    <button type="button" class="btn btn-light-danger text-danger font-weight-medium waves-effect" data-bs-dismiss="modal">Close</button>
-                                                </div>
+                        </div>
+                        <div class="d-flex">
+                            <button type="submit" class="btn btn-lg btn waves-effect waves-light btn-light-info text-info">Submit</button>
+                            <div>
+                                <!-- ------------------------------------------ -->
+                                <!-- Medium -->
+                                <!-- ------------------------------------------ -->
+                                <!-- sample modal content -->
+                                <div id="bs-example-modal-md" class="modal fade" tabindex="-1" aria-labelledby="bs-example-modal-md" style="display: none;" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header d-flex align-items-center">
+                                                <h4 class="modal-title text-success" id="myModalLabel">Success!</h4>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                             </div>
-                                            <!-- /.modal-content -->
+                                            <div class="modal-body">
+                                                <h4>Your case has been submitted...</h4>
+                                                <p><strong>Control number: <span class="control-number"></span></strong></p>
+                                                <p>Please copy the control number above to check updates regarding your case. Have a nice day!</p>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-light-danger text-danger font-weight-medium waves-effect" data-bs-dismiss="modal">Close</button>
+                                            </div>
                                         </div>
-                                        <!-- /.modal-dialog -->
+                                        <!-- /.modal-content -->
                                     </div>
+                                    <!-- /.modal-dialog -->
                                 </div>
                             </div>
                         </div>
