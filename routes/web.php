@@ -48,11 +48,13 @@ Route::group(['namespace' => 'Admin'], function() {
             Route::get('logout', 'AuthController@logout')->name('admin.logout');
             Route::get('statistics', 'StatisticsController@index')->name('admin.statistics.index');
 
+            Route::get('reports/list', 'Reports\ReportController@getReports')->name('reports.list');
             Route::resource('reports', 'Reports\ReportController');
 
             Route::get('dashboard', 'MainController@index')->name('admin.dashboard.index');
-            Route::get('users', 'UserController@index')->name('admin.users.index');
-            Route::get('users/create', 'UserController@create')->name('admin.users.create');
+
+            Route::get('users/list', 'Users\UserController@getUsers')->name('users.list');
+            Route::resource('users', 'Users\UserController');
         });
     });
 });

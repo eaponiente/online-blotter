@@ -1,92 +1,73 @@
 @extends('layouts.admin')
 @section('content')
+    <link href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css" rel="stylesheet">
+    <link href="https://cdn.datatables.net/1.10.21/css/dataTables.bootstrap4.min.css" rel="stylesheet">
     <!-- ============================================================== -->
-    <!-- Bread crumb and right sidebar toggle -->
+    <!-- Start Page Content -->
     <!-- ============================================================== -->
-    <div class="page-breadcrumb">
-        <div class="row align-items-center">
-            <div class="col-md-6 col-8 align-self-center">
-                <h3 class="page-title mb-0 p-0">
-                    <?php
-                        switch(request()->segment(2)) {
-                            case "reports":
-                                echo "Reports";
-                                break;
-                            case "blotters":
-                            case "details":
-                                echo "Incident Reports";
-                                break;
-                        }
-                    ?>
-                </h3>
-                <div class="d-flex align-items-center">
-                    <nav aria-label="breadcrumb">
-                        <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="#">Home</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">
-                            <?php
-                                switch(request()->segment(2)) {
-                                    case "reports":
-                                        echo "Reports";
-                                        break;
-                                    case "blotters":
-                                    case "details":
-                                        echo "Incident Reports";
-                                        break;
-                                }
-                            ?>
-                            </li>
-                            <?php
-                                if(request()->segment(2) === "details") {
-                            ?>
-                                    <li class="breadcrumb-item active" aria-current="page">View Details</li>
-                            <?php
-                                }
-                            ?>
-                        </ol>
-                    </nav>
+    <div class="row">
+        <!-- column -->
+        <div class="col-sm-12">
+
+            @if(session()->has('success'))
+                <div class="alert alert-success">
+                    {{ session()->get('success') }}
                 </div>
-            </div>
-            <div class="col-md-6 col-4 align-self-center">
-                <div class="text-end upgrade-btn">
-                    <?php
-                        if (request()->segment(2) === "details") {
-                    ?>
-                        <h4>Control No. 119087992</h4>
-                    <?php
-                        }
-                    ?>
-                    <!--<a href="https://www.wrappixel.com/templates/monsteradmin/"
-                        class="btn btn-success d-none d-md-inline-block text-white" target="_blank">Upgrade to
-                        Pro</a>-->
-                        <a href="{{ route('admin.users.create') }}" class="btn btn-info text-white"> <i class="fas fa-user-plus"></i> Add User</a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- ============================================================== -->
-    <!-- End Bread crumb and right sidebar toggle -->
-    <!-- ============================================================== -->
-    <!-- ============================================================== -->
-    <!-- Container fluid  -->
-    <!-- ============================================================== -->
-    <div class="container-fluid">
-        <!-- ============================================================== -->
-        <!-- Start Page Content -->
-        <!-- ============================================================== -->
-        <div class="row">
-            <!-- column -->
-            <div class="col-sm-12">
-                <div class="card">
-                    <div class="card-body">
-                        <h4 class="card-title">List of Users</h4>
-                        <div id="basicgrid"></div>
+            @endif
+
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">List of Users</h4>
+                    <div class="table-responsive">
+                        <button type="button" onclick="location.href = '{{ route('users.create') }}'" style="float: right; margin-bottom: 10px;" class="btn waves-effect waves-light btn-success text-white"><i class="fas fa-check"></i> Create User</button>
+
+                        <table class="table table-bordered yajra-datatable">
+                            <thead>
+                            <tr>
+                                <th>Station</th>
+                                <th>Fullname</th>
+                                <th>Position</th>
+                                <th>Action</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- ============================================================== -->
-    <!-- End Container fluid  -->
-    <!-- ============================================================== -->
+@endsection
+
+@section('scripts')
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.js"></script>
+    <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.21/js/dataTables.bootstrap4.min.js"></script>
+
+    <script type="text/javascript">
+        $(function () {
+
+            var table = $('.yajra-datatable').DataTable({
+                order: [0, 'asc'],
+                processing: true,
+                serverSide: true,
+                ajax: "{{ route('users.list') }}",
+                columns: [
+                    {data: 'station_name', name: 'station_name'},
+                    {data: 'fullname', name: 'fullname'},
+                    {data: 'position', name: 'position'},
+                    {
+                        data: 'action',
+                        name: 'action',
+                        orderable: true,
+                        searchable: true
+                    },
+                ]
+            });
+
+        });
+    </script>
 @endsection
