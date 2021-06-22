@@ -26,7 +26,13 @@ class ReportController extends Controller
 
     public function store(StoreReportRequest $storeReportRequest, CreateReport $createReport, UploadFiles $uploadFiles)
     {
-        $report = $createReport->execute($storeReportRequest->except('filename'));
+        $storeReportRequest->merge([
+            'type' => $storeReportRequest->input('type') == 'others' ? $storeReportRequest->input('others') : $storeReportRequest->input('type'),
+            'date_of_birth' => $storeReportRequest->input('birth_year') . '-' . $storeReportRequest->input('birth_month') . '-' . $storeReportRequest->input('birth_day'),
+            'when' => $storeReportRequest->input('when_year') . '-' . $storeReportRequest->input('when_month') . '-' . $storeReportRequest->input('when_day') . ' ' . $storeReportRequest->input('when_hours') . ':' . $storeReportRequest->input('when_minutes')
+        ]);
+
+        $report = $createReport->execute($storeReportRequest->all());
         $filePath = $uploadFiles->execute($storeReportRequest->file('filename'));
 
         $report->filename = $filePath;

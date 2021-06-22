@@ -14,9 +14,9 @@
                     <div class="row mt-4">
                         <div class="col-sm-12 col-md-12 col-lg-6">
                             <div class="form-floating mb-3">
-                                <select class="form-select form-input-bg form-type" name="type" id="type" placeholder="john@gmail.com">
+                                <select class="form-select form-input-bg form-type" name="type" id="report_type" placeholder="john@gmail.com">
                                     @foreach(config('constants.report_types') as $type)
-                                    <option value="{{ $type }}">{{ $type }}</option>
+                                    <option value="{{ strtolower($type) }}">{{ $type }}</option>
                                     @endforeach
                                 </select>
                                 <label for="type">Type of report</label>
@@ -35,6 +35,17 @@
                                 <label for="tb-remail">Civil status (Kahimtang sibil)</label>
                                 <div class="invalid-feedback">
                                     Last name is required
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt-12 hide" id="others">
+                        <div class="col-sm-12 col-md-12 col-lg-12">
+                            <div class="form-floating mb-3">
+                                <input type="text" name="others" class="form-control form-input-bg form-others" id="tb-rfname" placeholder="">
+                                <label for="tb-rfname">Others</label>
+                                <div class="invalid-feedback">
+                                    First name is required
                                 </div>
                             </div>
                         </div>
@@ -69,7 +80,7 @@
                         </div>
                         <div class="col-sm-12 col-md-12 col-lg-2">
                             <div class="form-floating">
-                                <input type="text" name="suffix" class="form-control form-input-bg form-suffix_name" id="tb-rfname" placeholder="john deo">
+                                <input type="text" name="suffix" class="form-control form-input-bg form-suffix" id="tb-rfname" placeholder="john deo">
                                 <label for="tb-rfname">Suffix</label>
                                 <div class="invalid-feedback">
                                     First name is required
@@ -95,7 +106,7 @@
                             </div>
                             <div class="form-floating mb-3">
                                 <input type="text" name="citizenship" class="form-control form-input-bg form-citizenship" id="text-rpassword" placeholder="*****">
-                                <label for="text-rpassword">Citizenship (Pagkalungsoranon)</label>
+                                <label for="text-rpassword">Citizenship</label>
                                 <div class="invalid-feedback">
                                     Address is required
                                 </div>
@@ -104,7 +115,7 @@
                         <div class="col-sm-12 col-md-12 col-lg-6">
                             <div class="form-floating mb-3">
                                 <input type="text" name="mobile" class="form-control form-input-bg form-mobile" id="tb-rfname" placeholder="john deo">
-                                <label for="tb-rfname">Contact number (Numero sa pagkontak)</label>
+                                <label for="tb-rfname">Contact #</label>
                                 <div class="invalid-feedback">
                                     First name is required
                                 </div>
@@ -133,7 +144,7 @@
                         <div class="col-sm-12 col-md-12 col-lg-2">
                             <label>Date of Birth</label>
                             <div class="form-floating mb-3">
-                                <select class="form-select form-input-bg form-type" name="birth_month" id="type">
+                                <select class="form-select form-input-bg form-birth_month" name="birth_month" id="type">
                                     @foreach(config('constants.month') as $key => $type)
                                     <option value="{{ $key + 1 }}">{{ $type }}</option>
                                     @endforeach
@@ -148,7 +159,7 @@
                         <div class="col-sm-12 col-md-12 col-lg-2">
                             <label></label>
                             <div class="form-floating mb-3">
-                                <select class="form-select form-input-bg form-type" name="birth_daay" id="type">
+                                <select class="form-select form-input-bg form-birth_day" name="birth_day" id="type">
                                     @foreach(range(1, 31) as $day)
                                     <option value="{{ $day }}">{{ str_pad($day, '0', 2) }}</option>
                                     @endforeach
@@ -163,7 +174,7 @@
                         <div class="col-sm-12 col-md-12 col-lg-2">
                             <label></label>
                             <div class="form-floating mb-3">
-                                <select class="form-select form-input-bg form-type" name="birth_year" id="type">
+                                <select class="form-select form-input-bg form-birth_year" name="birth_year" id="type">
                                     @foreach(range( date('Y'), 1900) as $year)
                                     <option value="{{ $year }}">{{ $year }}</option>
                                     @endforeach
@@ -207,7 +218,7 @@
                         <label>When (Kanus-a)</label>
                         <div class="col-lg-2 col-md-4">
                             <div class="form-floating mb-3">
-                                <select class="form-select form-input-bg form-type" name="when_month" id="type">
+                                <select class="form-select form-input-bg form-when_month" name="when_month" id="type">
                                     @foreach(config('constants.month') as $type)
                                     <option value="{{ $type }}">{{ $type }}</option>
                                     @endforeach
@@ -221,7 +232,7 @@
 
                         <div class="col-lg-2 col-md-4">
                             <div class="form-floating mb-3">
-                                <select class="form-select form-input-bg form-type" name="when_day" id="type">
+                                <select class="form-select form-input-bg form-when_day" name="when_day" id="type">
                                     @foreach(config('constants.day') as $type)
                                     <option value="{{ $type }}">{{ $type }}</option>
                                     @endforeach
@@ -235,7 +246,7 @@
 
                         <div class="col-lg-2 col-md-4">
                             <div class="form-floating mb-3">
-                                <select class="form-select form-input-bg form-type" name="when_year" id="type">
+                                <select class="form-select form-input-bg form-when_year" name="when_year" id="type">
                                     @foreach(config('constants.year') as $type)
                                     <option value="{{ $type }}">{{ $type }}</option>
                                     @endforeach
@@ -249,7 +260,7 @@
 
                         <div class="col-lg-2 col-md-4">
                             <div class="form-floating mb-3">
-                                <input type="text" name="when_hours" class="form-control form-input-bg form-first_name" id="tb-rfname" placeholder="john deo">
+                                <input type="text" name="when_hours" class="form-control form-input-bg form-when_hours" id="tb-rfname" placeholder="john deo">
                                 <label for="tb-rfname">Hour</label>
                                 <div class="invalid-feedback">
                                     First name is required
@@ -259,7 +270,7 @@
 
                         <div class="col-lg-2 col-md-4">
                             <div class="form-floating mb-3">
-                                <input type="text" name="when_minutes" class="form-control form-input-bg form-first_name" id="tb-rfname" placeholder="john deo">
+                                <input type="text" name="when_minutes" class="form-control form-input-bg form-when_minutes" id="tb-rfname" placeholder="john deo">
                                 <label for="tb-rfname">Minutes</label>
                                 <div class="invalid-feedback">
                                     First name is required
@@ -269,7 +280,7 @@
                         
                         <div class="col-lg-2 col-md-4">
                             <div class="form-floating mb-3">
-                                <select class="form-select form-input-bg form-type" name="meridiem" id="type">
+                                <select class="form-select form-input-bg form-meridiem" name="meridiem" id="type">
                                     @foreach(config('constants.meridiem') as $type)
                                     <option value="{{ $type }}">{{ $type }}</option>
                                     @endforeach

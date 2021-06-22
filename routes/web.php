@@ -48,6 +48,7 @@ Route::group(['namespace' => 'Admin'], function() {
             Route::get('logout', 'AuthController@logout')->name('admin.logout');
             Route::get('statistics', 'StatisticsController@index')->name('admin.statistics.index');
 
+            Route::get('reports/{uuid}/change-status/{status}', 'Reports\ReportController@changeStatus')->name('reports.change.status');
             Route::get('reports/list', 'Reports\ReportController@getReports')->name('reports.list');
             Route::resource('reports', 'Reports\ReportController');
 

@@ -3,6 +3,7 @@
 namespace App\Services\Reports;
 
 use Illuminate\Http\UploadedFile;
+use Illuminate\Support\Facades\Storage;
 
 class UploadFiles
 {

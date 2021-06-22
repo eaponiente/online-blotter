@@ -4,7 +4,8 @@ return [
     'report_types' => [
         'Robbery',
         'Murder',
-        'Kidnapping'
+        'Kidnapping',
+        'Others'
     ],
     'gender' => [
         'male',

@@ -17,6 +17,7 @@ $('#report-form').submit(function(e) {
 
             $('.is-invalid').removeClass('is-invalid');
             $('.form-first_name').val('');
+            $('.form-others').val('');
             $('.form-middle_name').val('');
             $('.form-last_name').val('');
             $('.form-email').val('');
@@ -40,6 +41,9 @@ $('#report-form').submit(function(e) {
                 $('.is-invalid').removeClass('is-invalid');
                 var messages = jqXHR.responseJSON.errors;
                 $.each(messages, function(key, val) {
+                    if(key == 'others') {
+
+                    }
                     var element = $('.form-' + key);
                     element.addClass('is-invalid');
                     element.parent().find('.invalid-feedback').html(val[0])
@@ -72,4 +76,18 @@ $('#search-form').submit(function(e) {
             }
         }
     })
+})
+
+$('#report_type').change(function() {
+    var self = $(this);
+    console.log(self.val())
+
+    if(self.val() === 'others') {
+        $('#others')
+            .removeClass('hide');
+    } else {
+        $('#others')
+            .removeClass('hide')
+            .addClass('hide');
+    }
 })

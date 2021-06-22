@@ -79,4 +79,18 @@ class ReportController extends Controller
                 ->make(true);
         }
     }
+
+    public function changeStatus($uuid, $status)
+    {
+        if(!in_array($status, ['pending', 'for verification', 'verified', 'closed'])) {
+            return redirect()->back();
+        }
+
+        $report = Report::where('uuid', $uuid)->first();
+
+        $report->status = $status;
+        $report->save();
+
+        return redirect()->back();
+    }
 }

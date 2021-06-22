@@ -19,20 +19,24 @@
                         </div>
                         <div class="card-body border-top">
                             <div class="row">
-                                <div class="col-md-6">
+                                <div class="col-md-12 mb-3">
                                     <div class="form-group row">
                                         <label class="control-label col-md-4 font-weight-medium">Status:</label>
                                         <div class="col-md-8">
                                             <div class="button-group">
-                                                <button type="button" class="btn waves-effect waves-light btn-success text-white"><i class="fas fa-check"></i> Active</button>
-                                                <button type="button" class="btn waves-effect waves-light btn-secondary">Pending</button>
-                                                <button type="button" class="btn waves-effect waves-light btn-secondary">Closed</button>
+                                                @foreach(['Pending', 'For Verification', 'Closed'] as $value)
+                                                    <button
+                                                            type="button"
+                                                            onclick="location.href='{{ route('reports.change.status', [$report->uuid, 'status' => strtolower($value)]) }}'"
+                                                            class="btn waves-effect waves-light btn-secondary {{ $report->status == strtolower($value) ? 'btn-success text-white' : 'btn-secondary' }}">
+    {!! ($report->status == strtolower($value) ? '<i class="fas fa-check"></i>' : '')  !!} {{ $value }} </button>
+                                                @endforeach
                                             </div>
                                         </div>
                                     </div>
                                 </div>
 
-                                <div class="col-md-6">
+                                <div class="col-md-12">
                                     <div class="form-group row">
                                         <label class="control-label col-md-4 font-weight-medium">Upload Signature:</label>
                                         <div class="col-md-8">
@@ -268,7 +272,7 @@
                                         <!--<label class="control-label col-md-2 font-weight-medium"></label>-->
                                         <div class="col-md-12 text-center">
                                             @if(filled($report->filename))
-                                            <a href="#" style="padding-right:30px"><img src="{{ \Illuminate\Support\Facades\Storage::url($report->filename) }}" width="250"></a>
+                                            <a href="#" style="padding-right:30px"><img src="{{ asset('storage/' .$report->filename) }}" width="100%"></a>
                                             @endif
                                         </div>
                                     </div>

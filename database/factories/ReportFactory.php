@@ -24,7 +24,7 @@ class ReportFactory extends Factory
     {
         $station = Station::inRandomOrder()->first();
 
-        $status = ['approved', 'pending', 'for verification'];
+        $status = ['pending', 'for verification', 'verified', 'closed'];
         $civilStatus = ['single', 'married', 'divorced', 'widowed'];
         $type = ['robbery', 'carnapping', 'assault'];
 
