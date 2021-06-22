@@ -66,7 +66,7 @@ class ReportController extends Controller
             return DataTables::of($reportQuery->orderBy($sortField, $sortDirection)->get())
                 ->addIndexColumn()
                 ->addColumn('action', function ($row) {
-                    $actionBtn = '<a href="' . route('reports.show', [$row->uuid]) . '" class="edit btn btn-success btn-sm">Show</a>';
+                    $actionBtn = '<a href="' . route('reports.show', [$row->uuid]) . '" class="edit btn btn-success btn-sm text-white">Show</a>';
                     return $actionBtn;
                 })
                 ->addColumn('fullname', function ($row) {

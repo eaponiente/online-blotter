@@ -138,7 +138,7 @@ class UserController extends Controller
             return DataTables::of($userQuery->orderBy($sortField, $sortDirection)->get())
                 ->addIndexColumn()
                 ->addColumn('action', function ($row) {
-                    $actionBtn = '<a href="' . route('users.edit', ['user' => $row->id]) . '" class="edit btn btn-success btn-sm">Edit</a>';
+                    $actionBtn = '<a href="' . route('users.edit', ['user' => $row->id]) . '" class="edit btn btn-success btn-sm text-white">Edit</a>';
                     return $actionBtn;
                 })
                 ->addColumn('fullname', function ($row) {
