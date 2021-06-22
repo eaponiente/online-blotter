@@ -185,16 +185,6 @@
                                 </div>
                             </div>
                         </div>
-                        
-                        <div class="col-sm-12 col-md-12 col-lg-6">
-                            <div class="form-group mb-3">
-                                <label for="text-rcpassword" class="mb-2">Upload ID (Pag-upload sa ID) <i class="fas fa-question-circle" data-bs-toggle="popover" data-bs-trigger="hover focus" title="LIST OF ACCEPTABLE IDS (At least 1 of the following)" data-bs-content="SSS ID, PHILHEALTH, PAG-IBIG ID/UMID, PASSPORT ID"></i></label>
-                                <input type="file" name="filename" class="form-control form-filename" id="text-rcpassword" placeholder="*****">
-                                <div class="invalid-feedback">
-                                    File upload is required
-                                </div>
-                            </div>
-                        </div>
                     </div>
                     <div class="row mt-4">
                         <div class="col-12">
@@ -258,9 +248,13 @@
                             </div>
                         </div>
 
-                        <div class="col-lg-2 col-md-4">
+                        <div class="col-4 col-sm-4 col-lg-2 col-md-4">
                             <div class="form-floating mb-3">
-                                <input type="text" name="when_hours" class="form-control form-input-bg form-when_hours" id="tb-rfname" placeholder="john deo">
+                                <select class="form-select form-input-bg form-when_hours" name="when_hours" id="type">
+                                    @foreach(range(1, 12) as $type)
+                                        <option value="{{ $type }}">{{ str_pad($type, 2, '0', STR_PAD_LEFT) }}</option>
+                                    @endforeach
+                                </select>
                                 <label for="tb-rfname">Hour</label>
                                 <div class="invalid-feedback">
                                     First name is required
@@ -268,9 +262,13 @@
                             </div>
                         </div>
 
-                        <div class="col-lg-2 col-md-4">
+                        <div class="col-4 col-sm-4 col-lg-2 col-md-4">
                             <div class="form-floating mb-3">
-                                <input type="text" name="when_minutes" class="form-control form-input-bg form-when_minutes" id="tb-rfname" placeholder="john deo">
+                                <select class="form-select form-input-bg form-when_minutes" name="when_minutes" id="type">
+                                    @foreach(range(1, 60) as $type)
+                                        <option value="{{ $type }}">{{ str_pad($type, 2, '0', STR_PAD_LEFT) }}</option>
+                                    @endforeach
+                                </select>
                                 <label for="tb-rfname">Minutes</label>
                                 <div class="invalid-feedback">
                                     First name is required
@@ -278,7 +276,7 @@
                             </div>
                         </div>
                         
-                        <div class="col-lg-2 col-md-4">
+                        <div class="col-4 col-sm-4 col-lg-2 col-md-4">
                             <div class="form-floating mb-3">
                                 <select class="form-select form-input-bg form-meridiem" name="meridiem" id="type">
                                     @foreach(config('constants.meridiem') as $type)
@@ -302,6 +300,18 @@
                                 </div>
                             </div>
 
+
+                        </div>
+                        <div class="col-sm-12 col-md-12 col-lg-12">
+                            <div class="form-group mb-3">
+                                <label for="text-rcpassword" class="mb-2">Upload ID (Pag-upload sa ID) <i class="fas fa-question-circle" data-bs-toggle="popover" data-bs-trigger="hover focus" title="LIST OF ACCEPTABLE IDS (At least 1 of the following)" data-bs-content="SSS ID, PHILHEALTH, PAG-IBIG ID/UMID, PASSPORT ID"></i></label>
+                                <input type="file" name="filename" class="form-control form-filename" id="text-rcpassword" placeholder="*****">
+                                <div class="invalid-feedback">
+                                    File upload is required
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12">
                             <div class="d-flex mb-3">
                                 <div class="checkbox checkbox-primary mb-3">
                                     <input id="checkbox-signup" type="checkbox" class="chk-col-indigo material-inputs">
