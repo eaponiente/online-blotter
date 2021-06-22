@@ -18,7 +18,7 @@ class StationSeeder extends Seeder
     {
         DB::table('stations')->truncate();
 
-        foreach (range(1, 10) as $val)
+        foreach (range(1, 2) as $val)
         {
             Station::factory()->create();
         }

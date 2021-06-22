@@ -223,15 +223,6 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="form-group row ">
-                                        <label class="control-label col-md-2 font-weight-medium">What:</label>
-                                        <div class="col-md-10">
-                                            <p class="form-control-static">{{ $report->what }}</p>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-md-12">
-                                    <div class="form-group row ">
                                         <label class="control-label col-md-2 font-weight-medium">Who:</label>
                                         <div class="col-md-10">
                                             <p class="form-control-static"> {{ $report->who }} </p>
@@ -253,15 +244,6 @@
                                         <label class="control-label col-md-2 font-weight-medium">When:</label>
                                         <div class="col-md-10">
                                             <p class="form-control-static"> {{ $report->when }} </p>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-md-12">
-                                    <div class="form-group row ">
-                                        <label class="control-label col-md-2 font-weight-medium">How:</label>
-                                        <div class="col-md-10">
-                                            <p class="form-control-static"> {{ $report->how }} </p>
                                         </div>
                                     </div>
                                 </div>

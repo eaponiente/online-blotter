@@ -43,7 +43,7 @@
                         <div class="col-4">
                             <div class="form-floating">
                                 <input type="text" name="first_name" class="form-control form-input-bg form-first_name" id="tb-rfname" placeholder="john deo">
-                                <label for="tb-rfname">First name (Panguna nga ngalan)</label>
+                                <label for="tb-rfname">First name (Pangalan)</label>
                                 <div class="invalid-feedback">
                                     First name is required
                                 </div>
@@ -52,7 +52,7 @@
                         <div class="col-2">
                             <div class="form-floating">
                                 <input type="text" name="middle_name" class="form-control form-input-bg form-middle_name" id="tb-rfname" placeholder="john deo">
-                                <label for="tb-rfname">Middle inital</label>
+                                <label for="tb-rfname">Middle initial</label>
                                 <div class="invalid-feedback">
                                     First name is required
                                 </div>
@@ -70,7 +70,7 @@
                         <div class="col-2">
                             <div class="form-floating">
                                 <input type="text" name="suffix" class="form-control form-input-bg form-suffix_name" id="tb-rfname" placeholder="john deo">
-                                <label for="tb-rfname">Qualifiers</label>
+                                <label for="tb-rfname">Suffix</label>
                                 <div class="invalid-feedback">
                                     First name is required
                                 </div>
@@ -113,7 +113,7 @@
                         <div class="col-6">
                             <div class="form-floating mb-3">
                                 <input type="text" name="mobile" class="form-control form-input-bg form-mobile" id="tb-rfname" placeholder="john deo">
-                                <label for="tb-rfname">Mobile number (Numero sa pagkontak)</label>
+                                <label for="tb-rfname">Contact number (Numero sa pagkontak)</label>
                                 <div class="invalid-feedback">
                                     First name is required
                                 </div>
@@ -152,16 +152,6 @@
 
                             </div>
                             <div class="form-group form-material mb-3">
-                                <label class="col-md-12 mb-0">What (Unsa)</label>
-                                <div class="col-md-12">
-                                    <textarea rows="1" name="what" class="form-control ps-0 form-control-line form-what" style="height:auto"></textarea>
-                                    <div class="invalid-feedback">
-                                        Last name is required
-                                    </div>
-                                </div>
-
-                            </div>
-                            <div class="form-group form-material mb-3">
                                 <label class="col-md-12 mb-0">Where (Asa)</label>
                                 <div class="col-md-12">
                                     <textarea rows="1" name="where" class="form-control ps-0 form-control-line form-where" style="height:auto"></textarea>
@@ -174,15 +164,6 @@
                                 <label class="col-md-12 mb-0">When (Kanus-a)</label>
                                 <div class="col-md-12">
                                     <textarea rows="1" name="when" class="form-control ps-0 form-control-line form-when" style="height:auto"></textarea>
-                                    <div class="invalid-feedback">
-                                        Last name is required
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-group form-material mb-3">
-                                <label class="col-md-12 mb-0">How (Giunsa)</label>
-                                <div class="col-md-12">
-                                    <textarea rows="1" name="how" class="form-control ps-0 form-control-line form-how" style="height:auto"></textarea>
                                     <div class="invalid-feedback">
                                         Last name is required
                                     </div>

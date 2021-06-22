@@ -18,7 +18,7 @@ class UserSeeder extends Seeder
     {
         DB::table('users')->truncate();
 
-        foreach (range(1, 30) as $val)
+        foreach (range(1, 2) as $val)
         {
             $station = Station::inRandomOrder()->first();
 

@@ -34,13 +34,12 @@ class CreateReportsTable extends Migration
             $table->date('date_of_birth');
             $table->tinyInteger('is_read')->default(0);
             $table->longText('who')->nullable();
-            $table->longText('what')->nullable();
             $table->longText('where')->nullable();
             $table->longText('when')->nullable();
-            $table->longText('how')->nullable();
             $table->longText('synopsis')->nullable();
             $table->string('filename')->nullable();
             $table->integer('prepared_by_user_id')->nullable();
+            $table->integer('incharge_signature_filename')->nullable();
             $table->timestamps();
         });
     }

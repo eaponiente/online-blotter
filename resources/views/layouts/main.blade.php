@@ -9,7 +9,7 @@
     <meta name="keywords" content="wrappixel, admin dashboard, html css dashboard, web dashboard, bootstrap 5 admin, bootstrap 5, css3 dashboard, bootstrap 5 dashboard, monster admin bootstrap 5 dashboard, frontend, responsive bootstrap 5 admin template, ">
     <meta name="description" content="Monster is powerful and clean admin dashboard template, inpired from Google's Material Design">
     <meta name="robots" content="noindex,nofollow">
-    <title>Davao Online Blotter</title>
+    <title>Davao City Online Police Blotter</title>
     <link rel="canonical" href="https://www.wrappixel.com/templates/monsteradmin/" />
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/favicon.png">
@@ -44,7 +44,7 @@
         <!-- ============================================================== -->
         <nav class="navbar navbar-expand-lg navbar-light shadow-sm" id="mainNav">
             <div class="container px-5">
-                <a class="navbar-brand fw-bold" href="{{ url('/') }}">Davao Online Police Blotter</a>
+                <a class="navbar-brand fw-bold" href="{{ url('/') }}">Davao City Online Police Blotter</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     Menu
                     <i class="bi-list"></i>

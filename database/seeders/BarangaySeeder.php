@@ -18,7 +18,7 @@ class BarangaySeeder extends Seeder
     {
         DB::table('barangays')->truncate();
 
-        foreach (range(1, 30) as $value)
+        foreach (range(1, 10) as $value)
         {
             $station = Station::inRandomOrder()->first();
 
