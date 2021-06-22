@@ -134,8 +134,8 @@
                             <label>Date of Birth</label>
                             <div class="form-floating mb-3">
                                 <select class="form-select form-input-bg form-type" name="birth_month" id="type">
-                                    @foreach(config('constants.month') as $type)
-                                    <option value="{{ $type }}">{{ $type }}</option>
+                                    @foreach(config('constants.month') as $key => $type)
+                                    <option value="{{ $key + 1 }}">{{ $type }}</option>
                                     @endforeach
                                 </select>
                                 <label for="type">Month</label>
@@ -149,8 +149,8 @@
                             <label></label>
                             <div class="form-floating mb-3">
                                 <select class="form-select form-input-bg form-type" name="birth_daay" id="type">
-                                    @foreach(config('constants.day') as $type)
-                                    <option value="{{ $type }}">{{ $type }}</option>
+                                    @foreach(range(1, 31) as $day)
+                                    <option value="{{ $day }}">{{ str_pad($day, '0', 2) }}</option>
                                     @endforeach
                                 </select>
                                 <label for="type">Day</label>
@@ -164,8 +164,8 @@
                             <label></label>
                             <div class="form-floating mb-3">
                                 <select class="form-select form-input-bg form-type" name="birth_year" id="type">
-                                    @foreach(config('constants.year') as $type)
-                                    <option value="{{ $type }}">{{ $type }}</option>
+                                    @foreach(range( date('Y'), 1900) as $year)
+                                    <option value="{{ $year }}">{{ $year }}</option>
                                     @endforeach
                                 </select>
                                 <label for="type">Year</label>

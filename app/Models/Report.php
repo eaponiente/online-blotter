@@ -37,6 +37,8 @@ class Report extends Model
         'filename',
     ];
 
+    protected $appends= ['fullname'];
+
     protected static function booted()
     {
         static::creating(function ($report) {
