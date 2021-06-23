@@ -73,7 +73,7 @@ class ReportController extends Controller
                     return $row->last_name . ', ' . $row->first_name;
                 })
                 ->addColumn('created_at', function ($row) {
-                    return $row->created_at->format('Y-m-d h:i A');
+                    return $row->created_at->tz('Asia/Manila')->format('Y-m-d h:i A');
                 })
                 ->rawColumns(['action'])
                 ->make(true);
