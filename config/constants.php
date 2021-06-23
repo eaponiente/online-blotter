@@ -2,9 +2,15 @@
 
 return [
     'report_types' => [
-        'Robbery',
         'Murder',
-        'Kidnapping',
+        'Homicide',
+        'Rape',
+        'Physical Injury',
+        'Motornapping',
+        'Carnapping',
+        'Theft',
+        'Hit and run',
+        'VAWC',
         'Others'
     ],
     'gender' => [
