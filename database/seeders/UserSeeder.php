@@ -24,7 +24,7 @@ class UserSeeder extends Seeder
 
             User::factory()->create([
                 'username' => 'admin_' . $val,
-                'station_id' => $station->id
+                'station_id' => $val == 1 ? null : $station->id
             ]);
         }
     }

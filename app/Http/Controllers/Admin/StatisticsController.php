@@ -12,12 +12,16 @@ class StatisticsController extends Controller
     {
         $authUser = auth()->user();
 
-        $dailyReport = Report::where('station_id', $authUser->station_id)
+        $dailyReport = Report::when(filled($authUser->station_id), function($query) use($authUser){
+            return $query->where('station_id', $authUser->station_id);
+        })
             ->whereDate('created_at', Carbon::today())
             ->count();
 
-        $weeklyReport = Report::where('station_id', $authUser->station_id)
-            ->whereBetween('created_at', [Carbon::now()->subWeek()->format("Y-m-d H:i:s"), Carbon::now()])
+        $weeklyReport = Report::when(filled($authUser->station_id), function($query) use($authUser){
+            return $query->where('station_id', $authUser->station_id);
+        })
+            ->whereBetween('created_at', [Carbon::now()->subWeek()->format("Y-m-d H:i:s"), Carbon::now()->toDateTimeString()])
             ->count();
 
         return view('admin.statistics.index', compact('dailyReport', 'weeklyReport'));

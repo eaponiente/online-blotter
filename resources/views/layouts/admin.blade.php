@@ -11,7 +11,7 @@
     <meta name="description"
         content="Monster Lite is powerful and clean admin dashboard template, inpired from Bootstrap Framework">
     <meta name="robots" content="noindex,nofollow">
-    <title>Davao Online Blotter</title>
+    <title>Davao City Online Police Blotter</title>
     <link rel="canonical" href="https://www.wrappixel.com/templates/monster-admin-lite/" />
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="{{ url('assets/images/favicon.png')}}">
@@ -53,20 +53,17 @@
                     <!-- ============================================================== -->
                     <!-- Logo -->
                     <!-- ============================================================== -->
-                    <a class="navbar-brand" href="index.html">
+                    <a class="navbar-brand" href="{{ route('admin.dashboard.index') }}">
                         <!-- Logo icon -->
                         <b class="logo-icon">
                             <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
                             <!-- Dark Logo icon -->
                             <img src="{{ url('assets/images/logo.png')}}" alt="homepage" width="50" class="dark-logo" />
-                            Davao Online Blotter
+                            Davao City Online Police Blotter
                         </b>
                         <!--End Logo icon -->
                         <!-- Logo text -->
                         <!--<span class="logo-text">
-                            <!-- dark Logo text -->
-                            <!--<img src="../assets/images/logo-text.png" alt="homepage" class="dark-logo" />
-
                         </span>-->
                     </a>
                     <!-- ============================================================== -->
@@ -112,21 +109,18 @@
                         <!-- ============================================================== -->
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle waves-effect waves-dark" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                <img src="{{ url('assets/images/users/1.jpg') }}" alt="user" class="profile-pic me-2">{{ auth()->user()->fullname }}
+                               {{ auth()->user()->fullname }} &nbsp;<i class="fa fa-sort-down"></i>
                             </a>
                             <!--<ul class="dropdown-menu show" aria-labelledby="navbarDropdown"></ul>-->
                             <div class="dropdown-menu dropdown-menu-end user-dd animated flipInY">
                                 <div class="d-flex no-block align-items-center p-3 bg-info text-white mb-2">
-                                    <div class=""><img src="../assets/images/users/5.jpg" alt="user" class="rounded-circle" width="60"></div>
                                     <div class="ms-2">
-                                        <h4 class="mb-0 text-white">Marken Doe</h4>
-                                        <p class=" mb-0">deo@gmail.com</p>
+                                        <h4 class="mb-0 text-white">{{auth()->user()->fullname}}</h4>
+                                        <p class=" mb-0">{{auth()->user()->username}}</p>
                                     </div>
                                 </div>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="{{ route('admin.logout') }}"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-log-out feather-sm text-danger me-1 ms-1"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg> Logout</a>
-                                <div class="dropdown-divider"></div>
-                                <div class="pl-4 p-2"><a href="#" class="btn d-block w-100 btn-info rounded-pill">View Profile</a></div>
                             </div>
                         </li>
                     </ul>
@@ -158,12 +152,14 @@
                                 <span class="hide-menu">Statistics</span>
                             </a>
                         </li>
+                        @if(blank(auth()->user()->station_id))
                         <li class="sidebar-item"> 
                             <a class="sidebar-link waves-effect waves-dark sidebar-link <?=request()->segment(2) === 'users' || request()->segment(2) === 'users' ? 'active' : ''?>" href="{{ route('users.index') }}" aria-expanded="false">
                                 <i class="me-3 fa fa-users" aria-hidden="true"></i>
                                 <span class="hide-menu">Users</span>
                             </a>
                         </li>
+                        @endif
                         <!--<li class="text-center p-20 upgrade-btn">
                             <a href="https://www.wrappixel.com/templates/monsteradmin/"
                                 class="btn btn-danger text-white mt-4" target="_blank">Upgrade to

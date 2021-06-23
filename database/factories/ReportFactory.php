@@ -5,6 +5,8 @@ namespace Database\Factories;
 use App\Models\Report;
 use App\Models\Station;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Http\File;
+use Illuminate\Support\Facades\Storage;
 
 class ReportFactory extends Factory
 {
@@ -27,6 +29,9 @@ class ReportFactory extends Factory
         $status = ['pending', 'for verification', 'verified', 'closed'];
         $civilStatus = ['single', 'married', 'divorced', 'widowed'];
         $type = ['robbery', 'carnapping', 'assault'];
+
+        $image = $this->faker->image();
+        $imageFile = new File($image);
 
         $createdAt = $this->faker->dateTimeBetween('-20days');
         return [
@@ -51,6 +56,7 @@ class ReportFactory extends Factory
             'where' => $this->faker->text,
             'when' => $this->faker->text,
             'synopsis' => $this->faker->text,
+            'filename' => Storage::disk('local')->putFile('files', $imageFile),
             'created_at' => $createdAt,
             'updated_at' => $createdAt,
         ];

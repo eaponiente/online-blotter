@@ -54,8 +54,10 @@ Route::group(['namespace' => 'Admin'], function() {
 
             Route::get('dashboard', 'MainController@index')->name('admin.dashboard.index');
 
-            Route::get('users/list', 'Users\UserController@getUsers')->name('users.list');
-            Route::resource('users', 'Users\UserController');
+            Route::middleware('superadmin')->group(function() {
+                Route::get('users/list', 'Users\UserController@getUsers')->name('users.list');
+                Route::resource('users', 'Users\UserController');
+            });
         });
     });
 });
