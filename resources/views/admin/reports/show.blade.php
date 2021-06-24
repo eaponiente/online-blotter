@@ -265,7 +265,7 @@
                                         <!--<label class="control-label col-md-2 font-weight-medium"></label>-->
                                         <div class="col-md-12 text-center">
                                             @if(filled($report->filename))
-                                            <a href="#" style="padding-right:30px"><img src="{{ asset('storage/' .$report->filename) }}" width="100%"></a>
+                                            <a href="#" style="padding-right:30px"><img src="{{ asset('storage/' .$report->filename) }}" width="400px"></a>
                                             @endif
                                         </div>
                                     </div>
