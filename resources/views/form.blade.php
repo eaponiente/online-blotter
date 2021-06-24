@@ -11,45 +11,6 @@
                 <form class="form-horizontal" method="POST" id="report-form" enctype="multipart/form-data">
                     {{ csrf_field() }}
                     <input type="hidden" name="station_id" value="{{ $station_id }}">
-                    <div class="row mt-4">
-                        <div class="col-sm-12 col-md-12 col-lg-6">
-                            <div class="form-floating mb-3">
-                                <select class="form-select form-input-bg form-type" name="type" id="report_type" placeholder="john@gmail.com">
-                                    @foreach(config('constants.report_types') as $type)
-                                    <option value="{{ strtolower($type) }}">{{ $type }}</option>
-                                    @endforeach
-                                </select>
-                                <label for="type">Type of report</label>
-                                <div class="invalid-feedback">
-                                    Last name is required
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-12 col-md-12 col-lg-6">
-                            <div class="form-floating mb-3">
-                                <select class="form-select form-input-bg form-civil_status" name="civil_status" id="tb-remail" placeholder="john@gmail.com">
-                                    @foreach(config('constants.civil_status') as $type)
-                                        <option value="{{ $type }}">{{ ucfirst($type) }}</option>
-                                    @endforeach
-                                </select>
-                                <label for="tb-remail">Civil status (Kahimtang sibil)</label>
-                                <div class="invalid-feedback">
-                                    Last name is required
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row mt-12 hide" id="others">
-                        <div class="col-sm-12 col-md-12 col-lg-12">
-                            <div class="form-floating mb-3">
-                                <input type="text" name="others" class="form-control form-input-bg form-others" id="tb-rfname" placeholder="">
-                                <label for="tb-rfname">Others</label>
-                                <div class="invalid-feedback">
-                                    First name is required
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                     <div class="row">
                         <div class="col-sm-12 col-md-12 col-lg-4">
                             <div class="form-floating mb-3">
@@ -88,7 +49,47 @@
                             </div>
                         </div>
                     </div>
-                    <div class="row mt-4">
+                    <div class="row mt-2">
+                        <div class="col-sm-12 col-md-12 col-lg-6">
+                            <div class="form-floating mb-3">
+                                <select class="form-select form-input-bg form-civil_status" name="civil_status" id="tb-remail" placeholder="john@gmail.com">
+                                    @foreach(config('constants.civil_status') as $type)
+                                        <option value="{{ $type }}">{{ ucfirst($type) }}</option>
+                                    @endforeach
+                                </select>
+                                <label for="tb-remail">Civil status (Kahimtang sibil)</label>
+                                <div class="invalid-feedback">
+                                    Last name is required
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-md-12 col-lg-6">
+                            <div class="form-floating mb-3">
+                                <select class="form-select form-input-bg form-type" name="type" id="report_type" placeholder="john@gmail.com">
+                                    @foreach(config('constants.report_types') as $type)
+                                    <option value="{{ strtolower($type) }}">{{ $type }}</option>
+                                    @endforeach
+                                </select>
+                                <label for="type">Type of report</label>
+                                <div class="invalid-feedback">
+                                    Last name is required
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt-12 hide" id="others">
+                        <div class="col-sm-12 col-md-12 col-lg-12">
+                            <div class="form-floating mb-3">
+                                <input type="text" name="others" class="form-control form-input-bg form-others" id="tb-rfname" placeholder="">
+                                <label for="tb-rfname">Others</label>
+                                <div class="invalid-feedback">
+                                    First name is required
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
                         <div class="col-sm-12 col-md-12 col-lg-6">
                             <div class="form-floating mb-3">
                                 <input type="text" name="email" class="form-control form-input-bg form-email" id="tb-rfname" placeholder="john deo">
