@@ -335,7 +335,7 @@
                                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                             </div>
                                             <div class="modal-body">
-                                                <h4>Your case has been submitted...</h4>
+                                                <h4>Submitted and assigned to <span class="police-station"></span></h4>
                                                 <p><strong>Control number: <span class="control-number"></span></strong></p>
                                                 <p>Please copy the control number above to check updates regarding your case. Have a nice day!</p>
                                             </div>

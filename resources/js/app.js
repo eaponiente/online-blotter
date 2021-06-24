@@ -13,6 +13,7 @@ $('#report-form').submit(function(e) {
         contentType: false,
         success: function(response) {
             $('.control-number').html(response.data.control_no)
+            $('.police-station').html(response.data.station)
             $('#bs-example-modal-md').modal('show')
 
             $('.is-invalid').removeClass('is-invalid');

@@ -44,7 +44,8 @@ class ReportController extends Controller
 
         return response()->json([
             'data' => [
-                'control_no' => $report->control_no
+                'control_no' => $report->control_no,
+                'station' => strtoupper($report->station->name)
             ]
         ], Response::HTTP_CREATED);
     }
@@ -76,6 +77,7 @@ class ReportController extends Controller
 
         return response()->json([
             'data' => [
+                'station' => $report->station->name,
                 'control_no' => $report->control_no
             ],
             'message' => 'Control no. found'
