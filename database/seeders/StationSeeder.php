@@ -17,7 +17,10 @@ class StationSeeder extends Seeder
     public function run()
     {
         $stations = [
-            "STA ANA Police Station (PS1)",
+            [
+                'name' => "STA ANA Police Station (PS1)",
+                'commander_name' => 'PMAJ BENKALIN A BALUAN'
+            ],
             "San Pedro Police Station (PS2)",
             "Talomo Police Station (PS3)",
             "Sasa Police Station (PS4)",
@@ -37,9 +40,7 @@ class StationSeeder extends Seeder
 
         foreach ($stations as $station)
         {
-            Station::factory()->create([
-                'name' => $station
-            ]);
+            Station::factory()->create($station);
         }
     }
 }
