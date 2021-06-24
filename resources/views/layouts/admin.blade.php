@@ -64,9 +64,9 @@
                         </b>
                         <!--End Logo icon -->
                         <!-- Logo text -->
-                        <span class="logo-text">
+                        <div class="logo-text" style="font-size: 12px;">
                             Davao City Online Police Blotter
-                        </span>
+                        </div>
                     </a>
                     <!-- ============================================================== -->
                     <!-- End Logo -->
