@@ -21,21 +21,64 @@ class StationSeeder extends Seeder
                 'name' => "STA ANA Police Station (PS1)",
                 'commander_name' => 'PMAJ BENKALIN A BALUAN'
             ],
-            "San Pedro Police Station (PS2)",
-            "Talomo Police Station (PS3)",
-            "Sasa Police Station (PS4)",
-            "Buhangin Police Station (PS5)",
-            "Bunawan Police Station (PS6)",
-            "Paquibato Police Station (PS7)",
-            "Toril Police Station (PS8)",
-            "Tugbok Police Station (PS9)",
-            "Calinan Police Station (PS10)",
-            "Baguio Police Station (PS11)",
-            "Marilog Police Station (PS12)",
-            "Mandug Police Station (PS13)",
-            "Mandug Police Station (PS15)",
-            "Baliok Police Station (PS17)"
+            [
+                'name' => "San Pedro Police Station (PS2)",
+                'commander_name' => 'PMAJ JACK L TILCAG'
+            ],
+            [
+                'name' => "Talomo Police Station (PS3)",
+                'commander_name' => 'PMAJ SEAN C LOGRONIO'
+            ],
+            [
+                'name' => "Sasa Police Station (PS4)",
+                'commander_name' => "PMAJ MILAN V NAZ"
+            ],
+            [
+                'name' => "Buhangin Police Station (PS5)",
+                'commander_name' => "PMAJ BERNIE SUAGA"
+            ],
+            [
+                'name' => "Bunawan Police Station (PS6)",
+                'commander_name' => "PMAJ NOEL B VILLAHERMOSA"
+            ],
+            [
+                'name' => "Paquibato Police Station (PS7)",
+                'commander_name' => "PMAJ  MARVIN C HUGOS"
+            ],
+            [
+                'name' => "Toril Police Station (PS8)",
+                'commander_name' => 'PMAJ MICHAEL S UYANGUREN'
+            ],
+            [
+                'name' => "Tugbok Police Station (PS9)",
+                'commander_name' => 'PMAJ RICKY A OBENZA'
+            ],
+            [
+                'name' => "Calinan Police Station (PS10)",
+                'commander_name' => 'PMAJ JAKE C GOLES'
+            ],
+            [
+                'name' => "Baguio Police Station (PS11)",
+                'commander_name' => 'PMAJ ARCHILLES C BARGIO'
+            ],
+            [
+                'name' => "Marilog Police Station (PS12)",
+                'commander_name' => 'PCPT PHILIP DAVE A UDDIN'
+            ],
+            [
+                'name' => "Mandug Police Station (PS13)",
+                'commander_name' => 'PMAJ JEROME A DE GUZMAN'
+            ],
+            [
+                'name' => "Ecoland Police Station (PS15)",
+                'commander_name' => 'PMAJ CAROL U JABAGAT'
+            ],
+            [
+                'name' => "Baliok Police Station (PS17)",
+                'commander_name' => 'PMAJ JOENEL S PEDERIO'
+            ]
         ];
+
         DB::table('stations')->truncate();
 
         foreach ($stations as $station)
