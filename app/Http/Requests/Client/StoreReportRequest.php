@@ -30,7 +30,7 @@ class StoreReportRequest extends FormRequest
             'middle_name' => 'required',
             'last_name' => 'required',
             'suffix' => 'nullable',
-            'email' => 'required|email',
+            'email' => 'nullable|email',
             'mobile' => 'required',
             'present_address' => 'required',
             'permanent_address' => 'nullable',

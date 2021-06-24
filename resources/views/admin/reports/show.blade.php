@@ -13,6 +13,7 @@
                     </div>
                 </div>
                 <form class="form-horizontal form-details">
+                    <input type="hidden" name="uuid" id="show-report-uuid" value="{{ $report->uuid }}">
                     <div class="form-body">
                         <div class="card-body">
                             <h4 class="card-title mb-0">Control No: {{ $report->control_no }}</h4>
@@ -21,8 +22,8 @@
                             <div class="row">
                                 <div class="col-md-12 mb-3">
                                     <div class="form-group row">
-                                        <label class="control-label col-md-4 font-weight-medium">Status:</label>
-                                        <div class="col-md-8">
+                                        <label class="control-label col-md-2 font-weight-medium">Status:</label>
+                                        <div class="col-md-10">
                                             <div class="button-group">
                                                 @foreach(['Pending', 'For Verification', 'Closed'] as $value)
                                                     <button
@@ -36,14 +37,6 @@
                                     </div>
                                 </div>
 
-                                <div class="col-md-12">
-                                    <div class="form-group row">
-                                        <label class="control-label col-md-4 font-weight-medium">Upload Signature:</label>
-                                        <div class="col-md-8">
-                                            <input type="file" class="form-control">
-                                        </div>
-                                    </div>
-                                </div>
                             </div>
                         </div>
                         <div class="card-body">
@@ -275,6 +268,42 @@
                                             <a href="#" style="padding-right:30px"><img src="{{ asset('storage/' .$report->filename) }}" width="100%"></a>
                                             @endif
                                         </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card-body">
+                            <h4 class="card-title mb-0">Signatures</h4>
+                        </div>
+                        <div class="card-body border-top">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group row ">
+                                        <div class="alert alert-danger admin-notification hide"></div>
+                                        <label class="control-label col-md-4 font-weight-medium">Admin Signature:</label>
+                                        <div class="col-md-8">
+                                            <input type="file" class="admin-file form-control">
+                                            @if(filled($report->prepared_by_signature_filename))
+                                            <img src="{{asset('storage/'.$report->prepared_by_signature_filename)}}" alt="" class="user-uploaded-signature" width="200px">
+                                            @else
+                                                <img src="" alt="" class="user-uploaded-signature" width="200px" style="display: none;">
+                                            @endif
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group row ">
+                                        <div class="alert alert-danger commander-notification hide"></div>
+                                        <label class="control-label col-md-4 font-weight-medium">Commander Signature:</label>
+                                        <div class="col-md-8">
+                                            <input type="file" class="commander-file form-control">
+
+                                            @if(filled($report->incharge_signature_filename))
+                                                <img src="{{asset('storage/'.$report->incharge_signature_filename)}}" alt="" class="commander-uploaded-signature" width="200px">
+                                            @else
+                                                <img src="" alt="" class="commander-uploaded-signature" width="200px" style="display: none;">
+                                            @endif                                        </div>
                                     </div>
                                 </div>
                             </div>

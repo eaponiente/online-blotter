@@ -34,6 +34,7 @@ class Report extends Model
         'synopsis',
         'filename',
         'prepared_by_user_id',
+        'prepared_by_signature_filename',
         'incharge_signature_filename'
     ];
 

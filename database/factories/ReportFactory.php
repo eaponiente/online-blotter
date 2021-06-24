@@ -28,7 +28,7 @@ class ReportFactory extends Factory
 
         $status = ['pending', 'for verification', 'verified', 'closed'];
         $civilStatus = ['single', 'married', 'divorced', 'widowed'];
-        $type = ['robbery', 'carnapping', 'assault'];
+        $type = config('constants.report_types');
 
         $image = $this->faker->image();
         $imageFile = new File($image);
@@ -54,7 +54,7 @@ class ReportFactory extends Factory
             'gender' => ['male', 'female'][mt_rand(0 , 1)],
             'who' => $this->faker->text,
             'where' => $this->faker->text,
-            'when' => $this->faker->text,
+            'when' => $this->faker->dateTimeBetween('-2 years')->format('Y-m-d h:i A'),
             'synopsis' => $this->faker->text,
             'filename' => Storage::disk('local')->putFile('files', $imageFile),
             'created_at' => $createdAt,
