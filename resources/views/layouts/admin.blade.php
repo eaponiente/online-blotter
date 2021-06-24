@@ -4,6 +4,8 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
     <!-- Tell the browser to be responsive to screen width -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="keywords"
@@ -219,6 +221,8 @@
     <script src="{{ url('js/jsgrid/db.js') }}"></script>
     <script src="{{ url('js/jsgrid/jsgrid.min.js') }}"></script>
     <script src="{{ url('js/jsgrid/jsgrid-init.js') }}"></script>
+
+    <script src="{{ url('js/app.js') }}"></script>
 
     @yield('scripts')
 </body>

@@ -50,6 +50,7 @@ Route::group(['namespace' => 'Admin'], function() {
 
             Route::get('reports/{uuid}/change-status/{status}', 'Reports\ReportController@changeStatus')->name('reports.change.status');
             Route::get('reports/list', 'Reports\ReportController@getReports')->name('reports.list');
+            Route::post('reports/{uuid}/upload/{role}', 'Reports\ReportController@uploadAdmin')->name('reports.upload.admin');
             Route::resource('reports', 'Reports\ReportController');
 
             Route::get('dashboard', 'MainController@index')->name('admin.dashboard.index');

@@ -3,8 +3,12 @@
 namespace App\Http\Controllers\Admin\Reports;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Admin\Reports\StoreSignatureRequest;
 use App\Models\Report;
+use App\Services\Reports\UploadFiles;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
+use Illuminate\Support\Facades\Storage;
 use Yajra\DataTables\Facades\DataTables;
 
 class ReportController extends Controller
@@ -87,10 +91,44 @@ class ReportController extends Controller
         }
 
         $report = Report::where('uuid', $uuid)->first();
-
         $report->status = $status;
         $report->save();
 
         return redirect()->back();
+    }
+
+    public function uploadAdmin(StoreSignatureRequest $request, $uuid, $role, UploadFiles $uploadFiles)
+    {
+        $userAuth = auth()->user();
+        $report = Report::where('uuid', $uuid)->first();
+        $path = $uploadFiles->execute($request->file('file'), 'signatures');
+
+        if($role == 'user') {
+            if(Storage::disk('local')->exists( $report->prepared_by_signature_filename)) {
+                Storage::disk('local')->delete($report->prepared_by_signature_filename);
+            }
+
+            $report->update([
+                'prepared_by_user_id' => $userAuth->id,
+                'prepared_by_signature_filename' => $path
+            ]);
+        }
+
+        if($role == 'commander') {
+            if(Storage::disk('local')->exists( $report->incharge_signature_filename)) {
+                Storage::disk('local')->delete($report->incharge_signature_filename);
+            }
+
+            $report->update([
+                'incharge_signature_filename' => $path
+            ]);
+        }
+
+        return response()->json([
+            'success' => true,
+            'data' => [
+                'path' => asset('storage/'. $path)
+            ]
+        ], Response::HTTP_OK);
     }
 }

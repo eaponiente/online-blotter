@@ -7,13 +7,13 @@ use Illuminate\Support\Facades\Storage;
 
 class UploadFiles
 {
-    public function execute(UploadedFile $file)
+    public function execute(UploadedFile $file, $folder = 'files')
     {
         $extension = $file->getClientOriginalExtension();
 
         $filename = md5( now() . uniqid() ) . '.' . $extension;
 
-        $path = $file->storeAs('files', $filename);
+        $path = $file->storeAs($folder, $filename);
 
         return $path;
     }

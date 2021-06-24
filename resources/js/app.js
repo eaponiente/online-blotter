@@ -91,3 +91,76 @@ $('#report_type').change(function() {
             .addClass('hide');
     }
 })
+
+$.ajaxSetup({
+    headers: {
+        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+    }
+});
+$('.admin-file').change(function(){
+    var self = $(this);
+    //on change event
+    var formdata = new FormData();
+    if($(this).prop('files').length > 0)
+    {
+        file =$(this).prop('files')[0];
+        formdata.append("file", file);
+
+        var reportUuid = $('#show-report-uuid').val();
+
+        $.ajax({
+            url: '/admin/reports/' + reportUuid + '/upload/user',
+            type: 'POST',
+            data: formdata,
+            processData: false,
+            contentType: false,
+            success: function(response) {
+                self.val('');
+                $('.user-uploaded-signature').attr('src', response.data.path).show();
+            },
+            error: function(jqXHR, textStatus, errorThrown) {
+                if(jqXHR.status === 422) {
+                    $('.admin-notification').removeClass('hide').addClass('hide')
+                    var messages = jqXHR.responseJSON.errors;
+                    $.each(messages, function(key, val) {
+                        $('.admin-notification').removeClass('hide').html(val[0])
+                    })
+                }
+            }
+        })
+    }
+});
+
+$('.commander-file').change(function(){
+    var self = $(this);
+    //on change event
+    var formdata = new FormData();
+    if($(this).prop('files').length > 0)
+    {
+        file =$(this).prop('files')[0];
+        formdata.append("file", file);
+
+        var reportUuid = $('#show-report-uuid').val();
+
+        $.ajax({
+            url: '/admin/reports/' + reportUuid + '/upload/commander',
+            type: 'POST',
+            data: formdata,
+            processData: false,
+            contentType: false,
+            success: function(response) {
+                self.val('');
+                $('.commander-uploaded-signature').attr('src', response.data.path).show();
+            },
+            error: function(jqXHR, textStatus, errorThrown) {
+                if(jqXHR.status === 422) {
+                    $('.commander-notification').removeClass('hide').addClass('hide')
+                    var messages = jqXHR.responseJSON.errors;
+                    $.each(messages, function(key, val) {
+                        $('.commander-notification').removeClass('hide').html(val[0])
+                    })
+                }
+            }
+        })
+    }
+});
