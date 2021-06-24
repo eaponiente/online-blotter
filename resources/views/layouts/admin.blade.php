@@ -59,12 +59,12 @@
                             <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
                             <!-- Dark Logo icon -->
                             <img src="{{ url('assets/images/logo.png')}}" alt="homepage" width="50" class="dark-logo" />
-                            Davao City Online Police Blotter
                         </b>
                         <!--End Logo icon -->
                         <!-- Logo text -->
-                        <!--<span class="logo-text">
-                        </span>-->
+                        <span class="logo-text">
+                            Davao Police Blotter
+                        </span>
                     </a>
                     <!-- ============================================================== -->
                     <!-- End Logo -->
