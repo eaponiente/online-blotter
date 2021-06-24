@@ -26,10 +26,14 @@ class ReportController extends Controller
 
     public function store(StoreReportRequest $storeReportRequest, CreateReport $createReport, UploadFiles $uploadFiles)
     {
+        $whenHours = str_pad($storeReportRequest->input('when_hours'), 2, '0', STR_PAD_LEFT);
+        $whenMinutes = str_pad($storeReportRequest->input('when_minutes'), 2, '0', STR_PAD_LEFT);
+        $meridiem = $storeReportRequest->input('meridiem');
+
         $storeReportRequest->merge([
             'type' => $storeReportRequest->input('type') == 'others' ? $storeReportRequest->input('others') : $storeReportRequest->input('type'),
             'date_of_birth' => $storeReportRequest->input('birth_year') . '-' . $storeReportRequest->input('birth_month') . '-' . $storeReportRequest->input('birth_day'),
-            'when' => $storeReportRequest->input('when_year') . '-' . $storeReportRequest->input('when_month') . '-' . $storeReportRequest->input('when_day') . ' ' . $storeReportRequest->input('when_hours') . ':' . $storeReportRequest->input('when_minutes')
+            'when' => $storeReportRequest->input('when_month') . ' ' . $storeReportRequest->input('when_day') . ' ' . $storeReportRequest->input('when_year') . ' ' . $whenHours . ':' . $whenMinutes . ' ' . $meridiem
         ]);
 
         $report = $createReport->execute($storeReportRequest->all());
