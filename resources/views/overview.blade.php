@@ -33,6 +33,10 @@
                             <p>{{ strtoupper($report->type) }}</p>
                         </div>
                         <div class="form-group mb-3">
+                            <label class="col-md-12 mb-0">Assigned to Station:</label>
+                            <p>{{ $report->station->name }}</p>
+                        </div>
+                        <div class="form-group mb-3">
                             <label class="col-md-12 mb-0">Who:</label>
                             <p>{{ $report->who }}</p>
                         </div>
@@ -48,6 +52,7 @@
                             <label class="col-md-12 mb-0">Synopsis:</label>
                             <p>{{ $report->synopsis }}</p>
                         </div>
+
 
                         <div class="row">
                             @if(filled($report->prepared_by_signature_filename))
