@@ -60,7 +60,9 @@
                                 <div class="form-group mb-3 mt-5">
                                     <label class="col-md-12 mb-0">Prepared by:</label>
                                     <img src="{{ asset('storage/' . $report->prepared_by_signature_filename) }}" width="150"> <br/>
-                                    SPO1 Cardo Marasigan
+                                    {{ $report->user->first_name . ' ' . ucfirst(substr($report->user->middle_name, 0, 1)) . ' ' . $report->user->last_name }}
+                                    <br>
+                                    {{ $report->user->position }}
                                 </div>
                             </div>
                             @endif
@@ -70,7 +72,7 @@
                                 <div class="form-group mb-3 mt-5">
                                     <label class="col-md-12 mb-0">Station commander:</label>
                                     <img src="{{ asset('storage/' . $report->incharge_signature_filename) }}" width="150"> <br/>
-                                    SPO1 Cardo Marasigan
+                                    {{ ucwords(strtolower($report->station->commander_name)) }}
                                 </div>
                             </div>
                             @endif
