@@ -6,8 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <!-- Tell the browser to be responsive to screen width -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="keywords" content="wrappixel, admin dashboard, html css dashboard, web dashboard, bootstrap 5 admin, bootstrap 5, css3 dashboard, bootstrap 5 dashboard, monster admin bootstrap 5 dashboard, frontend, responsive bootstrap 5 admin template, ">
-    <meta name="description" content="Monster is powerful and clean admin dashboard template, inpired from Google's Material Design">
+    <meta name="keywords" content="davao online police blotter, davao police blotter">
+    <meta name="description" content="Davao Online Police Blotter">
     <meta name="robots" content="noindex,nofollow">
     <title>Davao City Online Police Blotter</title>
     <link rel="canonical" href="https://www.wrappixel.com/templates/monsteradmin/" />

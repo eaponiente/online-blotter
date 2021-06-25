@@ -45,7 +45,7 @@ class StoreReportRequest extends FormRequest
             'when_year' => 'required',
             'when_hours' => 'required',
             'when_minutes' => 'required',
-            'who' => 'required',
+            'who' => 'nullable',
             'where' => 'required',
             'synopsis' => 'required',
             'filename' => 'required',
