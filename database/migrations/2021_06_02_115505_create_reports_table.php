@@ -39,7 +39,7 @@ class CreateReportsTable extends Migration
             $table->longText('synopsis')->nullable();
             $table->string('filename')->nullable();
             $table->integer('prepared_by_user_id')->nullable();
-            $table->integer('incharge_signature_filename')->nullable();
+            $table->string('incharge_signature_filename')->nullable();
             $table->timestamps();
         });
     }
