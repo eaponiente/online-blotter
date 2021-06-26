@@ -321,7 +321,7 @@
                             </div>
                         </div>
                         <div class="d-flex">
-                            <button type="submit" class="btn btn-lg btn waves-effect waves-light btn-light-info text-info">Submit</button>
+                            <button type="submit" id="report-form-submit-btn" class="btn btn-lg btn waves-effect waves-light btn-light-info text-info">Submit</button>
                             <div>
                                 <!-- ------------------------------------------ -->
                                 <!-- Medium -->

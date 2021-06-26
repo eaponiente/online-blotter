@@ -11,7 +11,16 @@ $('#report-form').submit(function(e) {
         data: formData,
         processData: false,
         contentType: false,
+        beforeSend: function() {
+            var submitBtn = $('#report-form-submit-btn');
+            submitBtn.attr('disabled', 'disabled');
+            submitBtn.html('Submitting...');
+        },
         success: function(response) {
+            var submitBtn = $('#report-form-submit-btn');
+            submitBtn.removeAttr('disabled');
+            submitBtn.html('Submit');
+
             $('.control-number').html(response.data.control_no)
             $('.police-station').html(response.data.station)
             $('#bs-example-modal-md').modal('show')
@@ -38,6 +47,9 @@ $('#report-form').submit(function(e) {
             $('.form-filename').val('');
         },
         error: function(jqXHR, textStatus, errorThrown) {
+            var submitBtn = $('#report-form-submit-btn');
+            submitBtn.removeAttr('disabled');
+            submitBtn.html('Submit');
             if(jqXHR.status === 422) {
                 $('.is-invalid').removeClass('is-invalid');
                 var messages = jqXHR.responseJSON.errors;
