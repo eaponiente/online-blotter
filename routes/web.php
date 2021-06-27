@@ -26,6 +26,7 @@ Route::group(['namespace' => 'Client'], function() {
     Route::post('/search', 'ReportController@processSearch')->name('report.search.process');
     Route::get('/view-report', 'ReportController@show')->name('report.show');
     Route::get('/report', 'ReportController@create');
+    Route::get('/download-report/{uuid}', 'ReportController@download')->name('report.download');
     Route::post('/report', 'ReportController@create')->name('report.create');
     Route::post('/reports/store', 'ReportController@store')->name('report.store');
 
@@ -49,6 +50,7 @@ Route::group(['namespace' => 'Admin'], function() {
             Route::get('logout', 'AuthController@logout')->name('admin.logout');
             Route::get('statistics', 'StatisticsController@index')->name('admin.statistics.index');
 
+            Route::get('reports/{uuid}/download', 'Reports\ReportController@download')->name('reports.admin.download');
             Route::get('reports/{uuid}/change-status/{status}', 'Reports\ReportController@changeStatus')->name('reports.change.status');
             Route::get('reports/list', 'Reports\ReportController@getReports')->name('reports.list');
             Route::post('reports/{uuid}/upload/{role}', 'Reports\ReportController@uploadAdmin')->name('reports.upload.admin');

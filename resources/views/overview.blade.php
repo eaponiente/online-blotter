@@ -4,9 +4,9 @@
         <div class="auth-box p-4 bg-white rounded" style="max-width:600px;margin:3% 0">
             <div>
                 <div class="buttons align-right">
-                    <button type="submit" class="btn btn-lg btn waves-effect waves-light btn-light-info text-info"><i
-                                class="fas fa-print"></i> Print
-                    </button>
+                    <a target="_blank" href="{{ route('report.download', $report->uuid) }}" class="btn btn-lg btn waves-effect waves-light btn-light-info text-info"><i
+                                class="fas fa-print"></i> Save to PDF
+                    </a>
                 </div>
                 <div class="logo text-center">
                     <span class="db"><img src="{{ url('assets/images/logo.png') }}" width="150" alt="logo"></span>

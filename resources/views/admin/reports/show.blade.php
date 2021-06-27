@@ -17,6 +17,8 @@
                     <div class="form-body">
                         <div class="card-body">
                             <h4 class="card-title mb-0">Control No: {{ $report->control_no }}</h4>
+                            <br>
+                            <a href="{{ route('reports.admin.download', ['uuid' => $report->uuid]) }}" target="_blank" class="btn btn-info text-white">Print to PDF</a>
                         </div>
                         <div class="card-body border-top">
                             <div class="row">
@@ -167,6 +169,14 @@
                                         <label class="control-label col-md-3 font-weight-medium">Status:</label>
                                         <div class="col-md-7">
                                             <p class="form-control-static"> {{ ucfirst($report->status) }} </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group row ">
+                                        <label class="control-label col-md-3 font-weight-medium">Station:</label>
+                                        <div class="col-md-7">
+                                            <p class="form-control-static"> {{ ucfirst($report->station->name) }} </p>
                                         </div>
                                     </div>
                                 </div>

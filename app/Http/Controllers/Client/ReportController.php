@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Client;
 
+use PDF;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Client\StoreReportRequest;
 use App\Models\Barangay;
@@ -82,5 +83,14 @@ class ReportController extends Controller
             ],
             'message' => 'Control no. found'
         ], Response::HTTP_OK);
+    }
+
+    public function download($uuid)
+    {
+        $report = Report::with('station', 'user')->where('uuid', $uuid)->first()->toArray();
+
+        $pdf = PDF::loadView('pdf.client-report', $report);
+        return $pdf->stream();
+        return view('pdf.client-report', $report);
     }
 }

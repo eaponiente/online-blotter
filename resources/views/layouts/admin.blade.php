@@ -118,7 +118,7 @@
                                 <div class="d-flex no-block align-items-center p-3 bg-info text-white mb-2">
                                     <div class="ms-2">
                                         <h4 class="mb-0 text-white">{{auth()->user()->fullname}}</h4>
-                                        <p class=" mb-0">{{auth()->user()->username}}</p>
+                                        <p class=" mb-0">{{auth()->user()->station ? auth()->user()->station->name : 'Administrator'}}</p>
                                     </div>
                                 </div>
                                 <div class="dropdown-divider"></div>

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin\Reports;
 
+use PDF;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\Reports\StoreSignatureRequest;
 use App\Models\Report;
@@ -130,5 +131,13 @@ class ReportController extends Controller
                 'path' => asset('storage/'. $path)
             ]
         ], Response::HTTP_OK);
+    }
+
+    public function download($uuid)
+    {
+        $report = Report::with('station', 'user')->where('uuid', $uuid)->first()->toArray();
+
+        $pdf = PDF::loadView('pdf.admin-report-pdf', $report);
+        return $pdf->stream();
     }
 }
