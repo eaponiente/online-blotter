@@ -15,4 +15,9 @@ class MainController extends Controller
 
         return view('index', compact('barangays'));
     }
+
+    public function howTo()
+    {
+        return view('how');
+    }
 }
