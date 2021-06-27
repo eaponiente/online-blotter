@@ -21,6 +21,7 @@ Route::group(['namespace' => 'Client'], function() {
     // Select country form
     Route::get('/', 'MainController@index');
 
+    Route::get('/how-to', 'MainController@howTo');
     Route::get('/search', 'ReportController@search')->name('report.search');
     Route::post('/search', 'ReportController@processSearch')->name('report.search.process');
     Route::get('/view-report', 'ReportController@show')->name('report.show');
