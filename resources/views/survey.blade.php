@@ -66,17 +66,18 @@
                         </div>
                         <div class="col-sm-12 col-md-12 col-lg-5 mt-3">
                             <div class="form-group mb-3">
-                                <input id="answerYes" type="radio" name="answer[{{$count}}]" class="chk-col-indigo material-inputs">
-                                <label for="answerYes">Accept</label>
+                                <input id="answerYes_{{$count}}" type="radio" name="answer[{{$count}}]" value="yes" class="">
+                                <label for="answerYes_{{$count}}">Accept</label>
 
-                                <input id="answerNo" type="radio" name="answer[{{$count}}]" class="chk-col-indigo material-inputs">
-                                <label for="answerNo">Not Accept</label>
+                                <input id="answerNo_{{$count}}" type="radio" name="answer[{{$count}}]" value="no" class="">
+                                <label for="answerNo_{{$count}}">Not Accept</label>
                             </div>
                         </div>
                         <?php $count++; ?>
                         @endforeach
                     </div>
                     @endforeach
+
                     <div class="row mt-5">
                         <div class="d-flex">
                             <button type="submit" id="report-form-submit-btn" class="btn btn-lg btn waves-effect waves-light btn-light-info text-info">Submit</button>
