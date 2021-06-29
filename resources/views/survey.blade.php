@@ -4,8 +4,8 @@
         <div class="auth-box p-4 bg-white rounded" style="margin:3% 0;max-width:1200px">
             <div>
                 <div class="logo text-center">
-                <span class="db"><img src="./assets/images/logo.png" width="150" alt="logo"></span>
-                    <h1 class="font-weight-medium mb-3 mt-1">Questionnaire</h1>
+                <span class="db"><img src="{{ url('assets/images/logo.png') }}" width="150" alt="logo"></span>
+                    <h1 class="font-weight-medium mb-3 mt-1">Survey</h1>
                     <h4>(Online Police Blotter System in Davao Region)</h4>
                 </div>
                 <p class="mt-5 text-center">Hi respondents! This survey is for you to rate how often you experienced
@@ -13,33 +13,23 @@
                 leave any question unanswered. The following scale will be your reference in
                 answering this survey.</p>
                 <!-- Form -->
-                <form class="form-horizontal" method="POST" id="report-form" enctype="multipart/form-data">
+                <form class="form-horizontal" method="POST" id="survey-form" action="{{ route('survey.store') }}" enctype="multipart/form-data">
                     {{ csrf_field() }}
                     <input type="hidden" name="station_id" value="">
                     <div class="row">
                         <div class="col-sm-12 col-md-12 col-lg-6">
                             <div class="form-floating mb-3">
-                                <input type="text" name="first_name" class="form-control form-input-bg form-first_name" id="tb-rfname" placeholder="john deo">
+                                <input type="text" name="first_name" class="form-control form-input-bg form-first_name" id="tb-rfname">
                                 <label for="tb-rfname">Name (Optional)</label>
                                 <div class="invalid-feedback">
                                     First name is required
                                 </div>
                             </div>
                         </div>
-                        <div class="col-sm-12 col-md-12 col-lg-6">
-                            <div class="form-floating mb-3">
-                                <input type="date" name="last_name" class="form-control form-input-bg form-last_name" id="tb-rfname" placeholder="john deo">
-                                <label for="tb-rfname">Date</label>
-                                <div class="invalid-feedback">
-                                    First name is required
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row mt-2">
+
                         <div class="col-sm-12 col-md-12 col-lg-4">
                             <div class="form-floating mb-3">
-                                <input type="text" name="others" class="form-control form-input-bg form-others" id="tb-rfname" placeholder="">
+                                <input type="text" name="age" required class="form-control form-input-bg form-others" id="tb-rfname">
                                 <label for="tb-rfname">Age</label>
                                 <div class="invalid-feedback">
                                     First name is required
@@ -48,35 +38,45 @@
                         </div>
                         <div class="col-sm-12 col-md-12 col-lg-2">
                             <div class="form-floating mb-3">
-                                <select class="form-select form-input-bg form-gender" name="gender" id="tb-remail" placeholder="john@gmail.com">
+                                <select class="form-select form-input-bg form-gender" required name="gender" id="tb-remail">
                                     @foreach(config('constants.gender') as $type)
                                         <option value="{{ $type }}">{{ ucfirst($type) }}</option>
                                     @endforeach
                                 </select>
-                                <label for="tb-remail">Gender (Kinatawo)</label>
+                                <label for="tb-remail">Gender</label>
                                 <div class="invalid-feedback">
                                     Last name is required
                                 </div>
                             </div>
                         </div>
+                    </div>
+                    <div class="row mt-2">
+
                         <div class="col-sm-12 col-md-12 col-lg-6">
                         </div>
                     </div>
+                    <?php $count = 0; ?>
+                    @foreach(config('questions') as $label => $questions)
                     <div class="row mt-5">
-                        <h4 class="text-center">PERCEIVED USEFULNESS</h4>
-                        <div class="col-sm-12 col-md-12 col-lg-6 text-center mt-3">
-                                Using the online police blotter system helps me in sending my complaints.
-                        </div>
-                        <div class="col-sm-12 col-md-12 col-lg-6 mt-3">
-                            <div class="form-group mb-3">
-                                <input id="answerYes" type="checkbox" class="chk-col-indigo material-inputs">
-                                <label for="answerYes">Yes</label>
 
-                                <input id="answerNo" type="checkbox" class="chk-col-indigo material-inputs">
-                                <label for="answerNo">No</label>
+                        <h4 class="text-center">{{ strtoupper(str_replace('_', ' ', $label)) }}</h4>
+                        @foreach($questions as $question)
+                        <div class="col-sm-12 col-md-12 col-lg-7 text-left mt-3">
+                            {{$question}}
+                        </div>
+                        <div class="col-sm-12 col-md-12 col-lg-5 mt-3">
+                            <div class="form-group mb-3">
+                                <input id="answerYes" type="radio" name="answer[{{$count}}]" class="chk-col-indigo material-inputs">
+                                <label for="answerYes">Accept</label>
+
+                                <input id="answerNo" type="radio" name="answer[{{$count}}]" class="chk-col-indigo material-inputs">
+                                <label for="answerNo">Not Accept</label>
                             </div>
                         </div>
+                        <?php $count++; ?>
+                        @endforeach
                     </div>
+                    @endforeach
                     <div class="row mt-5">
                         <div class="d-flex">
                             <button type="submit" id="report-form-submit-btn" class="btn btn-lg btn waves-effect waves-light btn-light-info text-info">Submit</button>

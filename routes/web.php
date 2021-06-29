@@ -21,7 +21,7 @@ Route::group(['namespace' => 'Client'], function() {
     // Select country form
     Route::get('/', 'MainController@index');
     Route::get('/survey', 'SurveyController@index');
-    Route::post('/survey/submit', 'SurveyController@submit');
+    Route::post('/survey/store', 'SurveyController@store')->name('survey.store');
     Route::get('/how-to', 'MainController@howTo');
     Route::get('/search', 'ReportController@search')->name('report.search');
     Route::post('/search', 'ReportController@processSearch')->name('report.search.process');
