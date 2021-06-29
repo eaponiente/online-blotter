@@ -5,7 +5,7 @@
             <div>
                 <div class="logo text-center">
                 <span class="db"><img src="./assets/images/logo.png" width="150" alt="logo"></span>
-                    <h5 class="font-weight-medium mb-3 mt-1">Please fill out the form below.</h5>
+                    <h1 class="font-weight-medium mb-3 mt-1">Please fill out the form below.</h1>
                 </div>
                 <!-- Form -->
                 <form class="form-horizontal" method="POST" id="report-form" enctype="multipart/form-data">

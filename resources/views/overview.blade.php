@@ -10,8 +10,8 @@
                 </div>
                 <div class="logo text-center">
                     <span class="db"><img src="{{ url('assets/images/logo.png') }}" width="150" alt="logo"></span>
-                    <h4 class="mt-4">{{ $report->control_no }}</h4>
-                    <h5 class="font-weight-medium mb-3 mt-1 text-dark-success">{{ strtoupper($report->status) }}</h5>
+                    <h1 class="mt-4">{{ $report->control_no }}</h1>
+                    <h4 class="font-weight-medium mb-3 mt-1 text-dark-success">{{ strtoupper($report->status) }}</h4>
                 </div>
                 <!-- Form -->
                 <div class="row mt-4">
