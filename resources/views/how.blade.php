@@ -5,7 +5,7 @@
             <div>
                 <div class="logo text-center">
                     <span class="db"><img src="./assets/images/logo.png" width="150" alt="logo"></span>
-                    <h5 class="font-weight-medium mb-3 mt-1">This is a blank page.</h5>
+                    <h1 class="font-weight-medium mb-3 mt-1">This is a blank page.</h1>
                 </div>
 
             </div>

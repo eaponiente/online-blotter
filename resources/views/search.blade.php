@@ -5,7 +5,7 @@
             <div>
                 <div class="logo text-center">
                     <span class="db"><img src="{{ url('assets/images/logo.png') }}" width="150" alt="logo"></span>
-                    <h5 class="font-weight-medium mb-3 mt-4">Search Control Number</h5>
+                    <h1 class="font-weight-medium mb-3 mt-4">Search Control Number</h1>
                 </div>
                 <!-- Form -->
                 <div class="row mt-4">
