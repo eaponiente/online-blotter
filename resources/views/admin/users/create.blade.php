@@ -114,14 +114,16 @@
                             <div class="form-group">
                                 <label class="col-md-12 mb-0">Password</label>
                                 <div class="col-md-12">
-                                    <input type="password" value=""
+                                    <input type="password"
+                                           name="password"
+                                           value=""
                                         class="form-control ps-0 form-control-line">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-md-12 mb-0">Mobile</label>
                                 <div class="col-md-12">
-                                    <input type="text" placeholder="123 456 7890"
+                                    <input type="text"
                                            name="mobile" value="{{ $edit->mobile ?? old('mobile') }}"
                                         class="form-control ps-0 form-control-line">
                                 </div>
@@ -129,7 +131,7 @@
                             <div class="form-group">
                                 <label class="col-sm-12">Position</label>
                                 <div class="col-sm-12 border-bottom">
-                                    <input type="text" placeholder="123 456 7890"
+                                    <input type="text"
                                            name="position" value="{{ $edit->position ?? old('position') }}"
                                            class="form-control ps-0 form-control-line">
                                 </div>
@@ -137,7 +139,7 @@
                             <div class="form-group">
                                 <label class="col-sm-12">Station</label>
                                 <div class="col-sm-12 border-bottom">
-                                    <select class="form-select shadow-none border-0 ps-0 form-control-line">
+                                    <select name="station_id" class="form-select shadow-none border-0 ps-0 form-control-line">
                                         <option value=""></option>
                                         @foreach($stations as $station)
                                             <option value="{{ $station->id }}" {{ isset($edit) && $edit->station_id == $station->id ? 'selected' : '' }}> {{ $station->name }}</option>

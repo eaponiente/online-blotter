@@ -13,10 +13,7 @@ class UpdateUser
      */
     public function execute(User $user, $param): User
     {
-        if(filled($param['password'])) {
-            $param['password'] = bcrypt($param['password']);
-        }
-
+        $param['password'] = filled($param['password']) ? bcrypt($param['password']) : $user->password;
         $user->update($param);
 
         return $user->fresh();

@@ -25,7 +25,7 @@ class StoreUserRequest extends FormRequest
     {
         $user = $this->route('user') ?? 'NULL';
 
-        if($user == 'NULL') {
+        if($user != 'NULL') {
             return [
                 'username' => 'required|unique:users,username,' . $user,
                 'password' => 'nullable|string|min:4',
