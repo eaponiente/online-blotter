@@ -29,3 +29,20 @@
     -webkit-box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
     box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
 }
+
+@media (min-width:320px)  { 
+    /* smartphones, iPhone, portrait 480x320 phones */ 
+    .question-btn, .question-title {
+        text-align: center;
+    }
+}
+
+@media (min-width:961px)  { 
+    .question-title {
+        text-align: right;
+    }
+
+    .question-btn {
+        text-align: left;
+    }
+}
