@@ -21,6 +21,8 @@ class SurveyController extends Controller
         ]);
 
         $createSurvey->execute($request->all());
+
+        return redirect()->route('survey.success');
     }
 
     public function success()

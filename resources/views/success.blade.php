@@ -15,11 +15,11 @@
                 </div>-->
 
             <div style="border-radius:200px; height:200px; width:200px; background: #F8FAF5; margin:0 auto;">
-                <i class="checkmark">✓</i>
+                <img src="{{ asset('assets/images/logo.png') }}" alt="logo" width="200px">
             </div>
 
-            <h1>Success</h1> 
-            <p>We received your purchase request;<br/> we'll be in touch shortly!</p>
+            <h1>Thank you!</h1>
+            <p>We appreciate you for taking the time to complete this survey.</p>
         </div>
     </div>
 @endsection

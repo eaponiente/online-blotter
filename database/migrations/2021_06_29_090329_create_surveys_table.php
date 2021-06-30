@@ -15,6 +15,7 @@ class CreateSurveysTable extends Migration
     {
         Schema::create('surveys', function (Blueprint $table) {
             $table->id();
+            $table->uuid('uuid')->nullable();
             $table->string('name')->nullable();
             $table->string('age')->nullable();
             $table->string('gender')->nullable();

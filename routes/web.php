@@ -63,6 +63,10 @@ Route::group(['namespace' => 'Admin'], function() {
             Route::middleware('superadmin')->group(function() {
                 Route::get('users/list', 'Users\UserController@getUsers')->name('users.list');
                 Route::resource('users', 'Users\UserController');
+
+                Route::get('surveys/{uuid}/download', 'Surveys\SurveyController@download')->name('surveys.download');
+                Route::get('surveys/list', 'Surveys\SurveyController@list')->name('surveys.list');
+                Route::resource('surveys', 'Surveys\SurveyController');
             });
         });
     });

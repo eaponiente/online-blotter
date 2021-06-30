@@ -3,6 +3,7 @@
 namespace App\Services\Surveys;
 
 use App\Models\Survey;
+use Illuminate\Support\Str;
 
 class CreateSurvey
 {
@@ -12,6 +13,7 @@ class CreateSurvey
      */
     public function execute($param): Survey
     {
+        $param['uuid'] = Str::uuid();
         return Survey::create($param);
     }
 }

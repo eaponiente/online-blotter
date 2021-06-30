@@ -42,8 +42,7 @@
                             </div>
                         </div>
                         <div class="card-body">
-                            <h4 class="card-title mb-0">Person Info <a href="{{ route('report.show', ['code' => $report->control_no]) }}" target="_blank" class="btn btn-danger text-white">View as complainant</a>
-                            </h4>
+                            <h4 class="card-title mb-0">Person Info <a href="{{ route('report.show', ['code' => $report->control_no]) }}" target="_blank" class="btn btn-danger text-white">View as complainant</a></h4>
                         </div>
                         <div class="card-body border-top">
                             <div class="row">

@@ -17,11 +17,7 @@
                     {{ csrf_field() }}
                     <input type="hidden" name="station_id" value="">
                     <div class="row">
-                        @if($errors->count())
-                            <div class="alert alert-danger">
-                                There are fields that do not have an answer.
-                            </div>
-                        @endif
+
                         <div class="col-sm-12 col-md-12 col-lg-6">
                             <div class="form-floating mb-3">
                                 <input type="text" name="first_name" class="form-control form-input-bg form-first_name" id="tb-rfname">
@@ -57,7 +53,12 @@
                     </div>
                     <div class="row mt-2">
 
-                        <div class="col-sm-12 col-md-12 col-lg-6">
+                        <div class="col-sm-12 col-md-12 col-lg-12">
+                            @if($errors->count())
+                                <div class="alert alert-danger">
+                                    Please check that all questions have been answered.
+                                </div>
+                            @endif
                         </div>
                     </div>
                     <?php $count = 0; ?>
