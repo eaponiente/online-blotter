@@ -20,7 +20,7 @@
 
                         <div class="col-sm-12 col-md-12 col-lg-6">
                             <div class="form-floating mb-3">
-                                <input type="text" name="first_name" class="form-control form-input-bg form-first_name" id="tb-rfname">
+                                <input type="text" name="name" class="form-control form-input-bg form-first_name" id="tb-rfname">
                                 <label for="tb-rfname">Name (Optional)</label>
                                 <div class="invalid-feedback">
                                     First name is required
