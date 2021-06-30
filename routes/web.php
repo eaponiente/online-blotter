@@ -20,7 +20,7 @@ use App\Http\Controllers\Client\MainController;
 Route::group(['namespace' => 'Client'], function() {
     // Select country form
     Route::get('/', 'MainController@index');
-    Route::get('/survey', 'SurveyController@index');
+    Route::get('/survey', 'SurveyController@index')->name('client.survey');
     Route::post('/survey/store', 'SurveyController@store')->name('survey.store');
     Route::get('/survey/success', 'SurveyController@success')->name('survey.success');
     Route::get('/how-to', 'MainController@howTo');

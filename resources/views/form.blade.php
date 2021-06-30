@@ -331,13 +331,14 @@
                                     <div class="modal-dialog">
                                         <div class="modal-content">
                                             <div class="modal-header d-flex align-items-center">
-                                                <h4 class="modal-title text-success" id="myModalLabel">Success!</h4>
+                                                <h4 class="modal-title text-black-50" id="myModalLabel">Assigned to <span class="police-station"></span></h4>
                                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                             </div>
                                             <div class="modal-body">
-                                                <h4>Submitted and assigned to <span class="police-station"></span></h4>
                                                 <p><strong>Control number: <span class="control-number"></span></strong></p>
-                                                <p>Please copy the control number above to check updates regarding your case. Have a nice day!</p>
+                                                <p>Please copy the control number above to check updates regarding your case. To help us improve we'd like to ask you questions about your experience so far.
+                                                    <br><br> Please go to this
+                                                    <a href="{{ route('client.survey') }}">link</a> to fill up our survey. You're feedback will be highly appreciated.</p>
                                             </div>
                                             <div class="modal-footer">
                                                 <button type="button" class="btn btn-light-danger text-danger font-weight-medium waves-effect" data-bs-dismiss="modal">Close</button>
