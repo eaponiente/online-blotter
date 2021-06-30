@@ -10,6 +10,7 @@ class Survey extends Model
     use HasFactory;
 
     protected $fillable = [
+        'uuid',
         'name',
         'gender',
         'age',

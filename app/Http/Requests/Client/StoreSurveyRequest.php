@@ -27,7 +27,8 @@ class StoreSurveyRequest extends FormRequest
             'name' => 'nullable',
             'age' => 'nullable',
             'gender' => 'required|in:male,female',
-            'answers' => 'array'
+            'answer' => 'required|array|min:32',
+            'answer.*' => 'required',
         ];
     }
 }

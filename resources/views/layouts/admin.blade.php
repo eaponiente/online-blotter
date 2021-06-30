@@ -148,6 +148,7 @@
                                 <span class="hide-menu">Reports</span>
                             </a>
                         </li>
+
                         <li class="sidebar-item"> 
                             <a class="sidebar-link waves-effect waves-dark sidebar-link <?=request()->segment(2) === 'blotters' || request()->segment(2) === 'details' ? 'active' : ''?>" href="{{ route('admin.statistics.index') }}" aria-expanded="false">
                                 <i class="me-3 fa fa-table" aria-hidden="true"></i>
@@ -155,6 +156,13 @@
                             </a>
                         </li>
                         @if(blank(auth()->user()->station_id))
+
+                        <li class="sidebar-item">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link {{ request()->segment(2) == 'surveys' ? 'active' : '' }}" href="{{ route('surveys.index') }}" aria-expanded="false">
+                                <i class="me-3 far fa-clock fa-fw" aria-hidden="true"></i>
+                                <span class="hide-menu">Surveys</span>
+                            </a>
+                        </li>
                         <li class="sidebar-item"> 
                             <a class="sidebar-link waves-effect waves-dark sidebar-link <?=request()->segment(2) === 'users' || request()->segment(2) === 'users' ? 'active' : ''?>" href="{{ route('users.index') }}" aria-expanded="false">
                                 <i class="me-3 fa fa-users" aria-hidden="true"></i>
