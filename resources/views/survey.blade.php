@@ -17,6 +17,11 @@
                     {{ csrf_field() }}
                     <input type="hidden" name="station_id" value="">
                     <div class="row">
+                        @if($errors->count())
+                            <div class="alert alert-danger">
+                                There are fields that do not have an answer.
+                            </div>
+                        @endif
                         <div class="col-sm-12 col-md-12 col-lg-6">
                             <div class="form-floating mb-3">
                                 <input type="text" name="first_name" class="form-control form-input-bg form-first_name" id="tb-rfname">
@@ -29,7 +34,7 @@
 
                         <div class="col-sm-12 col-md-12 col-lg-4">
                             <div class="form-floating mb-3">
-                                <input type="text" name="age" required class="form-control form-input-bg form-others" id="tb-rfname">
+                                <input type="text" name="age" class="form-control form-input-bg form-others" id="tb-rfname">
                                 <label for="tb-rfname">Age</label>
                                 <div class="invalid-feedback">
                                     First name is required
@@ -38,7 +43,7 @@
                         </div>
                         <div class="col-sm-12 col-md-12 col-lg-2">
                             <div class="form-floating mb-3">
-                                <select class="form-select form-input-bg form-gender" required name="gender" id="tb-remail">
+                                <select class="form-select form-input-bg form-gender" name="gender" id="tb-remail">
                                     @foreach(config('constants.gender') as $type)
                                         <option value="{{ $type }}">{{ ucfirst($type) }}</option>
                                     @endforeach
@@ -66,10 +71,10 @@
                         </div>
                         <div class="col-sm-12 col-md-12 col-lg-5 mt-3">
                             <div class="form-group mb-3">
-                                <input id="answerYes_{{$count}}" type="radio" name="answer[{{$count}}]" value="yes" class="">
+                                <input id="answerYes_{{$count}}" type="radio" {{ old('answer.' . $count) == 'yes' ? 'checked' : false }} name="answer[{{$count}}]" value="yes" class="">
                                 <label for="answerYes_{{$count}}">Accept</label>
 
-                                <input id="answerNo_{{$count}}" type="radio" name="answer[{{$count}}]" value="no" class="">
+                                <input id="answerNo_{{$count}}" type="radio" {{ old('answer.' . $count) == 'no' ? 'checked' : false }} name="answer[{{$count}}]" value="no" class="">
                                 <label for="answerNo_{{$count}}">Not Accept</label>
                             </div>
                         </div>
@@ -80,7 +85,7 @@
 
                     <div class="row mt-5">
                         <div class="d-flex">
-                            <button type="submit" id="report-form-submit-btn" class="btn btn-lg btn waves-effect waves-light btn-light-info text-info">Submit</button>
+                            <button type="submit" id="" class="btn btn-lg btn waves-effect waves-light btn-light-info text-info">Submit</button>
                             <div>
                                 <!-- ------------------------------------------ -->
                                 <!-- Medium -->
