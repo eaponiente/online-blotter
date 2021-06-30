@@ -17,4 +17,9 @@ class SurveyController extends Controller
     {
         dd($request->validated());
     }
+
+    public function success()
+    {
+        return view('success');
+    }
 }
