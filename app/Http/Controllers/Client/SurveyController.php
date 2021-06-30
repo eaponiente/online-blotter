@@ -22,4 +22,9 @@ class SurveyController extends Controller
 
         $createSurvey->execute($request->all());
     }
+
+    public function success()
+    {
+        return view('success');
+    }
 }

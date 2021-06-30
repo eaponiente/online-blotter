@@ -66,10 +66,10 @@
 
                         <h4 class="text-center">{{ strtoupper(str_replace('_', ' ', $label)) }}</h4>
                         @foreach($questions as $question)
-                        <div class="col-sm-12 col-md-12 col-lg-7 text-left mt-3">
+                        <div class="col-md-6 col-lg-6 mt-3 question-title">
                             {{$question}}
                         </div>
-                        <div class="col-sm-12 col-md-12 col-lg-5 mt-3">
+                        <div class="col-md-6 col-lg-3 mt-3 question-btn">
                             <div class="form-group mb-3">
                                 <input id="answerYes_{{$count}}" type="radio" {{ old('answer.' . $count) == 'yes' ? 'checked' : false }} name="answer[{{$count}}]" value="yes" class="">
                                 <label for="answerYes_{{$count}}">Accept</label>

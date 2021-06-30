@@ -22,6 +22,7 @@ Route::group(['namespace' => 'Client'], function() {
     Route::get('/', 'MainController@index');
     Route::get('/survey', 'SurveyController@index');
     Route::post('/survey/store', 'SurveyController@store')->name('survey.store');
+    Route::get('/survey/success', 'SurveyController@success')->name('survey.success');
     Route::get('/how-to', 'MainController@howTo');
     Route::get('/search', 'ReportController@search')->name('report.search');
     Route::post('/search', 'ReportController@processSearch')->name('report.search.process');
