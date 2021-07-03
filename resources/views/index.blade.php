@@ -5,7 +5,8 @@
             <div>
                 <div class="logo text-center">
                     <span class="db"><img src="./assets/images/logo.png" width="150" alt="logo"></span>
-                    <h4 class="font-weight-medium mb-3 mt-1">Davao City Online Police Blotter</h4>
+                    <h1 class="font-weight-medium mb-3 mt-1">Welcome!</h1>
+                    <h4>To proceed, please select your barangay.</h4.
                 </div>
                 <!-- Form -->
                 <div class="row mt-4">

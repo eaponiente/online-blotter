@@ -5,10 +5,11 @@
             <div>
                 <div class="logo text-center">
                 <span class="db"><img src="./assets/images/logo.png" width="150" alt="logo"></span>
-                    <h1 class="font-weight-medium mb-3 mt-1">Please fill out the form below.</h1>
+                    <h1 class="font-weight-medium mb-3 mt-1">Blotter Report Form</h1>
+                    <h4>Please fill out the from below.</h4>
                 </div>
                 <!-- Form -->
-                <form class="form-horizontal" method="POST" id="report-form" enctype="multipart/form-data">
+                <form class="form-horizontal mt-5" method="POST" id="report-form" enctype="multipart/form-data">
                     {{ csrf_field() }}
                     <input type="hidden" name="station_id" value="{{ $station_id }}">
                     <div class="row">
