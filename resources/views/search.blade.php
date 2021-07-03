@@ -1,7 +1,7 @@
 @extends('layouts.main')
 @section('content')
     <div class="auth-wrapper d-flex no-block justify-content-center align-items-center">
-        <div class="auth-box p-4 bg-white rounded">
+        <div class="auth-box p-4 bg-white rounded" style="max-width: 500px">
             <div>
                 <div class="logo text-center">
                     <span class="db"><img src="{{ url('assets/images/logo.png') }}" width="150" alt="logo"></span>
