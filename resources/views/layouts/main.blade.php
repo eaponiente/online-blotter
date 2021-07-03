@@ -9,7 +9,7 @@
     <meta name="keywords" content="davao online police blotter, davao police blotter">
     <meta name="description" content="Davao Online Police Blotter">
     <meta name="robots" content="noindex,nofollow">
-    <title>Davao City Online Police Blotter</title>
+    <title>{{ __('title.label') }}</title>
     <link rel="canonical" href="https://www.wrappixel.com/templates/monsteradmin/" />
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/favicon.png">
@@ -44,7 +44,7 @@
         <!-- ============================================================== -->
         <nav class="navbar navbar-expand-lg navbar-light shadow-sm" id="mainNav">
             <div class="container px-5">
-                <a class="navbar-brand fw-bold" href="{{ url('/') }}">Davao City Online Police Blotter</a>
+                <a class="navbar-brand fw-bold" href="{{ url('/') }}">{{ __('title.label') }}</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     Menu
                     <i class="bi-list"></i>

@@ -332,10 +332,11 @@
                                     <div class="modal-dialog">
                                         <div class="modal-content">
                                             <div class="modal-header d-flex align-items-center">
-                                                <h4 class="modal-title text-black-50" id="myModalLabel">Assigned to <span class="police-station"></span></h4>
+                                                <h4 class="modal-title text-black-50" id="myModalLabel">Your blotter is forwarded to <span class="police-station" style="font-weight: bold" ></span></h4>
                                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                             </div>
                                             <div class="modal-body">
+
                                                 <p><strong>Control number: <span class="control-number"></span></strong></p>
                                                 <p>Please copy the control number above to check updates regarding your case. To help us improve we'd like to ask you questions about your experience so far.
                                                     <br><br> Please go to this

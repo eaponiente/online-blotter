@@ -6,7 +6,7 @@
                 <div class="logo text-center">
                     <span class="db"><img src="./assets/images/logo.png" width="150" alt="logo"></span>
                     <h1 class="font-weight-medium mb-3 mt-1">Welcome!</h1>
-                    <h4>To proceed, please select your barangay.</h4.
+                    <h4>To proceed, please select your municipality.</h4.
                 </div>
                 <!-- Form -->
                 <div class="row mt-4">
@@ -15,13 +15,13 @@
                             {{ csrf_field() }}
                                 <div class="form-floating mb-3">
                                     <select type="text" name="barangay_id" class="form-control form-input-bg" id="tb-rfname" placeholder="john deo" required="">
-                                        <option value="">Please choose a barangay</option>
+                                        <option value=""></option>
                                         @foreach($barangays as $barangay)
                                             <option value="{{ $barangay->id }}">{{ $barangay->name }}</option>
                                         @endforeach
 
                                     </select>
-                                    <label for="tb-rfname">Select Barangay</label>
+                                    <label for="tb-rfname">Select Municipality</label>
                                     <div class="invalid-feedback">
                                         Full name is required
                                     </div>

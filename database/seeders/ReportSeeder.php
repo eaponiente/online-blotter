@@ -17,7 +17,7 @@ class ReportSeeder extends Seeder
     {
         DB::table('reports')->truncate();
 
-        foreach (range(1, 20) as $value)
+        foreach (range(1, 10) as $value)
         {
             Report::factory()->create();
         }

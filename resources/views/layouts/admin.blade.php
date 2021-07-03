@@ -13,7 +13,7 @@
     <meta name="description"
         content="Davao Online Police Blotter">
     <meta name="robots" content="noindex,nofollow">
-    <title>Davao City Online Police Blotter</title>
+    <title>{{ __('title.label') }}</title>
     <link rel="canonical" href="https://www.wrappixel.com/templates/monster-admin-lite/" />
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="{{ url('assets/images/favicon.png')}}">
@@ -65,7 +65,7 @@
                         <!--End Logo icon -->
                         <!-- Logo text -->
                         <div class="logo-text" style="font-size: 12px;">
-                            Davao City Online Police Blotter
+                            {!! __('title.label') !!}
                         </div>
                     </a>
                     <!-- ============================================================== -->
@@ -195,7 +195,7 @@
             <!-- footer -->
             <!-- ============================================================== -->
             <footer class="footer text-center">
-                © 2021 Davao Online Blotter by <a href="">Parokya ni Edgar</a>
+                © {{ date('Y') }} {{ __('title.label') }} by <a href="">Independent Devs</a>
             </footer>
             <!-- ============================================================== -->
             <!-- End footer -->
