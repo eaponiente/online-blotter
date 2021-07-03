@@ -18,6 +18,39 @@ class StationSeeder extends Seeder
     {
         $stations = [
             [
+                'name' => 'MALITA MUNICIPAL POLICE STATION',
+                'commander_name' => 'PLTCOL DEQUINCIO PANTE'
+            ],
+            [
+                'name' => 'DIGOS CITY POLICE STATION',
+                'commander_name' => 'PLTCOL VICI ANTHONY T TABABA'
+            ],
+            [
+                'name' => 'TAGUM CITY POLICE STATION',
+                'commander_name' => 'PMAJ JOSELITO L TAN'
+            ],
+            [
+                'name' => 'NABUNTURAN MUNICIPAL POLICE STATION',
+                'commander_name' => 'PMAJ BIENVENIDO A CUISON JR'
+            ],
+            [
+                'name' => 'MATI CITY POLICE STATION',
+                'commander_name' => 'PLTCOL BEMBO L AYING'
+            ],
+        ];
+
+        DB::table('stations')->truncate();
+
+        foreach ($stations as $station)
+        {
+            Station::factory()->create($station);
+        }
+    }
+
+    private function stations()
+    {
+        return [
+            [
                 'name' => "STA ANA Police Station (PS1)",
                 'commander_name' => 'PMAJ BENKALIN A BALUAN'
             ],
@@ -78,12 +111,5 @@ class StationSeeder extends Seeder
                 'commander_name' => 'PMAJ JOENEL S PEDERIO'
             ]
         ];
-
-        DB::table('stations')->truncate();
-
-        foreach ($stations as $station)
-        {
-            Station::factory()->create($station);
-        }
     }
 }

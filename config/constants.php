@@ -1,6 +1,7 @@
 <?php
 
 return [
+    'title' => "Davao Online Police Blotter in \n Davao Region",
     'report_types' => [
         'Murder',
         'Homicide',
